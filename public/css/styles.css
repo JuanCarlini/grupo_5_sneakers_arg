@@ -1,0 +1,28 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    font-family: sans-serif;
+    background-image: #dbdbdb;
+}
+
+div.top-header{
+    flex-direction: row;
+    padding: 5%
+}
+
+header{
+    display: flex;
+    background-color: #636363;
+}
+
+header ul li{
+    list-style-type: none;
+}
+
+header nav ul li a{
+    text-decoration: none;
+    color: #000
+}
