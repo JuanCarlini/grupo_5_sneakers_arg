@@ -10,7 +10,7 @@ body{
 
 div.top-header{
     flex-direction: row;
-    padding: 5%
+    padding: -100px;
 }
 
 header{
@@ -27,16 +27,30 @@ header nav ul li a{
     color: #000
 }
 
+/* LOGO */
+
+.logo img{
+    height: 80px;
+    width: 80px;
+    float: left;
+    position: relative;
+    left: 0px;
+    
+
+}
+
+
+
 /* BARRA DE BUSQUEDA */
 
 .wrapper{
 	position: relative;
-    top: 50%;
-    left: 50%;
+    top: -10%;
+    left: 100%;
     transform: translate(-50%, -50%);
    
     max-width: 550px;
-    width: 100%;
+    width: 80%;
     padding: 15px;
     display: flex;
     justify-content: space-between;
@@ -44,15 +58,15 @@ header nav ul li a{
 }
 
 .wrapper .input {
-    width: 80%;
-    padding: 15px 20px;
+    width: 78%;
+    padding: 10px 20px;
     border: none;
     border-radius: 5px;
     font-weight: bold;
 }
 
 .searchbtn {
-    background: #ced4da;
+    background: white;
     width: 10%;
     border-radius: 5px;
     position: relative;
@@ -81,8 +95,8 @@ header nav ul li a{
 .menu ul li{
     display: inline-block;
     position: relative;
-    top: -50px;
-    left: 750px;
+    top: -100px;
+    left: 800px;
 }
 
 .menu ul li a{
