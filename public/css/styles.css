@@ -30,25 +30,26 @@ header nav ul li a{
 
 /* MENU DE NAVEGACION */
 
-.menu{
-    background-color: #000;
 
-}
 
 .menu ul{
     list-style: none;
     margin: 0;
     padding: 0;
+    
 }
 
 .menu ul li{
     display: inline-block;
+    position: relative;
+    top: -50px;
+    left: 750px;
 }
 
 .menu ul li a{
     color: white;
     display: block;
-    padding: 20px 20px;
+    padding: 10px 25px;
     text-decoration: none;
 }
 
