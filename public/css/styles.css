@@ -3,18 +3,21 @@
     padding: 0px;
 }
 
-body{
+body.formulario{
     font-family: sans-serif;
-    background-image: #dbdbdb;
+    background-color: #dbdbdb;
 }
 
 div.top-header{
+    display: inline;
     flex-direction: row;
-    padding: -100px;
+    padding: -100%;
+    box-sizing: border-box;
 }
 
 header{
     display: flex;
+    height: 100px;
     background-color: #636363;
 }
 
@@ -29,12 +32,20 @@ header nav ul li a{
 
 /* LOGO */
 
+
+header div.logo{
+    height: 200;
+    width: 180;
+}
+
 .logo img{
     height: 80px;
     width: 80px;
     float: left;
     position: relative;
-    left: 0px;
+    left: 25px;
+    top: 15px;
+    
     
 
 }
@@ -45,12 +56,12 @@ header nav ul li a{
 
 .wrapper{
 	position: relative;
-    top: -10%;
-    left: 100%;
+    top: -30px;
+    left: 160%;
     transform: translate(-50%, -50%);
    
     max-width: 550px;
-    width: 80%;
+    width: 125%;
     padding: 15px;
     display: flex;
     justify-content: space-between;
@@ -58,7 +69,7 @@ header nav ul li a{
 }
 
 .wrapper .input {
-    width: 78%;
+    width: 70%;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -95,7 +106,7 @@ header nav ul li a{
 .menu ul li{
     display: inline-block;
     position: relative;
-    top: -100px;
+    top: -115px;
     left: 800px;
 }
 
@@ -103,6 +114,7 @@ header nav ul li a{
     color: white;
     display: block;
     padding: 10px 25px;
+    top: -50px;
     text-decoration: none;
 }
 
@@ -112,4 +124,119 @@ header nav ul li a{
 
 .item-r{
     float: right;
+}
+
+main{
+    width: 90%;
+    align-items: center;
+    margin: auto;
+}
+main article div{
+    padding: 15px;
+
+}
+
+main section.ultimos-productos{
+    margin-top: 150px;
+    
+}
+
+main section article.producto-individual{
+    display: inline-block;
+    position: relative;
+    left: 20%;
+    right: 20%;
+    top: 10%;
+    margin-right: 35%;
+
+}
+
+main section article{
+    background-color: #fff;
+    margin-top: 10px;
+    width: 150px;
+}
+
+main section article img{
+    width: 100%;
+}
+
+main section h3{
+    text-align: center;
+}
+
+main section div.products{
+    color:#000
+}
+
+body.formulario, html{
+    height: 100%;
+}
+
+body.formulario{
+    margin: 0;
+    padding: 0;
+    background: #dbdbdb;
+    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-box{
+    width: 300px;
+    padding: 40px;
+    background:#fff;
+    text-align: center;
+
+}
+
+.title{
+    font-weight: 500;
+}
+
+.form-box input[type="text"],
+.form-box input[type="password"],
+.form-box input[type="submit"]{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    padding: 14px 10px;
+    text-align: center;
+    border: 2px solid black;
+    width: 200px;
+    outline: none;
+    border-radius: 5px;
+    transition: 0.25s;
+}
+
+.form-box input[type="text"]:focus,
+.form-box input[type="password"]:focus{
+    width: 280px;
+    border-color: gray;
+}
+
+.form-box input[type="submit"]{
+    border: 0;
+    background: #8a817c;
+    cursor: pointer
+}
+
+.form-box input[type="submit"]:hover{
+    border: 2px solid gray;
+    background: none;
+    cursor: pointer
+}
+
+/* PORTADA */
+
+main img {
+    width: 900px;
+    height: 400px;
+    position: relative;
+    top: 70px;
+    left: 150px;
 }
