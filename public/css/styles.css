@@ -247,6 +247,18 @@ body.registro{
     align-items: center;
 }
 
+
+/* PORTADA */
+
+main img {
+    width: 900px;
+    height: 400px;
+    position: relative;
+    top: 70px;
+    left: 150px;
+}
+
+
 @media (max-width: 768px){
     body{
     padding-top: 70px;
