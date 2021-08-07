@@ -10,16 +10,45 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
     
 </head>
-<body class="registro">
-    <form action="/" method="POST" class ="form-box">
-        <h1 class="title">Welome back :)</h3>
-        <input type="text" name="name" placeholder="Nombre" required>
-        <input type="text" name="surname" placeholder="Apellido" required>
-        <input type="text" name="user" placeholder="Nombre de usuario" required>
-        <input type="password" name="pass" placeholder="Contraseña" required>
-        <input type="password" name="pass" placeholder="Confirmar contraseña" required>
-        <input type="submit" value="Enviar">
-    </form>
+<body class="formulario">
+    
+    <header class="header">
+        <nav class="nav">
+            <a href="/" class="logo nav-link">Sneakers</a>
+
+            <div class="wrapper">
+                <input type="text" class="input" 
+                placeholder="¿Que desea buscar?">
+                <div class="searchbtn"><i class="fas fa-search"></i></div>
+            </div>
+
+            <input type="checkbox" id="ckbox">
+            <label for="ckbox" class="drawer">
+                <i class="fas fa-bars" aira-hidden="true"></i>
+            </label>
+
+            <ul class="nav-menu">
+                <li class="nav-menu-item"><a href="/log-in" class="nav-menu-link nav-link">Ingresá</a></li>
+                <li class="nav-menu-item"><a href="/register" class="nav-menu-link nav-link">Registrate</a></li>
+                <li class="nav-menu-item"><a href="/carrito" class="nav-menu-link nav-link">Carrito</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="formulario-registro">
+        <form action="/" method="POST" class ="form-box">
+            <h1 class="title">Welome back :)</h3>
+            <input type="text" name="name" placeholder="Nombre" required>
+            <input type="text" name="surname" placeholder="Apellido" required>
+            <input type="text" name="user" placeholder="Nombre de usuario" required>
+            <input type="password" name="pass" placeholder="Contraseña" required>
+            <input type="password" name="pass" placeholder="Confirmar contraseña" required>
+            <input type="submit" value="Enviar">
+        </form>
+    </main>
+    <footer class="footer-log-in">
+        <p>Todos los derechos reservados</p>
+    </footer>
     
 </body>
 </html>
+
