@@ -315,10 +315,45 @@ main section article img{
 
 }
 
+.compra{
+    display: flex;
+    justify-content:space-around;
+}
 
+.texto-carrito{
+    align-items: center;
+    display: inline-block;
+    height: 100px;
+    justify-content: center;
+    width: 200px;
+    border-bottom: 1px solid #b3b3b3;
+}
 
+.boton-compra{
+    border: 0;
+    background: #8a817c;
+    cursor: pointer
+}
 
+.boton-compra:hover{
+    border: 2px solid gray;
+    background: none;
+    cursor: pointer
+}
 
+.boton-compra{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    padding: 14px 10px;
+    text-align: center;
+    border: 2px solid black;
+    width: 200px;
+    outline: none;
+    border-radius: 5px;
+    transition: 0.25s;
+}
 
 @media (max-width: 768px){
 .header{
@@ -347,10 +382,8 @@ main section article img{
     z-index: 1;
     
     height: auto;
-    overflow-y: scroll;
 
-    left: 100%;
-    transition: left 0.3s;
+    right: 100%;
 
     
 }
