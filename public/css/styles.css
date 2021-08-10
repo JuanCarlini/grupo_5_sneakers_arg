@@ -226,9 +226,10 @@ main section article img{
     padding: 40px;
     background:#fff;
     text-align: center;
-    position:relative;
+    position: relative;
     margin: 0 auto;
-    top: 25%
+    margin-top: 15%;
+    margin-bottom: 15%;
     
 }
 
@@ -252,12 +253,6 @@ main section article img{
     transition: 0.25s;
 }
 
-.form-box input[type="text"]:focus,
-.form-box input[type="password"]:focus{
-    width: 280px;
-    border-color: gray;
-}
-
 .form-box input[type="submit"]{
     border: 0;
     background: #8a817c;
@@ -270,11 +265,11 @@ main section article img{
     cursor: pointer
 }
 
-.footer-log-in{
+.footer{
     grid-area: footer;
     background-color: #9e9e9e;
     text-align: center;
-    height: 100px;
+    height: auto;
 }
 
 /*register*/

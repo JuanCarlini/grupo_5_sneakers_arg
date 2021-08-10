@@ -9,4 +9,7 @@ Somos Lautaro Lopez, Ciro Pizzini y Juan Carlini, tres jóvenes emprendedores co
 pagina basada en: 
 https://www.amazon.com y https://www.ebay.com por su simplicidad,  https://www.mercadolibre.com.ar por su practicidad, otras dos paginas por su simple y atractivo diseño https://www.newsport.com.ar y https://www.nike.com/ar.
 
-TRELLO: https://trello.com/b/PhJL3xc4/weekly-meeting-template
+TRELLO: https://trello.com/b/PhJL3xc4/weekly-meeting-template (fuera de uso momentáneamente)
+
+GITHUB: https://github.com/JuanCarlini/grupo_5_sneakers_arg
+
