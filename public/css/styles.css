@@ -355,6 +355,20 @@ main section article img{
     transition: 0.25s;
 }
 
+/*Detalle del producto*/
+
+.product_img{
+    width:450px;
+    height:258px;
+    
+}
+
+
+
+  
+
+    
+
 @media (max-width: 768px){
 .header{
     height: 80px;
@@ -414,3 +428,4 @@ main section article img{
 }
 
 }
+
