@@ -340,6 +340,12 @@ main section article img{
     transition: 0.25s;
 }    
 
+/*DETALLE DEL PRODUCTO*/
+
+.texto-producto{
+    border: 2px solid gray;
+}
+
 @media (max-width: 768px){
 .header{
     height: 80px;
@@ -417,5 +423,13 @@ main section article img{
     left: 0;
 }
 
+/*DETALLE DEL PRODUCTO*/
+
+.compra{
+    display: inline-block;
+    text-align: center;
+    padding: 10px;
+    border-bottom: 1px solid #b3b3b3;
 }
 
+}
