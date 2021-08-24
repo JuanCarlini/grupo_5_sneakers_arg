@@ -1,4 +1,5 @@
 const express = require("express");
+const react = require('react')
 const app = express();
 const path = require("path");
 
@@ -9,26 +10,26 @@ app.listen(3000, () =>{
     console.log("Servidor corriendo en 3000");
 })
 
-app.get("/", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "./views/home.html"))
+react.get("/", (req, res) => {
+    render(path.resolve(__dirname, "./views/home.html"))
 })
 
-app.post("/", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "./views/home.html"))
+react.post("/", (req, res) => {
+    render(path.resolve(__dirname, "./views/home.html"))
 })
 
-app.get("/log-in", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "./views/log-in.html"))
+react.get("/log-in", (req, res) => {
+    render(path.resolve(__dirname, "./views/log-in.html"))
 })
 
-app.get("/register", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "./views/register.html"))
+react.get("/register", (req, res) => {
+    render(path.resolve(__dirname, "./views/register.html"))
 })
 
-app.get("/carrito", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "./views/carrito.html"))
+react.get("/carrito", (req, res) => {
+    render(path.resolve(__dirname, "./views/carrito.html"))
 })
 
-app.get("/detalle-del-producto", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "./views/detalle-del-producto.html"))
+react.get("/detalle-del-producto", (req, res) => {
+    render(path.resolve(__dirname, "./views/detalle-del-producto.html"))
 })

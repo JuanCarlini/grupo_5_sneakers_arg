@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/JuanCarlini/grupo_5_sneakers_arg#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "react": "^17.0.2"
   }
 }
