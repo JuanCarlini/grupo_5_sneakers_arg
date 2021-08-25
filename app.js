@@ -4,6 +4,8 @@ const app = express();
 
 const mainRoutes = require('./routers/main')
 
+const adminRoute = require('./routers/main')
+
 app.use(express.static('./public')); 
 
 app.set('view engine', 'ejs');
@@ -11,6 +13,9 @@ app.set('view engine', 'ejs');
 
 
 app.use('/', mainRoutes)
+
+app.use('/admin', adminRoute)
+
 
 
 
