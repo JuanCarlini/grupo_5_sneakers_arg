@@ -1,39 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Bienvenid@ de vuelta!</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
-    
-</head>
+    <%- include('./partials/head') %>
 <body class="formulario">
     
-    <header class="header">
-        <nav class="nav">
-            <a href="/" class="logo nav-link">Sneakers</a>
-
-            <div class="wrapper">
-                <input type="text" class="input" 
-                placeholder="¿Que desea buscar?">
-                <div class="searchbtn"><i class="fas fa-search"></i></div>
-            </div>
-
-            <input type="checkbox" id="ckbox">
-            <label for="ckbox" class="drawer">
-                <i class="fas fa-bars" aira-hidden="true"></i>
-            </label>
-
-            <ul class="nav-menu">
-                <li class="nav-menu-item"><a href="/log-in" class="nav-menu-link nav-link">Ingresá</a></li>
-                <li class="nav-menu-item"><a href="/register" class="nav-menu-link nav-link">Registrate</a></li>
-                <li class="nav-menu-item"><a href="/carrito" class="nav-menu-link nav-link">Carrito</a></li>
-            </ul>
-        </nav>
-    </header>
+    <%- include('./partials/header') %>
     <main class="formulario-registro">
         <form action="/" method="POST" class ="form-box">
             <h1 class="title">Welome back :)</h3>
@@ -45,9 +15,7 @@
             <input type="submit" value="Enviar">
         </form>
     </main>
-    <footer class="footer">
-        <p>Todos los derechos reservados</p>
-    </footer>
+    <%- include('./partials/footer') %>
     
 </body>
 </html>
