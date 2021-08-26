@@ -346,6 +346,53 @@ main section article img{
     border: 2px solid gray;
 }
 
+/*ADMIN*/
+
+.formularios-admin{
+    display: flex;
+    justify-content: space-around
+}
+
+.form-box-admin{
+    width: 300px;
+    padding: 40px;
+    background:#fff;
+    text-align: center;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 15%;
+    margin-bottom: 15%;
+    border: 2px solid gray
+}
+
+.form-box-admin input[type="text"],
+.form-box-admin input[type="password"],
+.form-box-admin input[type="submit"]{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    padding: 14px 10px;
+    text-align: center;
+    border: 2px solid black;
+    width: 200px;
+    outline: none;
+    border-radius: 5px;
+    transition: 0.25s;
+}
+
+.form-box-admin input[type="submit"]{
+    border: 0;
+    background: #8a817c;
+    cursor: pointer
+}
+
+.form-box-admin input[type="submit"]:hover{
+    border: 2px solid gray;
+    background: none;
+    cursor: pointer
+}
+
 @media (max-width: 768px){
 .header{
     height: 80px;
