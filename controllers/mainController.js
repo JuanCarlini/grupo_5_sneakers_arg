@@ -16,6 +16,16 @@ const controlador ={
     detalleDelProducto: (req,res) =>{
         return res.render('detalle-del-producto')
     },
+    products: (req,res) =>{
+        return res.render('products')
+    },
+    create: (req,res) =>{
+        return res.render('create')
+    },
+    id: (req,res) =>{
+        return res.render('')
+    },    
+
 };
 
 module.exports= controlador;

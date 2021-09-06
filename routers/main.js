@@ -21,5 +21,18 @@ router.get('/detalle-del-producto',controlador.detalleDelProducto);
 
 router.get('/admin',controladorAdmin.admin);
 
+// Products:
+
+router.get('/products',controlador.products);
+
+router.get('/products/create',controlador.create);
+
+router.get('/products/:id',controlador.id);
+
+
+
+
+
+
 
 module.exports = router;
