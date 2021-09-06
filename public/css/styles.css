@@ -479,4 +479,9 @@ main section article img{
     border-bottom: 1px solid #b3b3b3;
 }
 
+/*ADMIN*/
+.form-box-admin{
+    position: absolute;
+}
+
 }

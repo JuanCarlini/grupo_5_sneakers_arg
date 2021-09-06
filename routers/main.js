@@ -1,15 +1,29 @@
 const express = require ('express');
 
+const multer = require("multer");
+
+const path = require("path");
+
 const router = express.Router();
 
 const controlador = require('../controllers/mainController.js')
 
 const controladorAdmin = require('../controllers/adminController.js')
 
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, path.join(__dirname, "..."))
+    },
+    filename: (req, file, cb) => {
+        const newFileName = "";
+        cb(null)
+    }
+});
+
+const upload = multer({storage});
 
 
-
-router.get('/',controlador.home);
+router.get('/', upload.single(""), controlador.home);
 
 router.get('/log-in',controlador.login);
 
