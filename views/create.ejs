@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head') %> 
+<body>
+    <%- include('./partials/header') %>
+    <main>
+        <form action="/" method="POST" class ="form-box-admin" >
+            <h1 class="title">Crear Producto</h3>
+            <input type="text" name="name" placeholder="Nombre" required>
+            <input type="text" name="surname" placeholder="Descripción" required>
+            <input type="text" name="user" placeholder="Imagen" required>
+            <input type="password" name="pass" placeholder="Categoría" required>
+            <input type="password" name="pass" placeholder="Colores" required>
+            <input type="password" name="pass" placeholder="Precio" required>
+            <input type="submit" value="Enviar">
+        </form>
+    </main>
+    <%- include('./partials/footer') %>
+</body>
+</html>

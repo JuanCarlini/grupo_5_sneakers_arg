@@ -8,6 +8,8 @@ const router = express.Router();
 
 const controlador = require('../controllers/mainController.js')
 
+const controller = require('../controllers/productsController.js')
+
 const controladorAdmin = require('../controllers/adminController.js')
 
 const storage = multer.diskStorage({
@@ -31,20 +33,17 @@ router.get('/register',controlador.register);
 
 router.get('/carrito',controlador.carrito);
 
-router.get('/detalle-del-producto',controlador.detalleDelProducto);
+router.get('/:id', controller.detail); 
 
 router.get('/admin',controladorAdmin.admin);
 
+router.get("/create", controlador.create);
+
+router.get("/edit", controlador.edit);
+
 // Products:
 
-router.get('/products',controlador.products);
-
-router.get('/products/create',controlador.create);
-
-router.get('/products/:id',controlador.id);
-
-
-
+router.get('/products',controller.index);
 
 
 

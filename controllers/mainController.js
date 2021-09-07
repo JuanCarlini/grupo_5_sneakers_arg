@@ -13,19 +13,12 @@ const controlador ={
     carrito: (req,res) =>{
         return res.render('carrito')
     },
-    detalleDelProducto: (req,res) =>{
-        return res.render('detalle-del-producto')
-    },
-    products: (req,res) =>{
-        return res.render('products')
-    },
     create: (req,res) =>{
         return res.render('create')
     },
-    id: (req,res) =>{
-        return res.render('')
-    },    
-
+    edit: (rqe,res) =>{
+        return res.render("edit")
+    }, 
 };
 
 module.exports= controlador;

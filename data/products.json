@@ -1,4 +1,45 @@
-[{"id":1,"brand":"Nike","model":null,"description ":null,"type":null,"size":9.15016,"color":"#55c000", "image":null},
-{"id":2,"brand":"Nike","model":null,"description ":null,"type":null,"size":7.25597,"color":"#84197f", "image":null},
-{"id":3,"brand":"Nike","model":null,"description ":null,"type":null,"size":10.52867,"color":"#6ea85d", "image":null},
-{"id":4,"brand":"Topper","model":null,"description ":null,"type":null,"size":8.38462,"color":"#5bd803", "image":null}]
+[{   
+    "id":1,
+    "brand":"Nike",
+    "model":"FlyEase",
+    "description":"",
+    "type":"deportivo",
+    "size":9,
+    "color":"#55c000",
+    "image":"nike-flyEase.jpg",
+    "price": 47000  
+    },
+
+    {"id":2,
+    "brand":"Nike",
+    "model":"Air Force",
+    "description":"Diseñadas para vos que te arriesgás a todo y que no pasas desapercibida, ideales para que vivas todas las aventuras posibles con las Zapatillas Nike Air Force 1 07 con capas de cuero sintético, te ofrece un look urbano y moderno lleno de texturas y ritmo. Su entresuela ancha y suela ranurada te ofrece ligereza y amortiguación en cualquier superficie para que vayas segura dando pasos estables y con un estilo único característico de la marca. Zapatillas Nike Air Force",
+    "type":"urban",
+    "size":7,
+    "color":"#84197f",
+    "image":"nike-air-force.jpg",
+    "price": 15000
+    },
+
+    {"id":3,
+    "brand":"Nike",
+    "model":"Air Max",
+    "description":"Para corredoras que valoran cada minuto y la velocidad es primordial, las nuevas Zapatillas Nike Air Max son perfectas porque combinan una estética minimalista clásica, el estilo urbano de la marca junto con su tecnología Air max que te brinda mejores y amortiguadas pisadas que te darán estabilidad y confianza a la hora de correr en cualquier lugar donde vayas.",
+    "type":"urban",
+    "size":10,
+    "color":"#6ea85d",
+    "image":"nike-air-max.jpg",
+    "price": 28800
+    },
+    
+    {"id":4,
+    "brand":"Topper",
+    "model":"X forcer",
+    "description":"Buscamos democratizar el deporte en Latinoamérica y en el mundo. Unimos moda y deporte generando productos accesibles y de calidad que ofrezcan comodidad, diseño y color para que las personas puedan verse y sentirse bien dentro y fuera del campo de juego. Acompañamos cada paso de nuestros consumidores dentro y fuera de la cancha.",
+    "type":"urban",
+    "size":8,
+    "color":"#5bd803",
+    "image":"topper-x-forcer.jpg",
+    "price": 8000
+    }
+]

@@ -7,37 +7,21 @@
     <main>
         <section class="compra">
             <article class="producto-individual-carrito">             
-                <img src="images/nike-flyEase.jpg" alt="Nike flyEase" class="product_img">
+                <img src="images/<%= product[0].image %>" alt="Nike flyEase" class="product_img">
                     <div class="product">
-                        <h4 class="description">Nike flyEase</h4>
-                        <p class="price">$46.000</p>
+                        <h4 class="description"><%= product[0].model %></h4>
                     </div>
                 </article>
                 <article class="descripcion">
                    <article class="texto-general">
                         <div class="contiene">
                             <div class="texto-producto">
-                                <h3>NIKE FLYEASE</h3>
-                                <p>TIPO DE PRODUCTO: CALZADO
-                                    PRODUCTOS 100% ORIGINALES
-                                    SEXO: NIÑOS UNISEX
-                                    NOMBRE: ZAPATILLAS NIKE MODA FLYEASE (GS) NG
-                                    MODELO: 077070BQ5448001
-                                    
-                                    Nike FlyEase 
-                                    Zapatillas de niños grandes.
-                                    ASPECTO DE ESTRELLA.
-                                    CONFORT TODO EL DÍA.
-                                    El confort y el estilo se unen en las Nike FlyEase 
-                                    El calce estructurado y de sujeción tiene un diseño retro de básquet para que pueda lucir como una estrella fuera de la cancha.
-                                    Look retro.
-                                    Confeccionadas en cuero, estas zapatillas tiene un look retro en la cancha.
-                                    Sensación flexible.
-                                    La suela de goma tiene ranuras flexibles para permitir que se doble con el pie.
-                                    Más detalles.
-                                    Rango de talles de niños grandes: 3.
-                                    Rango de talles de niños grandes: 3.
-                                </p>
+                                <h3><%= product[0].model %></h3>
+                                <p><%= product[0].description %></p>
+                                <p>TIPO: <%= product[0].type %></p>
+                                <p>TALLE: <%= product[0].size %></p>
+                                <p>COLOR: <%= product[0].color %></p>
+                                <p>PRECIO: $<%= toThousand(product[0].price) %></p>
                             </div>
                             <form action="/carrito" method="GET">
                                 <input type="submit" value="COMPRAR" class="boton-compra">
