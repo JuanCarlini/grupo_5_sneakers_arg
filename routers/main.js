@@ -33,7 +33,7 @@ router.get('/register',controlador.register);
 
 router.get('/carrito',controlador.carrito);
 
-router.get('/:id', controller.detail); 
+router.get('/products/:id', controller.detail); 
 
 router.get('/admin',controladorAdmin.admin);
 
