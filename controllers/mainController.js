@@ -1,5 +1,3 @@
-const express = require ('express');
-
 const controlador ={
     home: (req,res) => {
         return res.render('home');

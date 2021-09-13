@@ -6,6 +6,8 @@ const mainRoutes = require('./routers/main')
 
 const adminRoute = require('./routers/main')
 
+const logMiddleware = require("./middlewares/logMiddleware")
+
 app.use(express.static('./public')); 
 
 app.set('view engine', 'ejs');
@@ -16,7 +18,7 @@ app.use('/', mainRoutes)
 
 app.use('/admin', adminRoute)
 
-
+app.use(logMiddleware);
 
 
 app.listen(3000, () =>{

@@ -41,6 +41,8 @@ router.get("/create", controlador.create);
 
 router.get("/edit", controlador.edit);
 
+router.get("/detail", controller.detail);
+
 // Products:
 
 router.get('/products',controller.index);
