@@ -37,7 +37,7 @@ router.get('/products/:id', controller.detail);
 
 router.get('/admin',controladorAdmin.admin);
 
-router.get("/create", controlador.create);
+router.get("/product/create", controller.create);
 
 router.get("/edit", controlador.edit);
 
@@ -47,6 +47,7 @@ router.get("/detail", controller.detail);
 
 router.get('/products',controller.index);
 
+router.post("/products", upload.single("product-image"), controller.store);
 
 
 

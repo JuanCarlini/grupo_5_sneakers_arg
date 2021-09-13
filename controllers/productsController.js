@@ -22,14 +22,10 @@ const controller = {
 		res.render('detalle-del-producto', {product: product,
 			toThousand: toThousand, dotToComma: dotToComma}); 
 	},
-}
-module.exports = controller;
-
-/*
-// Create - Form to create
-	create: (req, res) => {
-		res.render('product-create-form');
-	},
+	// Create - Form to create
+	create: (req,res) =>{
+        return res.render('create')
+    },
 	
 	// Create -  Method to store
 	store: (req, res) => {
@@ -43,17 +39,21 @@ module.exports = controller;
 				type: req.body.type,
 				size: req.body.size,
                 color: req.body.color,
-				image: req.file.filename
+				image: req.file.filename,
+				price: req.body.price
 			};
 			products.push(newProduct);
 			let productsJSON = JSON.stringify(products, null, ' ');
 			fs.writeFileSync(products, productsJSON);
 			res.redirect('/products'); 
 		} else {
-			res.render('product-create-form');
+			res.render('create');
 		}
 	},
+}
+module.exports = controller;
 
+/*
 	// Update - Form to edit
 	edit: (req, res) => {
 		let idProduct = parseInt(req.params.id);

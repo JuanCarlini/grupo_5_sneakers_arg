@@ -11,9 +11,6 @@ const controlador ={
     carrito: (req,res) =>{
         return res.render('carrito')
     },
-    create: (req,res) =>{
-        return res.render('create')
-    },
     edit: (rqe,res) =>{
         return res.render("edit")
     }, 
