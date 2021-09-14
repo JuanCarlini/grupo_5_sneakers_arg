@@ -30,6 +30,11 @@ router.get('/', upload.single(""), controlador.home);
 
 router.get('/log-in',controlador.login);
 
+router.post("/log-in", [
+    check("email").isEmail().withMessage("Email invalido"),
+    check("password").isLength({min: 8}).withMessage("La contraseña debe tener al menos 8 caracteres")
+] ,controlador.processLogin)
+
 router.get('/register',controlador.register);
 
 router.get('/carrito',controlador.carrito);
@@ -37,8 +42,6 @@ router.get('/carrito',controlador.carrito);
 router.get('/products/:id', controller.detail); 
 
 router.get('/admin',controladorAdmin.admin);
-
-router.get("/create", controller.create);
 
 router.get("/edit", controlador.edit);
 
@@ -48,7 +51,9 @@ router.get("/detail", controller.detail);
 
 router.get('/products',controller.index);
 
-router.post("/products", upload.single("product-image"), controller.store);
+router.get("/product/create", controller.create);
+
+router.post("/products/create", upload.single("product-image"), controller.store);
 
 
 

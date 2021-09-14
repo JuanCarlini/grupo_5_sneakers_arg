@@ -4,7 +4,17 @@
 <body>
     <%- include('./partials/header') %>
     <main>
-        <form action="/products" method="POST" class ="form-box-admin" enctype="multipart/form-data">
+        <% if (typeof errors != "undefined"){ %>
+            <p style="color: red">ERROR</p>
+            <ul>
+                <% for (let i = 0; i < errors.length; i++){ %>
+                    <li>
+                        <%= errors(i).msg %>
+                    </li>
+                <% } %>
+            </ul>
+        <% } %>
+        <form action="/products/create" method="POST" class ="form-box-admin" enctype="multipart/form-data">
             <h1 class="title">Crear Producto</h3>
             <input type="text" name="name" placeholder="Nombre" required>
             <div>
