@@ -4,7 +4,33 @@
 <body>
     <%- include('./partials/header') %> 
     <main>
-        <h4>prueba</h4>
+        <div class="container products-wrapper">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="products-title">Todos los productos</h2>
+                </div>
+            
+                <div>
+                    <% for (i = 0 ; i < products.length ; i++) { %>
+                        <div class="products">
+                            <section class="product-box"i>
+                                <a href="/products/<%= products[i].id %>">
+                                    <article class="producto-individual">
+                                        <a href="/products/<%= products[i].id %>">
+                                            <img src="images/<%= products[i].image %>" alt="<%= products[i].model %>" class="product_img">
+                                        <div class="product">
+                                            <p class="price"><%= products[i].price %></p>
+                                        </div>
+                                        </a>
+                                    </article>
+                                </a>
+                            </section>
+                        </div>
+                    <% } %>
+                </div>
+            
+            </div>
+        </div>
     </main>
     <%- include('./partials/footer') %>
 </body>

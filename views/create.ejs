@@ -4,14 +4,14 @@
 <body>
     <%- include('./partials/header') %>
     <main>
-        <form action="/products" method="POST" class ="form-box-admin" >
+        <form action="/products" method="POST" class ="form-box-admin" enctype="multipart/form-data">
             <h1 class="title">Crear Producto</h3>
             <input type="text" name="name" placeholder="Nombre" required>
             <div>
                 <input type="text" name="surname" placeholder="Descripción" required>
             <label for="">Elija una o más imágenes</label>
             </div>
-            <input type="file" name="image" placeholder="Imagen" required>
+            <input type="file" name="product-image" placeholder="Imagen" required>
             <input type="text" name="category" placeholder="Categoría" required>
             <input type="text" name="color" placeholder="Colores" required>
             <input type="text" name="price" placeholder="Precio" required>
