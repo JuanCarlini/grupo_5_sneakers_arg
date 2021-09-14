@@ -13,14 +13,15 @@ const controller = require('../controllers/productsController.js')
 const controladorAdmin = require('../controllers/adminController.js')
 
 const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, path.join(__dirname, "..."))
-    },
-    filename: (req, file, cb) => {
-        const newFileName = "";
-        cb(null)
+    destination: function(req, file, cb) {
+        cb(null, path.join(__dirname, '../public/images/products'));
+    } ,
+
+    filename: function(req, file, cb) {
+        const newFileName = 'product-' + Date.now() + path.extname(file.originalname);
+        cb(null, newFileName);
     }
-});
+})
 
 const upload = multer({storage});
 
@@ -37,7 +38,7 @@ router.get('/products/:id', controller.detail);
 
 router.get('/admin',controladorAdmin.admin);
 
-router.get("/product/create", controller.create);
+router.get("/create", controller.create);
 
 router.get("/edit", controlador.edit);
 

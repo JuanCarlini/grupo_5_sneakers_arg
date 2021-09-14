@@ -43,7 +43,7 @@ const controller = {
 				price: req.body.price
 			};
 			products.push(newProduct);
-			let productsJSON = JSON.stringify(products, null, ' ');
+			let productsJSON = JSON.stringify(products);
 			fs.writeFileSync(products, productsJSON);
 			res.redirect('/products'); 
 		} else {
