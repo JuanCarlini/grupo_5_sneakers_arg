@@ -43,8 +43,6 @@ router.get('/carrito',controlador.carrito);
 
 router.get('/admin',controladorAdmin.admin);
 
-router.get("/edit", controlador.edit);
-
 router.get("/detail", controller.detail);
 
 // Products:
@@ -55,15 +53,14 @@ router.get("/product/create", controller.create);
 
 router.get('/products/:id', controller.detail); 
 
-//router.post("/products", controller.);
-
-//router.get("/products/:id/edit", controller.);
-
-//router.put("/products/:id", controller.);
-
-//router.delete("/products/:id", controller.);
-
 router.post("/products/create", upload.single("product-image"), controller.store);
+
+router.get("/products/:id/edit", controller.edit);
+
+router.put("/products/:id/edit", upload.single("product-image") ,controller.update);
+
+router.delete("/products/:id", controller.destroy);
+
 
 
 
