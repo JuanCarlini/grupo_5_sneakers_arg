@@ -1,5 +1,5 @@
 const express = require ('express');
-
+const app = require("../app")
 const multer = require("multer");
 
 const path = require("path");
@@ -30,16 +30,16 @@ router.get('/', upload.single(""), controlador.home);
 
 router.get('/log-in',controlador.login);
 
+/*
 router.post("/log-in", [
     check("email").isEmail().withMessage("Email invalido"),
     check("password").isLength({min: 8}).withMessage("La contraseña debe tener al menos 8 caracteres")
 ] ,controlador.processLogin)
+*/
 
 router.get('/register',controlador.register);
 
 router.get('/carrito',controlador.carrito);
-
-router.get('/products/:id', controller.detail); 
 
 router.get('/admin',controladorAdmin.admin);
 
@@ -52,6 +52,16 @@ router.get("/detail", controller.detail);
 router.get('/products',controller.index);
 
 router.get("/product/create", controller.create);
+
+router.get('/products/:id', controller.detail); 
+
+//router.post("/products", controller.);
+
+//router.get("/products/:id/edit", controller.);
+
+//router.put("/products/:id", controller.);
+
+//router.delete("/products/:id", controller.);
 
 router.post("/products/create", upload.single("product-image"), controller.store);
 
