@@ -29,8 +29,9 @@
   "type": "urban",
   "size": 10,
   "color": "#6ea85d",
-  "image": "nike-air-max.jpg",
-  "price": 28800
+  "image": "product-1631673293074.png",
+  "price": "28800",
+  "name": "Air Ma"
  },
  {
   "id": 4,
