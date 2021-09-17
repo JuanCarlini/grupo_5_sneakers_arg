@@ -85,7 +85,7 @@ const controller = {
 	},// Delete - Delete one product from DB
 	destroy : (req, res) => {
 		let idProduct = parseInt(req.params.id);
-		let products = JSON.parse(fs.readFileSync(products, 'utf-8'));
+		let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 		let indexProduct = products.findIndex(product => product.id === idProduct);
 		let imagePath = path.join(__dirname, '../../public/images/products', products[indexProduct].image);
 		fs.unlink(imagePath, function (err) {

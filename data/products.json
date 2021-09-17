@@ -3,12 +3,12 @@
   "id": 1,
   "brand": "Nike",
   "model": "FlyEase",
-  "description": "",
   "type": "deportivo",
   "size": 9,
   "color": "#55c000",
   "image": "nike-flyEase.jpg",
-  "price": 47000
+  "price": "45000",
+  "name": "FlyEase"
  },
  {
   "id": 2,
@@ -18,8 +18,9 @@
   "type": "urban",
   "size": 7,
   "color": "#84197f",
-  "image": "nike-air-force.jpg",
-  "price": 15000
+  "image": "product-1631726440269.jpg",
+  "price": "15000",
+  "name": "Air Force"
  },
  {
   "id": 3,
@@ -29,19 +30,17 @@
   "type": "urban",
   "size": 10,
   "color": "#6ea85d",
-  "image": "product-1631673293074.png",
+  "image": "nike-air-max.jpg",
   "price": "28800",
-  "name": "Air Ma"
+  "name": "Air Max"
  },
  {
   "id": 4,
   "brand": "Topper",
   "model": "X forcer",
-  "description": "Buscamos democratizar el deporte en Latinoamérica y en el mundo. Unimos moda y deporte generando productos accesibles y de calidad que ofrezcan comodidad, diseño y color para que las personas puedan verse y sentirse bien dentro y fuera del campo de juego. Acompañamos cada paso de nuestros consumidores dentro y fuera de la cancha.",
   "type": "urban",
   "size": 8,
   "color": "#5bd803",
-  "image": "topper-x-forcer.jpg",
-  "price": 8000
+  "image": "topper-x-forcer.jpg"
  }
 ]

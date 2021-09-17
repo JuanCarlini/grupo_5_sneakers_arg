@@ -1,10 +1,11 @@
 const controlador ={
-    home: (req,res) => {
-        return res.render('home');
-    },
+    home: (req, res) => {
+		res.render('home')
+	},
     login: (req,res) =>{
         return res.render('log-in')
     },
+    /*
     processLogin: (req, res) =>{
         let errors = validationResult(req);
         if(errors.isEmpty()){
@@ -35,6 +36,7 @@ const controlador ={
             return res.render("login", {errors: errors.errors})
         }
     },
+    */
     register: (req,res) =>{
         return res.render('register')
     },
