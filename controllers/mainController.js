@@ -1,6 +1,20 @@
+const fs = require('fs');
+const path = require('path');
+
+const productsFilePath = path.join(__dirname, '../data/products.json');
+
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+const dotToComma = n => n.toString().replace(/\./, ",");
+
+
+
 const controlador ={
     home: (req, res) => {
-		res.render('home')
+		let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+        let idProduct = parseInt(req.params.id);
+		let product = products.filter(i => i.id === idProduct);
+		res.render('home', {product: product,
+			toThousand: toThousand, dotToComma: dotToComma})
 	},
     login: (req,res) =>{
         return res.render('log-in')

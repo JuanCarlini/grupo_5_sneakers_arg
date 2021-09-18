@@ -6,21 +6,14 @@
   "type": "deportivo",
   "size": 9,
   "color": "#55c000",
-  "image": "nike-flyEase.jpg",
-  "price": "45000",
-  "name": "FlyEase"
+  "image": "nike-flyEase.jpg"
  },
  {
-  "id": 2,
-  "brand": "Nike",
-  "model": "Air Force",
-  "description": "Diseñadas para vos que te arriesgás a todo y que no pasas desapercibida, ideales para que vivas todas las aventuras posibles con las Zapatillas Nike Air Force 1 07 con capas de cuero sintético, te ofrece un look urbano y moderno lleno de texturas y ritmo. Su entresuela ancha y suela ranurada te ofrece ligereza y amortiguación en cualquier superficie para que vayas segura dando pasos estables y con un estilo único característico de la marca. Zapatillas Nike Air Force",
-  "type": "urban",
-  "size": 7,
-  "color": "#84197f",
-  "image": "product-1631726440269.jpg",
-  "price": "15000",
-  "name": "Air Force"
+    "id": 2,
+    "name": "Nike Air Force",
+    "price": "30000",
+    "category": "Urban",
+    "image": "product-1631924245351.jpg"
  },
  {
   "id": 3,

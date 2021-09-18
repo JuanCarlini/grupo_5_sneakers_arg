@@ -84,17 +84,17 @@ const controller = {
 		res.redirect('/products');
 	},// Delete - Delete one product from DB
 	destroy : (req, res) => {
-		let idProduct = parseInt(req.params.id);
+		let idProduct = req.params.id;
 		let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-		let indexProduct = products.findIndex(product => product.id === idProduct);
-		let imagePath = path.join(__dirname, '../../public/images/products', products[indexProduct].image);
+		let indexProduct = products.findIndex(product => product.id == idProduct);
+		let imagePath = path.join(__dirname, '../public/images/products', products[indexProduct].image);
 		fs.unlink(imagePath, function (err) {
 			if (err) throw err;
-			console.log('File deleted!');
 		});
-		let productsUpdated = products.filter(i => i.id !== idProduct);
+		let productsUpdated = products.filter(i => i.id != idProduct);
 		let productsUpdatedJSON = JSON.stringify(productsUpdated, null, ' ');
-		fs.writeFileSync(products, productsUpdatedJSON);
+		fs.writeFileSync(path.join(__dirname, "../data/products.json"), productsUpdatedJSON);
+		console.log(productsUpdated)
 		res.redirect('/products');
 	}
 };
