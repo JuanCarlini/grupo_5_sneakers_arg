@@ -13,6 +13,7 @@ body{
     font-family: sans-serif;
     font-size: 1.2rem;
     min-height: 100%;
+    background-color: #ebebeb
 }
 
 .grid-container > *{
@@ -24,7 +25,7 @@ body{
 
 .header{
     grid-area: header;
-    background-color: #636363
+    background-color: #13ad3c
 }
 
 .nav{
@@ -40,10 +41,20 @@ body{
 }
 
 .logo{
-    font-size: 30px;
-    font-weight: bold;
-    padding: 0 40px;
-    line-height: 80px;
+    height: inherit;
+    width: inherit;
+    margin: auto;
+}
+
+.image-logo{
+    height: 25px;
+    width: 150px;
+}
+
+.portada{
+    margin: 0;
+    padding: 0;
+    width: 100%;
 }
 
 .nav-menu{
@@ -131,6 +142,13 @@ main section article.producto-individual{
     display: inline-block;
     position: relative;
     border: 1px solid #b3b3b3;
+    border-radius: 10px;
+}
+.producto-individual image{
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    border-radius: 10px
 }
 
 .texto{
@@ -391,6 +409,40 @@ main section article img{
     border: 2px solid gray;
     background: none;
     cursor: pointer
+}
+
+/* CARRUSEL */
+
+div#slider { overflow: hidden; } /* las imágenes no van a salir del márgen de la pantalla*/
+div#slider figure img { width: 20%; float: left; }
+
+div#slider figure { 
+  position: relative;
+  width: 500%;
+  margin: 0;
+  left: 0;
+  text-align: left;
+  font-size: 0;
+  animation: 30s slidy infinite; /*el movimiento se va a mantener de forma indefinida -infinito-*/
+}
+
+.image-slider{
+    width: 500px;
+    height: 300px;
+}
+
+
+/*esta parte del código define el movimiento de las imágenes a la izquierda*/
+@keyframes slidy {
+0% { left: 0%; }
+20% { left: 0%; }
+25% { left: -100%; }
+45% { left: -100%; }
+50% { left: -200%; }
+70% { left: -200%; }
+75% { left: -300%; }
+95% { left: -300%; }
+100% { left: -400%; }
 }
 
 @media (max-width: 768px){

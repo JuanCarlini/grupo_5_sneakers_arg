@@ -94,7 +94,6 @@ const controller = {
 		let productsUpdated = products.filter(i => i.id != idProduct);
 		let productsUpdatedJSON = JSON.stringify(productsUpdated, null, ' ');
 		fs.writeFileSync(path.join(__dirname, "../data/products.json"), productsUpdatedJSON);
-		console.log(productsUpdated)
 		res.redirect('/products');
 	}
 };

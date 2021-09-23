@@ -1,10 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
     <%- include('./partials/head') %> 
+    
 <body class="grid-container">
 
     <%- include('./partials/header') %> 
     <main class="main">
+        <img src="images/banner.png" alt="portada" class="portada">
+        
+        <div id="slider">
+            <figure>
+            <img src="images/products/nike-air-force-1.jpg" alt="" class="imgage-slider">
+            <img src="images/products/nike-air-jordan.jpg" alt="" class="imgage-slider">
+            <img src="images/products/nike-air-max-270.jpg" alt="" class="imgage-slider">
+            <img src="images/products/nike-air-max.jpg" alt="" class="imgage-slider">
+            <img src="images/products/fila-high-top.jpg" alt="" class="imgage-slider">
+            </figure>
+            </div>
         <section class="productos-destacados">
             <h3>PRODUCTOS DESTACADOS</h3>
             <div  class="product_img-destacado">
@@ -24,7 +36,7 @@
             <h3>ULTIMOS PRODUCTOS</h3>
             <div class="products">
                 <article class="producto-individual">
-                    <a href="/products/3">
+                    <a href="/products/2">
                         <img src="images/products/nike-air-max.jpg" alt="Nike Air Max" class="product_img">
                     <div class="product">
                         <h4 class="description">Nike Air Max</h4>
@@ -34,8 +46,8 @@
                 </article>
                 <article class="producto-individual">
                     
-                    <a href="/products/2">
-                        <img src="  images/products/nike-air-force.jpg" alt="Nike Air Force" class="product_img">
+                    <a href="/products/3">
+                        <img src="images/products/nike-air-force-1.jpg" alt="Nike Air Force" class="product_img">
                         <div class="product">
                             <h4 class="description">Nike Air Force</h4>
                             <p class="price">$16.500</p>
@@ -45,6 +57,8 @@
             </div>
         </section>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.js"></script>
+    <script src="/public/css/carousel.js"></script>
     <%- include('./partials/footer') %> 
 </body>
 </html>

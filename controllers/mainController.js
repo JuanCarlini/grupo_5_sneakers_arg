@@ -10,8 +10,8 @@ const dotToComma = n => n.toString().replace(/\./, ",");
 
 const controlador ={
     home: (req, res) => {
-		let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-        let idProduct = parseInt(req.params.id);
+		let idProduct = parseInt(req.params.id);
+        let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 		let product = products.filter(i => i.id === idProduct);
 		res.render('home', {product: product,
 			toThousand: toThousand, dotToComma: dotToComma})
@@ -55,9 +55,13 @@ const controlador ={
         return res.render('register')
     },
     carrito: (req,res) =>{
-        return res.render('carrito')
+        let idProduct = parseInt(req.params.id);
+		let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+		let product = products.filter(i => i.id === idProduct);
+		res.render('carrito', {product: product,
+			toThousand: toThousand, dotToComma: dotToComma});
     },
-    edit: (rqe,res) =>{
+    edit: (req,res) =>{
         return res.render("edit")
     }, 
 };
