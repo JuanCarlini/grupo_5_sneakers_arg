@@ -8,32 +8,44 @@
     <main class="main">
         <img src="images/banner.png" alt="portada" class="portada">
         
-        <div id="slider">
-            <figure>
-            <img src="images/products/nike-air-force-1.jpg" alt="" class="imgage-slider">
-            <img src="images/products/nike-air-jordan.jpg" alt="" class="imgage-slider">
-            <img src="images/products/nike-air-max-270.jpg" alt="" class="imgage-slider">
-            <img src="images/products/nike-air-max.jpg" alt="" class="imgage-slider">
-            <img src="images/products/fila-high-top.jpg" alt="" class="imgage-slider">
-            </figure>
-            </div>
-        <section class="productos-destacados">
-            <h3>PRODUCTOS DESTACADOS</h3>
-            <div  class="product_img-destacado">
-                <div class="box">
-                    <a href="/products/1" class="texto">
-                    <img src="images/products/nike-flyEase.jpg" alt="Nike FlyEase" class="foto">
-                </div>
-            </div>
-            <article class="producto-destacado">
-                <div class="product-destacado">
-                        <h4 class="description">Nike FlyEase  $46.999</h4>
-                </div>
-                </a>
-            </article>
-        </section>
+    <!-- Slideshow container -->
+    <div class="slideshow-container">
+
+    <!-- Full-width images with number and caption text -->
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 3</div>
+      <img src="images/products/nike-air-force-1.jpg" style="width:100%" class="image-carousel">
+      <div class="text">Caption Text</div>
+    </div>
+  
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 3</div>
+      <img src="images/products/nike-air-max.jpg" style="width:100%" class="image-carousel">
+      <div class="text">Caption Two</div>
+    </div>
+  
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 3</div>
+      <img src="images/products/nike-air-max-270.jpg" style="width:100%" class="image-carousel">
+      <div class="text">Caption Three</div>
+    </div>
+  
+    <!-- Next and previous buttons -->
+    <div class="arrows">
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+  </div>
+  <br>
+  
+  <!-- The dots/circles -->
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+  </div>
         <section class="ultimos-productos">          
-            <h3>ULTIMOS PRODUCTOS</h3>
+            <h3>PRODUCTOS DESTACADOS</h3>
             <div class="products">
                 <article class="producto-individual">
                     <a href="/products/2">
@@ -56,9 +68,42 @@
                 </article>
             </div>
         </section>
+        <div class="todos">
+            <a href="/products" class="todos-los-productos">TODOS LOS PRODUCTOS</a>
+        </div>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.js"></script>
-    <script src="/public/css/carousel.js"></script>
+    <link rel="stylesheet" href="css/slider.css" />
+    <script>
+        var slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+    </script>
     <%- include('./partials/footer') %> 
 </body>
 </html>

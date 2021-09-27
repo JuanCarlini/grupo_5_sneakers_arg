@@ -143,11 +143,13 @@ main section article.producto-individual{
     position: relative;
     border: 1px solid #b3b3b3;
     border-radius: 10px;
+    height: 300px;
+    width: 250px;
 }
 .producto-individual image{
     position: absolute;
-    width: inherit;
-    height: inherit;
+    width: 250px;
+    height: 350px;
     border-radius: 10px
 }
 
@@ -171,7 +173,7 @@ main section article.producto-individual:hover{
     cursor: grab;
 }
 
-main section.productos-destacados{
+.productos-destacados{
     margin-top: 10px;   
     width: auto;
 }
@@ -179,6 +181,7 @@ main section.productos-destacados{
 .producto-destacado{
     display: inline-block;
     position: relative;
+    width: 300px;
 }
 
 .product{
@@ -210,6 +213,36 @@ main section article img{
     justify-content: space-around
 }
 
+.todos{
+    margin: 80px;
+}
+
+.todos-los-productos{
+    text-decoration: none;
+    color: black;
+    margin-top: 30px;
+}
+
+.todos-los-productos:hover{
+    color: grey
+}
+
+.products-complete{
+    display: inline-block;
+    width: inherit;
+    height: inherit;
+}
+
+.product_img{
+    height: 250px;
+    overflow: hidden;
+}
+
+.items{
+    display: inline;
+    position: relative;
+    width: 300px;
+}
 
 /* FOOTER */
 
@@ -413,23 +446,53 @@ main section article img{
 
 /* CARRUSEL */
 
-div#slider { overflow: hidden; } /* las imágenes no van a salir del márgen de la pantalla*/
-div#slider figure img { width: 20%; float: left; }
-
-div#slider figure { 
-  position: relative;
-  width: 500%;
-  margin: 0;
-  left: 0;
-  text-align: left;
-  font-size: 0;
-  animation: 30s slidy infinite; /*el movimiento se va a mantener de forma indefinida -infinito-*/
-}
-
-.image-slider{
-    width: 500px;
-    height: 300px;
-}
+section.awSlider .carousel{
+    display:table;
+    z-index:2;
+    -moz-box-shadow: 0 0 4px #444;
+      -webkit-box-shadow: 0 0 4px #444;
+      box-shadow: 0 0 15px rgba(1,1,1,.5);
+  }
+  
+  section.awSlider{
+    margin:30px auto;
+    padding:30px;
+    position:relative;
+    display:table;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  section.awSlider:hover > img{
+    -ms-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+    opacity:1;
+  }
+  
+  section.awSlider img{
+     pointer-events: none;
+  }
+  
+  section.awSlider > img{
+    position:absolute;
+    top:30px;
+    z-index:1;
+    transition:all .3s;
+    filter: blur(1.8vw);
+    -webkit-filter: blur(2vw);
+    -moz-filter: blur(2vw); 
+    -o-filter: blur(2vw); 
+    -ms-filter: blur(2vw);
+    -ms-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    opacity:.5;
+  }
 
 
 /*esta parte del código define el movimiento de las imágenes a la izquierda*/
@@ -496,7 +559,7 @@ div#slider figure {
 }
 
 .producto-individual{
-    width: 90%;
+    width:100px;
 }
 
 .product_img-destacado{

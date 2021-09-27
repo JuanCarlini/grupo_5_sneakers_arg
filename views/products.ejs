@@ -10,9 +10,9 @@
                     <h2 class="products-title">Todos los productos</h2>
                 </div>
             
-                <div>
+                <article class="items">
                     <% for (i = 0 ; i < products.length ; i++) { %>
-                        <div class="products">
+                        <div class="products-complete">
                             <section class="product-box"i>
                                 <a href="/products/<%= products[i].id %>">
                                     <article class="producto-individual">
@@ -27,7 +27,7 @@
                             </section>
                         </div>
                     <% } %>
-                </div>
+                </article>
             
             </div>
         </div>

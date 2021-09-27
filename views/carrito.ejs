@@ -5,19 +5,17 @@
 </head>
 <body class="grid-container">
 
-    
-        <%- include('./partials/header') %>
-    
-    
+    <%- include('./partials/header') %>
+
     <main>
 
         <div class="productos-seleccionados-main">
 
             <section class="compra">
                 <article class="producto-individual-carrito">             
-                    <img src="images/products/nike-flyEase.jpg" alt="Nike flyEase" class="product_img">
+                    <img src="images/products/<%= product[0].image %>" alt="<%= product[0].model %>" class="product_img">
                     <div class="product">
-                     <h4 class="description">Nike flyEase</h4>
+                     <h4 class="description"><%= product[0].model %></h4>
                       <p class="price">$<%= product[0].price %></p>
                     </div>
                 </article>
@@ -26,7 +24,7 @@
                         <div class="precio-total">
                             <div class="texto-carrito">
                                 <h3>RESUMEN</h3>
-                                <p>$46.000</p>
+                                <p>$<%= product[0].price %></p>
                             </div>
                             <div class="texto-carrito">
                                 <h3>SUBTOTAL</h3>
@@ -34,7 +32,7 @@
                             </div>
                             <div class="texto-carrito">
                                 <h3>TOTAL</h3>
-                                <p>$46.500</p>
+                                <p>$<%= product[0].price + 500%></p>
                             </div>
                         </div>
                         <form action="/" method="POST">
