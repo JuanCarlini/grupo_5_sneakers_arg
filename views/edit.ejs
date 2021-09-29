@@ -5,14 +5,17 @@
     <%- include('./partials/header') %>
     <main>
         <form action="/products/<%= productToEdit[0].id %>/edit?_method=PUT" method="POST" class ="form-box-admin" enctype="multipart/form-data">
-            <h1 class="title">Editar Productos</h3>
-            <input type="text" name="name" placeholder="Nombre" value="<%= productToEdit[0].model %>">
-            <input type="text" name="description" placeholder="Descripción" value="<%= productToEdit[0].description %>">
-            <input type="file" name="product-image" placeholder="Imagen" value="<%= productToEdit[0].image %>">
-            <input type="text" name="type" placeholder="Categoría" value="<%= productToEdit[0].type %>">
-            <input type="text" name="color" placeholder="Colores" value="<%= productToEdit[0].color %>">
-            <input type="number" name="price" placeholder="Precio" value="<%= productToEdit[0].price %>">
-            <input type="submit" value="Enviar">
+            <h1 class="title">Editar Producto</h3>
+                <input type="text" name="brand" placeholder="Marca" required>
+                <input type="text" name="model" placeholder="Modelo" required>
+                <input type="text" name="description" placeholder="Descripción" required>
+                <input type="text" name="type" placeholder="Tipo" required>
+                <input type="number" name="size" placeholder="Talle" required>
+                <input type="text" name="color" placeholder="Colores" required>
+                <label for="">Elija una o más imágenes</label>
+                <input type="file" name="image" placeholder="Imagen" required>
+                <input type="text" name="price" placeholder="Precio" required>
+                <input type="submit" value="Enviar">
         </form>
     </main>
     <%- include('./partials/footer') %>

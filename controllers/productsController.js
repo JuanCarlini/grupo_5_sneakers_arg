@@ -32,13 +32,15 @@ const controller = {
 			let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 			let newProduct = {
 			id: products[products.length-1].id+1,
-			name: req.body.name,
-			price: req.body.price,
-			discount: req.body.discount,
-			category: req.body.category,
+			brand: req.body.brand,
+			model: req.body.model,
 			description: req.body.description,
+			type: req.body.type,
+			size: req.body.size,
+			color: req.body.color,
 			image: req.file.filename,
-			price: req.body.price
+			price: req.body.price,
+			name: req.body.name
 			};
 			products.push(newProduct);
 			let productsJSON = JSON.stringify(products, null, ' ');
@@ -62,12 +64,14 @@ const controller = {
 		let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 		products.forEach(product => {
 			if(product.id == idProduct) {
-				product.name= req.body.name,
-				product.price= req.body.price,
-				product.discount= req.body.discount,
-				product.category= req.body.category,
+				product.brand= req.body.brand,
+				product.model= req.body.model,
 				product.description= req.body.description,
-				product.price= req.body.price
+				product.type= req.body.type,
+				product.size= req.body.size,
+				product.color= req.body.color
+				product.price= req.body.price,
+				product.name= req.body.name
 				if (req.file) {
 					let indexProduct = products.findIndex(product => product.id == idProduct);
 					let imagePath = path.join(__dirname, '../public/images/products', products[indexProduct].image);

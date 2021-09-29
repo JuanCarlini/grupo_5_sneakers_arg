@@ -6,8 +6,8 @@
   "description": "Para corredoras que valoran cada minuto y la velocidad es primordial, las nuevas Zapatillas Nike Air Max son perfectas porque combinan una estética minimalista clásica, el estilo urbano de la marca junto con su tecnología Air max que te brinda mejores y amortiguadas pisadas que te darán estabilidad y confianza a la hora de correr en cualquier lugar donde vayas.",
   "type": "urban",
   "size": 10,
-  "color": "#6ea85d",
-  "image": "product-1632402056144.jpg",
+  "color": "Negro",
+  "image": "product-1632827693229.jpg",
   "price": "45000",
   "name": "FlyEase"
  },
@@ -15,13 +15,13 @@
   "id": 2,
   "brand": "Nike",
   "model": "Air Max",
-  "description": "Para corredoras que valoran cada minuto y la velocidad es primordial, las nuevas Zapatillas Nike Air Max son perfectas porque combinan una estética minimalista clásica, el estilo urbano de la marca junto con su tecnología Air max que te brinda mejores y amortiguadas pisadas que te darán estabilidad y confianza a la hora de correr en cualquier lugar donde vayas.",
+  "description": "Nuevas Nike Air Max",
   "type": "urban",
   "size": 10,
-  "color": "#6ea85d",
-  "image": "product-1632402088730.jpg",
-  "price": "35000",
-  "name": "Air Force"
+  "color": "Negro",
+  "image": "product-1632767774536.jpg",
+  "price": "45000",
+  "name": "Air Max"
  },
  {
   "id": 3,
@@ -30,21 +30,9 @@
   "description": "Para corredoras que valoran cada minuto y la velocidad es primordial, las nuevas Zapatillas Nike Air Max son perfectas porque combinan una estética minimalista clásica, el estilo urbano de la marca junto con su tecnología Air max que te brinda mejores y amortiguadas pisadas que te darán estabilidad y confianza a la hora de correr en cualquier lugar donde vayas.",
   "type": "urban",
   "size": 10,
-  "color": "#6ea85d",
+  "color": "Beige",
   "image": "nike-air-force-1.jpg",
   "price": "28800",
-  "name": "Air Max"
- },
- {
-  "id": 4,
-  "brand": "Topper",
-  "model": "X forcer",
-  "type": "urban",
-  "size": 8,
-  "color": "#5bd803",
-  "image": "topper-x-forcer.jpg",
-  "name": "X forcer",
-  "price": "12000",
-  "description": "Nuevas zapatillas FILA"
+  "name": "Air Force"
  }
 ]

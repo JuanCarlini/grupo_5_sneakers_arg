@@ -53,7 +53,7 @@ router.get("/product/create", controller.create);
 
 router.get('/products/:id', controller.detail); 
 
-router.post("/products/create", upload.single("product-image"), controller.store);
+router.post("/product/create", upload.single("product-image"), controller.store);
 
 router.get("/products/:id/edit", controller.edit);
 
