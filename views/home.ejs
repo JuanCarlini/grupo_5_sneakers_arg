@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head') %> 
+    
+<body class="grid-container">
+
+    <%- include('./partials/header') %> 
+    <main class="main">
+        <img src="images/banner.png" alt="portada" class="portada">
+        
+    <!-- Slideshow container -->
+    <div class="slideshow-container">
+
+    <!-- Full-width images with number and caption text -->
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 3</div>
+      <img src="images/products/nike-air-force-1.jpg" style="width:100%" class="image-carousel">
+      <div class="text">Nike Air Force 1</div>
+    </div>
+  
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 3</div>
+      <img src="images/products/nike-air-max.jpg" style="width:100%" class="image-carousel">
+      <div class="text">Nike Air Max</div>
+    </div>
+  
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 3</div>
+      <img src="images/products/nike-air-max-270.jpg" style="width:100%" class="image-carousel">
+      <div class="text">Nike Air Max 270</div>
+    </div>
+  
+    <!-- Next and previous buttons -->
+    <div class="arrows">
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+  </div>
+  <br>
+  
+  <!-- The dots/circles -->
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+  </div>
+        <section class="ultimos-productos">          
+            <h3>PRODUCTOS DESTACADOS</h3>
+            <div class="products">
+                <article class="producto-individual">
+                    <a href="/products/1">
+                        <img src="images/products/nike-flyEase.jpg" alt="Nike FlyEase" class="product_img">
+                        <div class="product">
+                            <h4 class="description">Nike FlyEase</h4>
+                            <p class="price">$45.500</p>
+                        </div>
+                    </a>
+                </article>
+                <article class="producto-individual">
+                    <a href="/products/2">
+                        <img src="images/products/nike-air-max.jpg" alt="Nike Air Max" class="product_img">
+                        <div class="product">
+                            <h4 class="description">Nike Air Max</h4>
+                            <p class="price">$16.000</p>
+                         </div>
+                    </a>
+                </article>
+                <article class="producto-individual">
+                    <a href="/products/3">
+                        <img src="images/products/nike-air-force-1.jpg" alt="Nike Air Force" class="product_img">
+                        <div class="product">
+                            <h4 class="description">Nike Air Force</h4>
+                            <p class="price">$16.500</p>
+                        </div>
+                    </a>
+                </article>
+                
+            </div>
+        </section>
+        <div class="todos">
+            <a href="/products" class="todos-los-productos">TODOS LOS PRODUCTOS</a>
+            <a href="/product/create" class="todos-los-productos">CREAR PRODUCTO</a>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.js"></script>
+    <link rel="stylesheet" href="css/slider.css" />
+    <script>
+        var slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+    </script>
+    <%- include('./partials/footer') %> 
+</body>
+</html>

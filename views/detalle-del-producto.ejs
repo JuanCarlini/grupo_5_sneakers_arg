@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head') %> 
+<body class="grid-container">
+
+    <%- include('./partials/header') %> 
+    <main>
+        <section class="compra">
+            <article class="producto-individual-carrito">             
+                    <img src="/images/products/<%= product[0].image %>" alt="<%= product[0].model %>" class="product_img">
+                    <div class="product">   
+                        <h4 class="description"><%= product[0].model %></h4>
+                    </div>
+                </article>
+                <article class="descripcion">
+                   <article class="texto-general">
+                        <div class="contiene">
+                            <div class="texto-producto">
+                                <h3><%= product[0].model %></h3>
+                                <p><%= product[0].description %></p>
+                                <p>TIPO: <%= product[0].type %></p>
+                                <p>TALLE: <%= product[0].size %></p>
+                                <p>COLOR: <%= product[0].color %></p>
+                                <p>PRECIO: $<%= product[0].price %></p>
+                            </div>
+                            <form action="/carrito" method="GET">
+                                <input type="submit" value="COMPRAR" class="boton-compra">
+                            </form>
+                            <form action="/products/<%= product[0].id %>/edit" method="GET">
+                                <input type="submit" value="EDITAR" class="boton-compra">
+                            </form>
+                            <form action="/products/<%= product[0].id %>?_method=DELETE" method="POST">
+                                <input type="submit" value="ELIMINAR" class="boton-compra">
+                            </form>
+                        </div>
+                    </article>
+                </article>
+            </article>
+        </section>
+    </main>
+    <%- include('./partials/footer') %> 
+
+   
+
+</body>
+</html>

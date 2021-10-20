@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head') %> 
+<body>
+    <%- include('./partials/header') %> 
+    <main>
+        <h3>Todos los productos</h3>
+        <div class="products">
+            <% for (i = 0 ; i < products.length ; i++) { %>
+                <article class="products-complete">
+                    <a href="/products/<%= products[i].id %>" class="text-product">
+                        <img src="images/products/<%= products[i].image %>" alt="<%= products[i].model %>" class="product_img">
+                        <div class="product">
+                            <h4 class="description"><%= products[i].model %></h4>
+                            <p class="price">$<%= products[i].price %></p>
+                        </div>
+                    </a>
+                </article>
+            <% } %>
+        </div>
+    </main>
+    <%- include('./partials/footer') %>
+</body>
+</html>
