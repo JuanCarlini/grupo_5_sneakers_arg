@@ -10,15 +10,17 @@ const app = express();
 
 app.use(express.urlencoded({ extended: false })); 
 
+const logMiddleware = require("./middlewares/logMiddleware");
+
+const profileImages = require("./middlewares/profileImages");
+
 const mainRoutes = require('./routers/main')
 
 const adminRoute = require('./routers/main')
 
 const profileRoute = require('./routers/main')
 
-const logMiddleware = require("./middlewares/logMiddleware");
 
-const profileImages = require("./middlewares/profileImages");
 
 
 const { use } = require("./routers/main");
