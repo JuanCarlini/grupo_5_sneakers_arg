@@ -22,7 +22,7 @@ const profileImages = require('../controllers/profileImages');
 
 // Middleweres:
 
-const profileImage = require('../middlewares/profileImages')
+const uploadImage = require("../middlewares/profileImages");
 
 // Multer Upload products images:
 
@@ -53,7 +53,7 @@ const validaciones =  [
 
 // Routes:
 
-router.get('/', upload.single(""), controlador.home);
+router.get('/', controlador.home);
 
 router.get('/log-in',controlador.login);
 
@@ -63,7 +63,7 @@ router.post("/user/login" ,controlador.processLogin)
 
 router.get('/register', validaciones, controlador.register); 
 
-router.post("/register", upload.single("avatar"), profileImages.register);
+router.post("/register", uploadImage.single("avatar"), profileImages.register);
 
 router.get('/carrito',controlador.carrito);
 
