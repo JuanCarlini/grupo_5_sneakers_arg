@@ -38,16 +38,16 @@ const upload = multer({storage});
 // Validations:
 
 const validations =  [
-    body ('name') .notEmpty().withMessage("Nombre no puede estar vacio"),
-    body ('surname') .notEmpty().withMessage("Apellido no puede estar vacio"),
-    body ('user') .notEmpty().withMessage("Nombre de usuario no puede estar vacio"),
-    body ('pass') .notEmpty().withMessage("Contraseña no puede estar vacio"),
-    body ('confirm-pass') .notEmpty().withMessage("Confirmar contraseña no puede estar vacio"),
+    body ('name').notEmpty().withMessage("Nombre no puede estar vacio"),
+    body ('surname').notEmpty().withMessage("Apellido no puede estar vacio"),
+    body ('user').notEmpty().withMessage("Nombre de usuario no puede estar vacio"),
+    body ('pass').notEmpty().withMessage("Contraseña no puede estar vacio"),
+    body ('confirm-pass').notEmpty().withMessage("Confirmar contraseña no puede estar vacio"),
    ];
 
 // Route Profile Images
 
-router.post("/register", uploadImage.single("avatar"), validations ,profileImages.register);
+router.post("/register", uploadImage.single("avatar"), validations ,profileImages.processRegister);
 
 // Routes:
 
