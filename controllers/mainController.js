@@ -27,6 +27,11 @@ const controlador ={
         return res.render('register')
     },    
 
+    processRegister: (req,res) =>{
+       const resultValidation = validationResult(req);
+       return res.send(resultValidation);
+    },
+
     processLogin: (req, res) =>{
         let errors = validationResult(req);
         if(errors.isEmpty()){

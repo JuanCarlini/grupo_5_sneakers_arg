@@ -8,6 +8,8 @@ const path = require("path");
 
 const multer = require("multer");
 
+// Express Validaror:
+
 const { body } = require('express-validator');
 
 // Controllers:
@@ -40,16 +42,16 @@ const storage = multer.diskStorage({
 
 const upload = multer({storage});
 
+// Validations:
 
 
-const validaciones =  [
+const validations =  [
 
     body ('Nombre') .notEmpty().withMessage("Nombre no puede estar vacio"),
     body ('Apellido') .notEmpty().withMessage("Apellido no puede estar vacio"),
     body ('Nombre de usuario') .notEmpty().withMessage("Nombre de usuario no puede estar vacio"),
     body ('Contraseña') .notEmpty().withMessage("Contraseña no puede estar vacio"),
     body ('Confirmar contraseña') .notEmpty().withMessage("Confirmar contraseña no puede estar vacio"),
-
    
 ];
 
@@ -60,13 +62,11 @@ router.get('/', controlador.home);
 
 router.get('/log-in',controlador.login);
 
-
 router.post("/user/login" ,controlador.processLogin)
-
 
 router.get('/register', controlador.register); 
 
-router.post("/register", uploadImage.single("avatar"), validaciones ,profileImages.register);
+router.post("/register", uploadImage.single("avatar"), validations ,profileImages.register);
 
 router.get('/carrito',controlador.carrito);
 
