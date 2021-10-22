@@ -44,12 +44,15 @@ const upload = multer({storage});
 
 const validaciones =  [
 
-    body ('Nombre') .notEmpty().withMessage("Nombre no puede estar vacio")];
+    body ('Nombre') .notEmpty().withMessage("Nombre no puede estar vacio"),
+    body ('Apellido') .notEmpty().withMessage("Apellido no puede estar vacio"),
+    body ('Nombre de usuario') .notEmpty().withMessage("Nombre de usuario no puede estar vacio"),
+    body ('Contraseña') .notEmpty().withMessage("Contraseña no puede estar vacio"),
+    body ('Confirmar contraseña') .notEmpty().withMessage("Confirmar contraseña no puede estar vacio"),
 
-   /* check("email").isEmail().withMessage("Email invalido"),
-    check("password").isLength({min: 8}).withMessage("La contraseña debe tener al menos 8 caracteres")
+   
 ];
-*/
+
 
 // Routes:
 
@@ -61,9 +64,9 @@ router.get('/log-in',controlador.login);
 router.post("/user/login" ,controlador.processLogin)
 
 
-router.get('/register', validaciones, controlador.register); 
+router.get('/register', controlador.register); 
 
-router.post("/register", uploadImage.single("avatar"), profileImages.register);
+router.post("/register", uploadImage.single("avatar"), validaciones ,profileImages.register);
 
 router.get('/carrito',controlador.carrito);
 
