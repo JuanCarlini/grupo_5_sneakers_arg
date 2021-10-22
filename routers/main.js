@@ -5,7 +5,7 @@ const router = express.Router();
 const path = require("path");
 const multer = require("multer");
 
-// Express Validaror:
+// Express Validator:
 
 const { body } = require('express-validator');
 
@@ -22,7 +22,6 @@ const uploadImage = require("../middlewares/profileImages");
 
 // Multer Upload products images:
 
-
 const storage = multer.diskStorage({
     destination: function(req, file, cb) {
         cb(null, path.join(__dirname, '../public/images/products'));
@@ -38,17 +37,17 @@ const upload = multer({storage});
 
 // Validations:
 
-
 const validations =  [
+    body ('name') .notEmpty().withMessage("Nombre no puede estar vacio"),
+    body ('surname') .notEmpty().withMessage("Apellido no puede estar vacio"),
+    body ('user') .notEmpty().withMessage("Nombre de usuario no puede estar vacio"),
+    body ('pass') .notEmpty().withMessage("Contraseña no puede estar vacio"),
+    body ('confirm-pass') .notEmpty().withMessage("Confirmar contraseña no puede estar vacio"),
+   ];
 
-    body ('Nombre') .notEmpty().withMessage("Nombre no puede estar vacio"),
-    body ('Apellido') .notEmpty().withMessage("Apellido no puede estar vacio"),
-    body ('Nombre de usuario') .notEmpty().withMessage("Nombre de usuario no puede estar vacio"),
-    body ('Contraseña') .notEmpty().withMessage("Contraseña no puede estar vacio"),
-    body ('Confirmar contraseña') .notEmpty().withMessage("Confirmar contraseña no puede estar vacio"),
-   
-];
+// Route Profile Images
 
+router.post("/register", uploadImage.single("avatar"), validations ,profileImages.register);
 
 // Routes:
 
@@ -56,7 +55,6 @@ router.get('/', controlador.home);
 router.get('/log-in',controlador.login);
 router.post("/user/login" ,controlador.processLogin)
 router.get('/register', controlador.register); 
-router.post("/register", uploadImage.single("avatar"), validations ,profileImages.register);
 router.get('/carrito',controlador.carrito);
 router.get('/admin',controladorAdmin.admin);
 router.get("/detail", controller.detail);
@@ -71,7 +69,6 @@ router.get("/products/:id/edit", controller.edit);
 router.put("/products/:id/edit", upload.single("product-image") ,controller.update);
 router.delete("/products/:id", controller.destroy);
 
-
-
+// Exports:
 
 module.exports = router;
