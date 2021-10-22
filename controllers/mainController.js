@@ -1,6 +1,9 @@
 const fs = require('fs');
 const path = require('path');
+<<<<<<< HEAD
 const { validationResult }= require('express-validator');
+=======
+>>>>>>> 66c75b50aa17d0011373aa109587e7abbef96041
 
 const productsFilePath = path.join(__dirname, '../data/products.json');
 
@@ -20,6 +23,7 @@ const controlador ={
     login: (req,res) =>{
         return res.render('log-in')
     },
+<<<<<<< HEAD
     
         
 
@@ -27,6 +31,9 @@ const controlador ={
         return res.render('register')
     },    
 
+=======
+    /*
+>>>>>>> 66c75b50aa17d0011373aa109587e7abbef96041
     processLogin: (req, res) =>{
         let errors = validationResult(req);
         if(errors.isEmpty()){
@@ -57,8 +64,16 @@ const controlador ={
             return res.render("login", {errors: errors.errors})
         }
     },
+<<<<<<< HEAD
     
         carrito: (req,res) =>{
+=======
+    */
+    register: (req,res) =>{
+        return res.render('register')
+    },
+    carrito: (req,res) =>{
+>>>>>>> 66c75b50aa17d0011373aa109587e7abbef96041
         let idProduct = parseInt(req.params.id);
 		let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 		let product = products.filter(i => i.id === idProduct);
