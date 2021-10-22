@@ -1,13 +1,17 @@
+// Requires:
+
 const fs = require('fs');
 const path = require('path');
 const { validationResult }= require('express-validator');
+
+// Coma:
 
 const productsFilePath = path.join(__dirname, '../data/products.json');
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const dotToComma = n => n.toString().replace(/\./, ",");
 
-
+// Controller Home:
 
 const controlador ={
     home: (req, res) => {
@@ -16,16 +20,23 @@ const controlador ={
 		let product = products.filter(i => i.id === idProduct);
 		res.render('home', {product: product,
 			toThousand: toThousand, dotToComma: dotToComma})
+
+    // Render Login:
+
+            
 	},
     login: (req,res) =>{
         return res.render('log-in')
     },
     
-        
+    // Render Register:
+
 
     register: (req,res) =>{
         return res.render('register')
     },    
+
+    // ProcessRegister:
 
     processRegister: (req,res) =>{
        const resultValidation = validationResult(req);
@@ -37,6 +48,8 @@ const controlador ={
 
        }
     },
+
+    // ProccesLogin:
 
     processLogin: (req, res) =>{
         let errors = validationResult(req);

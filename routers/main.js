@@ -1,11 +1,8 @@
 // Multer - express:
 
 const express = require ('express');
-
 const router = express.Router();
-
 const path = require("path");
-
 const multer = require("multer");
 
 // Express Validaror:
@@ -15,11 +12,8 @@ const { body } = require('express-validator');
 // Controllers:
 
 const controlador = require('../controllers/mainController.js')
-
 const controller = require('../controllers/productsController.js')
-
 const controladorAdmin = require('../controllers/adminController.js')
-
 const profileImages = require('../controllers/profileImages');
 
 // Middleweres:
@@ -59,35 +53,22 @@ const validations =  [
 // Routes:
 
 router.get('/', controlador.home);
-
 router.get('/log-in',controlador.login);
-
 router.post("/user/login" ,controlador.processLogin)
-
 router.get('/register', controlador.register); 
-
 router.post("/register", uploadImage.single("avatar"), validations ,profileImages.register);
-
 router.get('/carrito',controlador.carrito);
-
 router.get('/admin',controladorAdmin.admin);
-
 router.get("/detail", controller.detail);
 
 // Products:
 
 router.get('/products',controller.index);
-
 router.get("/product/create", controller.create);
-
 router.get('/products/:id', controller.detail); 
-
 router.post("/product/create", upload.single("product-image"), controller.store);
-
 router.get("/products/:id/edit", controller.edit);
-
 router.put("/products/:id/edit", upload.single("product-image") ,controller.update);
-
 router.delete("/products/:id", controller.destroy);
 
 
