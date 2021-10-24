@@ -13,7 +13,7 @@
         <form action="/register" method="POST" class ="form-box">
             <h1 class="title">Welome back :)</h3>
             <input type="text" name="name" placeholder="Nombre" required>
-            <% if (local.errors && errors.name) { %>
+            <% if (locals.errors && errors.name) { %>
                 <div class="text-danger">
                     Aca va ir el error
                 </div>
