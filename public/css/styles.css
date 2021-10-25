@@ -328,6 +328,13 @@ main section article img{
     padding: 10px;
 }
 
+/* Errores register */
+
+.text-danger{
+    color: red;
+    font-size: 15px;
+}
+
 /*Carrito*/
 
 .boton-compra{

@@ -5,24 +5,42 @@
     
     <%- include('./partials/header') %>
     <main class="formulario-registro">
-        <% if (locals.errors) { %>
-         <% for ( let oneEror in errors ) { %>
-            <p><%= errors[oneEror].msg %></p>
-        <% } %>
-    <% } %>
-        <form action="/register" method="POST" class ="form-box">
+            <form action="/register" method="POST" class ="form-box">
             <h1 class="title">Welcome back :)</h3>
             <input type="text" name="name" placeholder="Nombre">
             <% if (locals.errors && errors.name) { %>
                 <div class="text-danger">
-                   <%- errors %>
-                </div>
-            <% } %>
+                   <%= errors.name.msg %>
+              </div>
+                <% } %>
             
             <input type="text" name="surname" placeholder="Apellido">
+            <% if (locals.errors && errors.surname) { %>
+                <div class="text-danger">
+                   <%= errors.surname.msg %>
+              </div>
+                <% } %>
+
             <input type="text" name="user" placeholder="Nombre de usuario" >
+            <% if (locals.errors && errors.user) { %>
+                <div class="text-danger">
+                   <%= errors.user.msg %>
+              </div>
+                <% } %>
+
             <input type="password" name="pass" placeholder="Contraseña">
-            <input type="password" name="confirm-pass" placeholder="Confirmar contraseña">
+            <% if (locals.errors && errors.pass) { %>
+                <div class="text-danger">
+                   <%= errors.pass.msg %>
+              </div>
+                <% } %>
+                
+            <input type="password" name="confirmpass" placeholder="Confirmar contraseña">
+            <% if (locals.errors && errors.confirmpass) { %>
+                <div class="text-danger">
+                   <%= errors.confirmpass.msg %>
+              </div>
+                <% } %>
             <input type="submit" value="Enviar">
             <label><b>Imagen de perfil:</b></label>
             <input class="form-control" type="file" name="avatar"> 
