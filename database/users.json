@@ -1,0 +1,21 @@
+[
+{
+    "id": "1",
+    "name": "Lautaro",
+    "surname": "Lopez",
+    "user": "lautyy140",
+    "pass": "123",
+    "confirmpass": "123",
+    "avatar": "default.jpg"
+    },
+{
+    "id": "2",
+    "name": "Juan",
+    "surname": "Carlini",
+    "user": "juan123",
+    "pass": "1234",
+    "confirmpass": "1234",
+    "avatar": "default.jpg"
+    }
+]
+    

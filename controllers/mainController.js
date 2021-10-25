@@ -48,6 +48,8 @@ const controlador ={
                 errors: resultValidation.mapped()
             })
         }
+
+       return res.send("Los datos son correctos")
     },
         
 

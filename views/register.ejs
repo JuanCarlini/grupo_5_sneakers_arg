@@ -21,6 +21,13 @@
               </div>
                 <% } %>
 
+                <input type="text" name="email" placeholder="Email">
+                <% if (locals.errors && errors.email) { %>
+                    <div class="text-danger">
+                       <%= errors.email.msg %>
+                  </div>
+                    <% } %>
+
             <input type="text" name="user" placeholder="Nombre de usuario" >
             <% if (locals.errors && errors.user) { %>
                 <div class="text-danger">

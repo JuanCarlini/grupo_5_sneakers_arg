@@ -7,6 +7,7 @@ const validations =  [
     body ('user').notEmpty().withMessage("Nombre de usuario no puede estar vacio"),
     body ('pass').notEmpty().withMessage("Contraseña no puede estar vacio"),
     body ('confirmpass').notEmpty().withMessage("Confirmar contraseña no puede estar vacio"),
+    body ('email').isEmail().withMessage("Ingresa un email valido"),
    ];
 
    module.exports = validations;
