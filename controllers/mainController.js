@@ -2,6 +2,8 @@
 
 const fs = require('fs');
 const path = require('path');
+const express = require('express');
+const { validationResult }= require('express-validator');
 
 // Coma:
 
@@ -36,6 +38,18 @@ const controlador ={
     },    
 
     // ProcessRegister:
+
+    processRegister: (req,res) =>{
+        const resultValidation = validationResult(req);
+        
+        if(resultValidation.errors.length > 0){
+         return res.render('register',{
+             errors: resultValidation.mapped()
+         })   
+     
+             }
+         },
+        
 
     
 

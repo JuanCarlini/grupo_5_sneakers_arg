@@ -14,7 +14,6 @@ const { body } = require('express-validator');
 const controlador = require('../controllers/mainController.js')
 const controller = require('../controllers/productsController.js')
 const controladorAdmin = require('../controllers/adminController.js')
-const profileImages = require('../controllers/profileImages');
 
 // Middleweres:
 
@@ -47,7 +46,7 @@ const validations =  [
 
 // Route Profile Images
 
-router.post("/register", uploadImage.single("avatar"), validations ,profileImages.processRegister);
+router.post("/register", uploadImage.single("avatar"), validations ,controlador.processRegister);
 
 // Routes:
 
