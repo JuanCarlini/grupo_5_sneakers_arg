@@ -5,9 +5,7 @@ const router = express.Router();
 const path = require("path");
 const multer = require("multer");
 
-// Express Validator:
 
-const { body } = require('express-validator');
 
 // Controllers:
 
@@ -18,6 +16,7 @@ const controladorAdmin = require('../controllers/adminController.js')
 // Middleweres:
 
 const uploadImage = require("../middlewares/profileImages");
+const validaciones = require("../middlewares/validateRegisterMiddleware");
 
 // Multer Upload products images:
 
@@ -34,20 +33,10 @@ const storage = multer.diskStorage({
 
 const upload = multer({storage});
 
-// Validations register form:
-
-
-const validations =  [
-    body ('name').notEmpty().withMessage("Nombre no puede estar vacio"),
-    body ('surname').notEmpty().withMessage("Apellido no puede estar vacio"),
-    body ('user').notEmpty().withMessage("Nombre de usuario no puede estar vacio"),
-    body ('pass').notEmpty().withMessage("Contraseña no puede estar vacio"),
-    body ('confirmpass').notEmpty().withMessage("Confirmar contraseña no puede estar vacio"),
-   ];
 
 // Route register form:
 
-router.post("/register", uploadImage.single("avatar"), validations ,controlador.processRegister);
+router.post("/register", uploadImage.single("avatar"), validaciones ,controlador.processRegister);
 
 // Routes:
 
