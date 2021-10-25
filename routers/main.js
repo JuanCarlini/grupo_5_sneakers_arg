@@ -34,7 +34,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({storage});
 
-// Validations:
+// Validations register form:
 
 const validations =  [
     body ('name').notEmpty().withMessage("Nombre no puede estar vacio"),
@@ -44,7 +44,7 @@ const validations =  [
     body ('confirm-pass').notEmpty().withMessage("Confirmar contraseña no puede estar vacio"),
    ];
 
-// Route Profile Images
+// Route register form:
 
 router.post("/register", uploadImage.single("avatar"), validations ,controlador.processRegister);
 

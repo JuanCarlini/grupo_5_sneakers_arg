@@ -5,9 +5,9 @@
     
     <%- include('./partials/header') %>
     <main class="formulario-registro">
-        <% if(locals.errors) { %>
+        <% if (locals.errors) { %>
          <% for ( let oneEror in errors ) { %>
-            <p><% errors[oneEror].msg %></p>
+            <p><%= errors[oneEror].msg %></p>
         <% } %>
     <% } %>
         <form action="/register" method="POST" class ="form-box">

@@ -32,8 +32,6 @@ app.use(methodOverride("_method"));
 
 //app.use(logMiddleware);
 
-//app.use(profileImages);
-
 app.use(profileRoute);
 
 app.use('/', mainRoutes)

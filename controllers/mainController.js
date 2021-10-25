@@ -39,21 +39,20 @@ const controlador ={
 
     // ProcessRegister:
 
+
     processRegister: (req,res) =>{
-        const resultValidation = validationResult(req);
-        
-        if(resultValidation.errors.length > 0){
-         return res.render('register',{
-             errors: resultValidation.mapped()
-         })   
-     
-             }
-         },
+      const resultValidation = validationResult(req)
+
+           if(resultValidation.errors.length > 0){
+            return res.render('register', { 
+                errors: resultValidation.mapped()
+            })
+        }
+    },
         
 
-    
+        // ProccesLogin:
 
-    // ProccesLogin:
 
     processLogin: (req, res) =>{
         let errors = validationResult(req);
