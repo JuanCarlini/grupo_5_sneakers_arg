@@ -41,16 +41,12 @@
                    <%= errors.pass.msg %>
               </div>
                 <% } %>
-                
-            <input type="password" name="confirmpass" placeholder="Confirmar contraseña">
-            <% if (locals.errors && errors.confirmpass) { %>
-                <div class="text-danger">
-                   <%= errors.confirmpass.msg %>
-              </div>
-                <% } %>
-            <input type="submit" value="Enviar">
+
             <label><b>Imagen de perfil:</b></label>
             <input class="form-control" type="file" name="avatar"> 
+                
+            <input type="submit" value="Enviar">
+            
                   
                 </form>
             </main>

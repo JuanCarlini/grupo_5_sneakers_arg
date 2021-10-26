@@ -1,32 +1,20 @@
 [
  {
-  "id": 1,
-  "name": "dd",
-  "surname": "dwdw",
-  "email": "wd@gmail.com",
-  "user": "d",
-  "pass": "d",
-  "confirmpass": "d",
-  "avatar": ""
+  "id": 6,
+  "name": "fefwfwfe",
+  "surname": "reggrerg",
+  "email": "hola@gmail.com",
+  "user": "lautyyy",
+  "pass": "$2a$10$SSaBX5DUoKL8GfsYSTDFger0xj6jmzcgIOPLBRnOyAzOAZc00Gpbm",
+  "avatar": "1635216433449_img.png"
  },
  {
-  "id": 2,
-  "name": "dwwddwdw",
-  "surname": "dwdwdw",
-  "email": "tu@gmail.com",
-  "user": "wddww",
-  "pass": "dwd",
-  "confirmpass": "dwwdwd",
-  "avatar": "imagen.png"
- },
- {
-  "id": 3,
-  "name": "feeffefe",
-  "surname": "fefefe",
-  "email": "dwdw@gmai.com",
-  "user": "dwdwwdwd",
-  "pass": "dwwdwd",
-  "confirmpass": "dwdw",
-  "avatar": "1635213861433_img.png"
+  "id": 7,
+  "name": "lauta",
+  "surname": "dfdw",
+  "email": "hola@gmail.com",
+  "user": "lautyy120",
+  "pass": "$2a$10$4cHH2KWYo3TNkUtUZuBoueOLbbcn5r/VWBr5vGOpUxGcrVda.z/MS",
+  "avatar": "1635216714411_img.png"
  }
 ]

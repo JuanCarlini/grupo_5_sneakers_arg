@@ -6,6 +6,7 @@ const express = require('express');
 const { validationResult }= require('express-validator');
 const User = require('../models/User');
 const uploadImage = require("../middlewares/profileImages");
+const bcryptjs = require('bcryptjs');
 
 // Coma:
 
@@ -54,6 +55,7 @@ const controlador ={
        
         let userToCreate = {
             ...req.body,
+            pass: bcryptjs.hashSync(req.body.pass, 10), 
             avatar: req.file.filename
         } 
 
