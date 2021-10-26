@@ -5,7 +5,7 @@
     
     <%- include('./partials/header') %>
     <main class="formulario-registro">
-            <form action="/register" method="POST" class ="form-box">
+            <form action="/register" method="POST" class ="form-box" enctype="multipart/form-data">
             <h1 class="title">Welcome back :)</h3>
             <input type="text" name="name" placeholder="Nombre">
             <% if (locals.errors && errors.name) { %>
