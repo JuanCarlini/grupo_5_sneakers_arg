@@ -48,7 +48,8 @@ const controlador ={
 
            if(resultValidation.errors.length > 0){
             return res.render('register', { 
-                errors: resultValidation.mapped()
+                errors: resultValidation.mapped(),
+                oldData: req.body
             })
         }
 
