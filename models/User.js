@@ -40,7 +40,7 @@ const User ={
         }
         allUsers.push(newUser);
         fs.writeFileSync(this.filename, JSON.stringify(allUsers, null,  ' '))
-        return true;
+        return newUser;
     },
 
     delete: function(id){
@@ -54,6 +54,6 @@ const User ={
 
     
 
-console.log(User.delete(2));
+module.exports = User;
 
-// 29:37
+// 37:55

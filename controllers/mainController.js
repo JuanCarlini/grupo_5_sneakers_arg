@@ -4,6 +4,8 @@ const fs = require('fs');
 const path = require('path');
 const express = require('express');
 const { validationResult }= require('express-validator');
+const User = require('../models/User');
+const uploadImage = require("../middlewares/profileImages");
 
 // Coma:
 
@@ -49,7 +51,14 @@ const controlador ={
             })
         }
 
-       return res.send("Los datos son correctos")
+       
+        let userToCreate = {
+            ...req.body,
+            avatar: req.file.filename
+        } 
+
+        User.create(userToCreate)
+        return res.send("Se guardo el usuario")
     },
         
 

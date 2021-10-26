@@ -1,12 +1,22 @@
 [
  {
   "id": 1,
-  "name": "Lautaro",
-  "surname": "Lopez",
-  "email": "lautaro@gmail.com",
-  "user": "lautyy140",
-  "pass": "123",
-  "confirmpass": "123",
-  "avatar": "default.jpg"
+  "name": "dd",
+  "surname": "dwdw",
+  "email": "wd@gmail.com",
+  "user": "d",
+  "pass": "d",
+  "confirmpass": "d",
+  "avatar": ""
+ },
+ {
+  "id": 2,
+  "name": "dwwddwdw",
+  "surname": "dwdwdw",
+  "email": "tu@gmail.com",
+  "user": "wddww",
+  "pass": "dwd",
+  "confirmpass": "dwwdwd",
+  "avatar": "imagen.png"
  }
 ]
