@@ -43,5 +43,14 @@
   "user": "fede1",
   "pass": "$2a$10$X2yANy/bCrCpGSXVHCq1vubOmj1GjdolzpX7wzLzWGS2swPAwRYCu",
   "avatar": "1635301736012_img.png"
+ },
+ {
+  "id": 11,
+  "name": "pedronn",
+  "surname": "ramr",
+  "email": "rame@gmail.com",
+  "user": "rammm",
+  "pass": "$2a$10$.TkG3.D39SwvzDmrGKPQ6OswkkcJC76pzPuqerp2/QdUQrdQcf6Ou",
+  "avatar": "1635373979060_img.png"
  }
 ]
