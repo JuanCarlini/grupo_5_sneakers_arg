@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) =>{
 
     let cols = {
     id: {
-        type: DataTypes.INTEGER
+        type: DataTypes.INTEGER(10)
     },
     name: {
         type: DataTypes.STRING
