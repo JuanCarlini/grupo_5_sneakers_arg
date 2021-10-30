@@ -1,6 +1,6 @@
 module.exports = (sequelize, DataTypes) => {
 
-    let alias = "Usuario";
+    let alias = "Producto";
 
     let cols = {
         id: {
@@ -26,36 +26,19 @@ module.exports = (sequelize, DataTypes) => {
         },
         avatar: {
             type: DataTypes.STRING(250)
-
-        },
-
-        created_at: {
-            type: DataTypes.DATE,
-        },
-
-        modified_at: {
-            type: DataTypes.DATE,
-        },
-
-        deleted_at: {
-            type: DataTypes.DATE,
-        },
+        }
 
     };
 
     let config = {
-        tableName: 'Usuario'
+        tableName= "Producto"
     }
 
-    const Usuario = sequelize.define(alias, cols, config)
-    Usuario.associate = function (models){
-        Usuario.belongsToMany(models.Producto, { 
-            as: 'produtos_usuarios', 
-            foreingKey: 'producto_id'
-        })
+    const Producto = sequelize.define(alias, cols, config)
+    Producto.associate = function (models) {
 
     }
 
-    return Usuario;
 
+    return Producto;
 }
