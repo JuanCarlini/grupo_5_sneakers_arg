@@ -1,32 +1,35 @@
 module.exports = (sequelize, DataTypes) => {
 
-    let alias = "Usuario";
+    let alias = "Usuarios";
 
     let cols = {
         id: {
             type: DataTypes.INTEGER(10),
             primaryKey: true,
             autoIncrement: true
-
         },
         name: {
-            type: DataTypes.STRING(50)
+            type: DataTypes.STRING(50),
+            allowNull: false
         },
         surname: {
-            type: DataTypes.STRING(50)
+            type: DataTypes.STRING(50),
+            allowNull: false
         },
         email: {
-            type: DataTypes.STRING(50)
+            type: DataTypes.STRING(50),
+            allowNull: false
         },
         user: {
-            type: DataTypes.STRING(50)
+            type: DataTypes.STRING(50),
+            allowNull: false
         },
         pass: {
-            type: DataTypes.STRING(50)
+            type: DataTypes.STRING(50),
+            allowNull: false
         },
         avatar: {
             type: DataTypes.STRING(250)
-
         },
 
         created_at: {
@@ -44,7 +47,7 @@ module.exports = (sequelize, DataTypes) => {
     };
 
     let config = {
-        tableName: 'Usuario'
+        tableName: 'usuarios'
     }
 
     const Usuario = sequelize.define(alias, cols, config)

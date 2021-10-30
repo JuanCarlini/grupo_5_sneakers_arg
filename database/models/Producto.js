@@ -1,37 +1,66 @@
 module.exports = (sequelize, DataTypes) => {
 
-    let alias = "Producto";
+    let alias = "Productos";
 
     let cols = {
         id: {
             type: DataTypes.INTEGER(10),
             primaryKey: true,
             autoIncrement: true
+        },
+        brand: {
+            type: DataTypes.STRING(50),
+            allowNull: false
+        },
+        model: {
+            type: DataTypes.STRING(50),
+            allowNull: false
+        },
+        description: {
+            type: DataTypes.STRING(50),
+            allowNull: false
+        },
+        type: {
+            type: DataTypes.STRING(50),
+            allowNull: false
+        },
+        size: {
+            type: DataTypes.INTEGER(50),
+            allowNull: false
+        },
+        color: {
+            type: DataTypes.STRING(50),
+            allowNull: false
+        },
+        image: {
+            type: DataTypes.STRING(50),
+            allowNull: false
+        },
+        price: {
+            type: DataTypes.STRING(50),
+            allowNull: false
+        },
+        name:{
+            type: DataTypes.STRING(50),
+            allowNull: false          
+        },
 
+        created_at: {
+            type: DataTypes.DATE,
         },
-        name: {
-            type: DataTypes.STRING(50)
+
+        modified_at: {
+            type: DataTypes.DATE,
         },
-        surname: {
-            type: DataTypes.STRING(50)
+
+        deleted_at: {
+            type: DataTypes.DATE,
         },
-        email: {
-            type: DataTypes.STRING(50)
-        },
-        user: {
-            type: DataTypes.STRING(50)
-        },
-        pass: {
-            type: DataTypes.STRING(50)
-        },
-        avatar: {
-            type: DataTypes.STRING(250)
-        }
 
     };
 
     let config = {
-        tableName= "Producto"
+        tableName= "productos"
     }
 
     const Producto = sequelize.define(alias, cols, config)
