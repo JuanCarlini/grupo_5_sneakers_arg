@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
         id: {
             type: DataTypes.INTEGER(10),
             primaryKey: true,
-            autoIncrement: true
+            /* autoIncrement: true */
         },
         name: {
             type: DataTypes.STRING(50),
@@ -30,34 +30,24 @@ module.exports = (sequelize, DataTypes) => {
         },
         avatar: {
             type: DataTypes.STRING(250)
-        },
+        }
 
-        created_at: {
-            type: DataTypes.DATE,
-        },
-
-        modified_at: {
-            type: DataTypes.DATE,
-        },
-
-        deleted_at: {
-            type: DataTypes.DATE,
-        },
 
     };
 
     let config = {
-        tableName: 'usuarios'
+        timestamps:false,
+        tableName:'usuarios'
     }
 
     const Usuario = sequelize.define(alias, cols, config)
-    Usuario.associate = function (models){
-        Usuario.belongsToMany(models.Producto, { 
-            as: 'produtos_usuarios', 
-            foreingKey: 'producto_id'
-        })
+    /* Usuario.associate = function (models){
+        Usuario.hasMany(models.Usuario, { 
+            as: 'id', 
+            foreingKey: 'productoid'
+        }) 
 
-    }
+    } */
 
     return Usuario;
 

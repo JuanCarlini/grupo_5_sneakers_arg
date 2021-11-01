@@ -7,6 +7,7 @@ const { validationResult }= require('express-validator');
 const User = require('../models/User');
 const uploadImage = require("../middlewares/profileImages");
 const bcryptjs = require('bcryptjs');
+const db = require('../database/models/index');
 
 // Coma:
 

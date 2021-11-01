@@ -3,10 +3,10 @@ module.exports = (sequelize, DataTypes) => {
     let alias = "Productos";
 
     let cols = {
-        id: {
+        productoid: {
             type: DataTypes.INTEGER(10),
-            primaryKey: true,
-            autoIncrement: true
+            foreignkey: true,
+            /* autoIncrement: true */
         },
         brand: {
             type: DataTypes.STRING(50),
@@ -43,30 +43,23 @@ module.exports = (sequelize, DataTypes) => {
         name:{
             type: DataTypes.STRING(50),
             allowNull: false          
-        },
+        }
 
-        created_at: {
-            type: DataTypes.DATE,
-        },
-
-        modified_at: {
-            type: DataTypes.DATE,
-        },
-
-        deleted_at: {
-            type: DataTypes.DATE,
-        },
-
+        
     };
 
     let config = {
-        tableName= "productos"
+        timestamps:false,
+        tableName:"productos"
     }
 
     const Producto = sequelize.define(alias, cols, config)
-    Producto.associate = function (models) {
-
-    }
+     /* Producto.associate = function (models){
+        Producto.belongsToMany(models.Producto, { 
+            as: 'productoid', 
+            primaryKey: 'id' 
+        })
+    } */
 
 
     return Producto;
