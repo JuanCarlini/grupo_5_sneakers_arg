@@ -7,6 +7,7 @@ const { validationResult }= require('express-validator');
 const User = require('../models/User');
 const uploadImage = require("../middlewares/profileImages");
 const bcryptjs = require('bcryptjs');
+const db = require('../database/models/index');
 
 // Coma:
 
@@ -48,7 +49,8 @@ const controlador ={
 
            if(resultValidation.errors.length > 0){
             return res.render('register', { 
-                errors: resultValidation.mapped()
+                errors: resultValidation.mapped(),
+                oldData: req.body
             })
         }
 

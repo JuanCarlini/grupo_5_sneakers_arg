@@ -16,5 +16,41 @@
   "user": "lautyy120",
   "pass": "$2a$10$4cHH2KWYo3TNkUtUZuBoueOLbbcn5r/VWBr5vGOpUxGcrVda.z/MS",
   "avatar": "1635216714411_img.png"
+ },
+ {
+  "id": 8,
+  "name": "fe",
+  "surname": "f",
+  "email": "s@gmail.com",
+  "user": "lautyy",
+  "pass": "$2a$10$/1X9vtFo/.tVzR6IXA24vOFWnm2FM2t97bvriG421bV9eHpvVVU7a",
+  "avatar": "1635278930575_img.png"
+ },
+ {
+  "id": 9,
+  "name": "Lautaro",
+  "surname": "wddwwd",
+  "email": "dwwdwd@gmail.com",
+  "user": "wdwdw",
+  "pass": "$2a$10$DQLcwuuYWPO5UfBbvHv2..fLC.9NwEWcWYD7K4aWfY6if5RNF8TAu",
+  "avatar": "1635288899770_img.png"
+ },
+ {
+  "id": 10,
+  "name": "Fede",
+  "surname": "dwwd",
+  "email": "fede1@gmail.com",
+  "user": "fede1",
+  "pass": "$2a$10$X2yANy/bCrCpGSXVHCq1vubOmj1GjdolzpX7wzLzWGS2swPAwRYCu",
+  "avatar": "1635301736012_img.png"
+ },
+ {
+  "id": 11,
+  "name": "pedronn",
+  "surname": "ramr",
+  "email": "rame@gmail.com",
+  "user": "rammm",
+  "pass": "$2a$10$.TkG3.D39SwvzDmrGKPQ6OswkkcJC76pzPuqerp2/QdUQrdQcf6Ou",
+  "avatar": "1635373979060_img.png"
  }
 ]
