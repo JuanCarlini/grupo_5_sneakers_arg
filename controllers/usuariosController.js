@@ -12,10 +12,12 @@ const usuariosController ={
             avatar: req.body.avatar  
         })
 
+        res.redirect('/register')
+
     }
 
 }
  
-res.redirect('/register')
+
 
 module.exports = usuariosController;
