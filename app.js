@@ -10,8 +10,7 @@ const profileRoute = require('./routers/main')
 const logMiddleware = require("./middlewares/logMiddleware");
 const profileImages = require("./middlewares/profileImages");
 
-const usuariosRouter = require("./routers/Usuarios")
-const productosRouter = require("./routers/Productos")
+const createRoute = require('./routers/main')
 
 
 const app = express();
@@ -44,9 +43,9 @@ app.use('/admin', adminRoute)
 
 // CRUD BASE DE DATOS:
 
-app.use('/usuarios', usuariosRouter)
+app.use('/register', createRoute)
 
-app.use('/productos', productosRouter)
+/* app.use('/productos', productosRouter) */
 
 app.listen(3000, () =>{
     console.log("Servidor corriendo en 3000");

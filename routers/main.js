@@ -12,6 +12,7 @@ const multer = require("multer");
 const controlador = require('../controllers/mainController.js')
 const controller = require('../controllers/productsController.js')
 const controladorAdmin = require('../controllers/adminController.js')
+const usuariosController = require("../controllers/usuariosController");
 
 // Middleweres:
 
@@ -34,9 +35,12 @@ const storage = multer.diskStorage({
 const upload = multer({storage});
 
 
-// Route register form:
+// Route register form db:
 
-router.post("/register", uploadImage.single("avatar"), validaciones ,controlador.processRegister);
+router.post("/register", usuariosController.crear)
+
+
+/* router.post("/register", uploadImage.single("avatar"), validaciones ,controlador.processRegister); */
 
 // Routes:
 
