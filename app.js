@@ -7,7 +7,6 @@ const methodOverride = require("method-override");
 const mainRoutes = require('./routers/main')
 const adminRoute = require('./routers/main')
 const profileRoute = require('./routers/main')
-const logMiddleware = require("./middlewares/logMiddleware");
 const profileImages = require("./middlewares/profileImages");
 
 const createRoute = require('./routers/main')

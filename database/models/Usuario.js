@@ -1,32 +1,31 @@
-module.exports = (sequelize, DataTypes) => {
+/* module.exports = (sequelize, DataTypes) => {
 
-    let alias = "Usuarios";
+    let alias = "Usuario";
 
     let cols = {
         id: {
             type: DataTypes.INTEGER(10),
             primaryKey: true,
-            /* autoIncrement: true */
+            /* autoIncrement: true 
         },
         name: {
-            type: DataTypes.STRING(50),
-            allowNull: false
+            type: DataTypes.STRING(50)
         },
         surname: {
             type: DataTypes.STRING(50),
-            allowNull: false
+           
         },
         email: {
             type: DataTypes.STRING(50),
-            allowNull: false
+            
         },
         user: {
             type: DataTypes.STRING(50),
-            allowNull: false
+            
         },
         pass: {
             type: DataTypes.STRING(50),
-            allowNull: false
+           
         },
         avatar: {
             type: DataTypes.STRING(250)
@@ -41,14 +40,41 @@ module.exports = (sequelize, DataTypes) => {
     }
 
     const Usuario = sequelize.define(alias, cols, config)
-      /* Usuario.associate = function (models){
+       Usuario.associate = function (models){
         Usuario.hasMany(models.Productos, { 
             as: 'id', 
             foreingKey: 'productoid'
         })   
  
-    } */
+    } 
 
     return Usuario;
 
+} */
+
+module.exports= (sequelize,DataTypes) =>{
+    const usuario = sequelize.define(
+        'Usuario',
+        {
+            id:{
+            type: DataTypes.INTEGER(10),
+            primaryKey: true,
+            autoIncrement: true
+            
+            },
+            name:DataTypes.STRING(50), 
+            surname:DataTypes.STRING(50),
+            email:DataTypes.STRING(50),
+            user:DataTypes.STRING(50),
+            pass:DataTypes.STRING(50),
+            avatar:DataTypes.STRING(250)
+            
+        },
+        {
+            tableName:'usuarios',
+            timestamps:false}
+    );
+
+    return usuario
+    
 }

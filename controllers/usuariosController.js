@@ -2,7 +2,7 @@ const db = require('../database/models');
 
 const usuariosController ={
     crear: function(req,res){
-        db.Usuarios.create({
+        db.Usuario.create({
             
             name: req.body.name,
             surname:req.body.surname, 
