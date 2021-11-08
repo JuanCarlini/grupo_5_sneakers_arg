@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const db = require('../database/models');
 
 const productsFilePath = path.join(__dirname, '../data/products.json');
 
@@ -22,34 +23,28 @@ const controller = {
 		res.render('detalle-del-producto', {product: product,
 			toThousand: toThousand, dotToComma: dotToComma}); 
 	},
+	
 	// Create - Form to create
 	create: (req,res) =>{
         return res.render('create')
     },
 
-	store: (req, res) => {
-		if (req.file) {
-			let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-			let newProduct = {
-			id: products[products.length-1].id+1,
-			brand: req.body.brand,
-			model: req.body.model,
-			description: req.body.description,
-			type: req.body.type,
-			size: req.body.size,
-			color: req.body.color,
-			image: req.file.filename,
-			price: req.body.price,
-			name: req.body.name
-			};
-			products.push(newProduct);
-			let productsJSON = JSON.stringify(products, null, ' ');
-			fs.writeFileSync(productsFilePath, productsJSON);
-			res.redirect('/products'); 
-		} else {
-			res.render('create');
-		}
-	},
+			crear: function(req,res){
+			db.Usuario.create({
+				
+				name: req.body.name,
+				description:req.body.description, 
+				productimage: req.body.product-image, 
+				category: req.body.category,
+				color: req.body.color,
+				price: req.body.price 
+				
+			 }).then(function (){
+				res.redirect("/create")
+			}) 
+		},
+		
+ 	
 	// Update - Form to edit
 	edit: (req, res) => {
 		let idProduct = parseInt(req.params.id);

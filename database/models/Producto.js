@@ -1,66 +1,28 @@
-module.exports = (sequelize, DataTypes) => {
-
-    let alias = "Productos";
-
-    let cols = {
-        productoid: {
+module.exports= (sequelize,DataTypes) =>{
+    const producto = sequelize.define(
+        'Producto',
+        {
+            id:{
             type: DataTypes.INTEGER(10),
-            foreignkey: true,
-            /* autoIncrement: true */
+            autoIncrement: true,
+            primaryKey: true
+            
+            },
+            name :DataTypes.STRING(50),
+            description: DataTypes.STRING(50),
+            image:DataTypes.STRING(250),
+            category: DataTypes.STRING(50), 
+            color: DataTypes.STRING(50),
+            price:DataTypes.INTEGER(10)
+                                  
         },
-        brand: {
-            type: DataTypes.STRING(50),
-            allowNull: false
-        },
-        model: {
-            type: DataTypes.STRING(50),
-            allowNull: false
-        },
-        description: {
-            type: DataTypes.STRING(50),
-            allowNull: false
-        },
-        type: {
-            type: DataTypes.STRING(50),
-            allowNull: false
-        },
-        size: {
-            type: DataTypes.INTEGER(50),
-            allowNull: false
-        },
-        color: {
-            type: DataTypes.STRING(50),
-            allowNull: false
-        },
-        image: {
-            type: DataTypes.STRING(50),
-            allowNull: false
-        },
-        price: {
-            type: DataTypes.STRING(50),
-            allowNull: false
-        },
-        name:{
-            type: DataTypes.STRING(50),
-            allowNull: false          
-        }
+        {
+            tableName:'productos',
+            timestamps:false}
+    );
 
-        
-    };
+    
 
-    let config = {
-        timestamps:false,
-        tableName:"productos"
-    }
-
-    const Producto = sequelize.define(alias, cols, config)
-     /* Producto.associate = function (models){
-        Producto.belongsToMany(models.Producto, { 
-            as: 'productoid', 
-            primaryKey: 'id' 
-        })
-    } */
-
-
-    return Producto;
+    return producto;
+    
 }

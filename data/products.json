@@ -34,12 +34,5 @@
   "image": "nike-air-force-1.jpg",
   "price": "28800",
   "name": "Air Force"
- },
- {
-  "id": 4,
-  "color": "dw",
-  "image": "product-1634759099053.png",
-  "price": "12",
-  "name": "d"
  }
 ]

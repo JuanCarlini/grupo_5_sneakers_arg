@@ -4,7 +4,7 @@
 <body>
     <%- include('./partials/header') %>
     <main>
-        <form action="/products/<%= productToEdit[0].id %>/edit?_method=PUT" method="POST" class ="form-box-admin" enctype="multipart/form-data">
+        <form action="/product/edit<%= productToEdit[0].id %>/edit?_method=PUT" method="POST" class ="form-box-admin" enctype="multipart/form-data">
             <h1 class="title">Editar Producto</h3>
                 <input type="text" name="brand" placeholder="Marca" required>
                 <input type="text" name="model" placeholder="Modelo" required>

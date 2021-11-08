@@ -51,7 +51,6 @@
     return Usuario;
 
 } */
-
 module.exports= (sequelize,DataTypes) =>{
     const usuario = sequelize.define(
         'Usuario',
@@ -74,6 +73,8 @@ module.exports= (sequelize,DataTypes) =>{
             tableName:'usuarios',
             timestamps:false}
     );
+
+    
 
     return usuario
     
