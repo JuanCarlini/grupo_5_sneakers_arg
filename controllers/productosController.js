@@ -46,42 +46,35 @@ const controller = {
 		
  	
 	// Update - Form to edit
-	edit: (req, res) => {
-		let idProduct = parseInt(req.params.id);
-		let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-		let productToEdit = products.filter(i => i.id === idProduct);
-		res.render('edit', {productToEdit: productToEdit,
-			toThousand: toThousand}); 
-	},
-	// Update - Method to update
+	edit: (req,res) =>{
+        return res.render('edit')
+    },
 	update: (req, res) => {
-		let idProduct = req.params.id;
-		let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-		products.forEach(product => {
-			if(product.id == idProduct) {
-				product.brand= req.body.brand,
-				product.model= req.body.model,
-				product.description= req.body.description,
-				product.type= req.body.type,
-				product.size= req.body.size,
-				product.color= req.body.color
-				product.price= req.body.price,
-				product.name= req.body.name
-				if (req.file) {
-					let indexProduct = products.findIndex(product => product.id == idProduct);
-					let imagePath = path.join(__dirname, '../public/images/products', products[indexProduct].image);
-					fs.unlink(imagePath, function (err) {
-						if (err) throw err;
-					});
-					product.image = req.file.filename;
-				}
+		let id = req.params.id;
+		db.Producto.findAll(id).then((prod) => {
+		  db.Producto.update(
+			{
+				name: req.body.name,
+				description:req.body.description, 
+				productimage: req.body.productimage, 
+				category: req.body.category,
+				color: req.body.color,
+				price: req.body.price 
+			},
+			{
+			  where: {
+				product_id: id,
+			  },
 			}
-			
+		  )
+			.then(() => {
+			  return res.redirect("/edit" + id);
+			})
+			.catch((error) => res.send(error));
 		});
-		let productsJSON = JSON.stringify(products, null, ' ');
-		fs.writeFileSync(path.join(__dirname, "../data/products.json"), productsJSON);
-		res.redirect('/products');
-	},// Delete - Delete one product from DB
+	},
+	
+	// Delete - Delete one product from DB
 	destroy : (req, res) => {
 		let idProduct = req.params.id;
 		let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));

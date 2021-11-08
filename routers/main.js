@@ -51,14 +51,18 @@ router.get('/carrito',controlador.carrito);
 router.get('/admin',controlador.admin);
 router.get("/detail", controller.detail); 
 
-// Products:
+// Products CRUD:
 
+// Create
 router.get('/products',controller.index);
 router.get("/create", controller.create);
 router.post("/create", upload.single("product-image"), controller.crear);
-router.get('/products/:id', controller.detail); 
-router.get("/products/:id/edit", controller.edit);
+
+// Update
+router.get("/edit", controller.edit);
 router.put("/products/:id/edit", upload.single("product-image") ,controller.update);
+router.get('/products/:id', controller.detail); 
+// Delete
 router.delete("/products/:id", controller.destroy);
 
 // Exports:
