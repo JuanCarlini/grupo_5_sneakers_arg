@@ -30,11 +30,11 @@ const controller = {
     },
 
 			crear: function(req,res){
-			db.Usuario.create({
+			db.Producto.create({
 				
 				name: req.body.name,
 				description:req.body.description, 
-				productimage: req.body.product-image, 
+				productimage: req.body.productimage, 
 				category: req.body.category,
 				color: req.body.color,
 				price: req.body.price 
