@@ -2,7 +2,8 @@
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 500px;
+  max-width: 800px;
+  max-height: 500px;
   position: relative;
   margin: auto;
   align-self: middle;
@@ -11,15 +12,14 @@
 /* Hide the images by default */
 .mySlides {
   display: none;
-  height: 500px;
-  width: 500px;
+  height: 800px;
+  width: 800px;
 }
 
 /* Images adjust */
 .image-carousel{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+ align-items: center;
+ max-height: 500px;
 }
 
 /* Next & previous buttons */

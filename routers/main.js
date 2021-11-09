@@ -56,11 +56,11 @@ router.get("/detail", controller.detail);
 // Create
 router.get('/products',controller.index);
 router.get("/create", controller.create);
-router.post("/create", upload.single("product-image"), controller.crear);
+router.post("/create", upload.single("productimage"), controller.crear);
 
 // Update
 router.get("/edit", controller.edit);
-router.put("/products/:id/edit", upload.single("product-image") ,controller.update);
+router.put("/products/:id/edit", upload.single("productimage") ,controller.update);
 router.get('/products/:id', controller.detail); 
 // Delete
 router.delete("/products/:id", controller.destroy);

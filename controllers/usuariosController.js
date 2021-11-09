@@ -1,6 +1,6 @@
 const db = require('../database/models');
-const bcript = require('bcryptjs')
-const { validationResult } = require('express-validator')
+const bcript = require('bcryptjs');
+const { validationResult } = require('express-validator');
 
 const usuariosController = {
 
@@ -12,7 +12,6 @@ const usuariosController = {
                 oldData: req.body
             })
         } 
-
         db.Usuario.findAll({
             where: {
                 email: req.body.email
