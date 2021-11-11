@@ -110,6 +110,9 @@ const controlador ={
     edit: (req,res) =>{
         return res.render("edit")
     }, 
+    admin: (req,res) => {
+        return res.render('admin');
+},
 };
 
 module.exports= controlador;
