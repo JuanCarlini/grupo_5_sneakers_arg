@@ -47,7 +47,7 @@ const controller = {
  	
 	// Update - Form to edit
 	edit: (req,res) =>{
-        return res.render('edit')
+        return res.render('edit') // Aca primero buscar el producto
     },
 	update: (req, res) => {
 		let id = req.params.id;

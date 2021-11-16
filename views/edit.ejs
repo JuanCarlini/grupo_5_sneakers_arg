@@ -4,9 +4,9 @@
 <body>
     <%- include('./partials/header') %>
     <main>
-        <form action="/edit<%= productToEdit[0].id %>/edit?_method=PUT" method="POST" class ="form-box-admin" enctype="multipart/form-data">
+        <form action="/edit_method=PUT" method="POST" class ="form-box-admin" enctype="multipart/form-data">
             <h1 class="title">Editar Producto</h3>
-                <input type="text" name="name" placeholder="Nombre">
+                <input type="text" name="name" placeholder="Nombre" value="nike">
             <input type="text" name="description" placeholder="Descripción">
             <label>Elija una o más imágenes</label>
             <input type="file" name="productimage" placeholder="Imagen">
