@@ -36,7 +36,7 @@ const upload = multer({storage});
 
 // Route register form db:
 
-router.post("/register", validations, uploadImage.single("avatar"), usuariosController.crear)
+router.post("/register", uploadImage.single("avatar"), validations, usuariosController.crear)
 
 
 /* router.post("/register", uploadImage.single("avatar"), validaciones ,controlador.processRegister); */
