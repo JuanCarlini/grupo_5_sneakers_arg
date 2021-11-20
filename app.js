@@ -5,11 +5,10 @@ const path = require("path");
 const methodOverride = require("method-override");
 
 const mainRoutes = require('./routers/main')
-const adminRoute = require('./routers/main')
-const profileRoute = require('./routers/main')
+const adminRoute = require('./routers/adminRoutes')
 const profileImages = require("./middlewares/profileImages");
 
-const createRoute = require('./routers/main')
+
 
 
 const app = express();
@@ -34,7 +33,7 @@ app.use(methodOverride("_method"));
 
 //app.use(logMiddleware);
 
-app.use(profileRoute);
+/* app.use(profileRoute); */
 
 app.use('/', mainRoutes)
 
@@ -42,7 +41,7 @@ app.use('/admin', adminRoute)
 
 // CRUD BASE DE DATOS:
 
-app.use('/register', createRoute)
+app.use('/register', mainRoutes)
 
 /* app.use('/productos', productosRouter) */
 
