@@ -30,11 +30,12 @@ const controller = {
     },
 
 			crear: function(req,res){
+				/* return res.json(req.file.filename) */
 			db.Producto.create({
 				
 				name: req.body.name,
 				description:req.body.description, 
-				productimage: req.body.productimage, 
+				image: req.file.filename,   
 				category: req.body.category,
 				color: req.body.color,
 				price: req.body.price 
@@ -46,34 +47,10 @@ const controller = {
 		
  	
 	// Update - Form to edit
-	edit: (req,res) =>{
-        return res.render('edit') // Aca primero buscar el producto
-    },
-	update: (req, res) => {
-		let id = req.params.id;
-		db.Producto.findAll(id).then((prod) => {
-		  db.Producto.update(
-			{
-				name: req.body.name,
-				description:req.body.description, 
-				productimage: req.body.productimage, 
-				category: req.body.category,
-				color: req.body.color,
-				price: req.body.price 
-			},
-			{
-			  where: {
-				product_id: id,
-			  },
-			}
-		  )
-			.then(() => {
-			  return res.redirect("/edit" + id);
-			})
-			.catch((error) => res.send(error));
-		});
-	},
-	
+
+		
+
+
 	// Delete - Delete one product from DB
 	destroy : (req, res) => {
 		let idProduct = req.params.id;

@@ -12,6 +12,7 @@ const multer = require("multer");
 const controlador = require('../controllers/mainController.js')
 const usuariosController = require("../controllers/usuariosController");
 const controller = require("../controllers/productosController")
+const adminController = require("../controllers/adminController")
 
 // Middleweres:
 
@@ -48,7 +49,6 @@ router.get('/log-in',controlador.login);
 router.post("/user/login" ,controlador.processLogin)
 router.get('/register', controlador.register); 
 router.get('/carrito',controlador.carrito);
-router.get('/admin',controlador.admin);
 router.get("/detail", controller.detail); 
 
 // Products CRUD:
@@ -59,12 +59,11 @@ router.get("/create", controller.create);
 router.post("/create", upload.single("productimage"), controller.crear);
 
 // Update
-router.get("/edit", controller.edit);
-router.put("/products/:id/edit", upload.single("productimage") ,controller.update);
+
 router.get('/products/:id', controller.detail); 
+
 // Delete
 router.delete("/products/:id", controller.destroy);
 
-// Exports:
 
 module.exports = router;
