@@ -55,8 +55,7 @@ router.get("/detail", controller.detail);
 
 // Create
 router.get('/products',controller.index);
-router.get("/create", controller.create);
-router.post("/create", upload.single("productimage"), controller.crear);
+
 
 // Update
 

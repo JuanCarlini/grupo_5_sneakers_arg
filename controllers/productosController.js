@@ -24,32 +24,6 @@ const controller = {
 			toThousand: toThousand, dotToComma: dotToComma}); 
 	},
 	
-	// Create - Form to create
-	create: (req,res) =>{
-        return res.render('create')
-    },
-
-			crear: function(req,res){
-				/* return res.json(req.file.filename) */
-			db.Producto.create({
-				
-				name: req.body.name,
-				description:req.body.description, 
-				image: req.file.filename,   
-				category: req.body.category,
-				color: req.body.color,
-				price: req.body.price 
-				
-			 }).then(function (){
-				res.redirect("/create")
-			}) 
-		},
-		
- 	
-	// Update - Form to edit
-
-		
-
 
 	// Delete - Delete one product from DB
 	destroy : (req, res) => {

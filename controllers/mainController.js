@@ -61,7 +61,7 @@ const controlador ={
         } 
 
         User.create(userToCreate)
-        return res.render("home")
+        return res.send("Se guardo el usuario")
     },
         
 
