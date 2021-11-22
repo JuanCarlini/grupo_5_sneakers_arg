@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
     <%- include('./partials/head') %> 
-    
 <body class="grid-container">
     <%- include('./partials/header') %> 
     <section class="banner">
@@ -11,75 +10,33 @@
         <section class="last-visit">
             <h3>Basado en tu última visita</h3>
             <div class="products">
-                <article>
-                    <img src="images/products/nike-air-jordan.jpg" alt="Nike Air Jordan" class="product_img">
-                    <div class="main-article">
-                        <p class="price">$25.000</p>
-                        <p class="discount">40% off</p>
-                        <h4 class="description">Nike Air Jordan</h4>
-                    </div>
-                </article>
-                <article>
-                    <img src="images/products/nike-air-force-1.jpg" alt="Nike Air Force 1" class="product_img">
-                    <div class="main-article">
-                        <p class="price">$25.000</p>
-                        <p class="discount">20% off</p>
-                        <h4 class="description">Nike Air Force 1</h4>
-                    </div>
-                </article>
-                <article>
-                    <img src="images/products/nike-air-max-270.jpg" alt="Nike Air Max 270" class="product_img">
-                    <div class="main-article">
-                        <p class="price">$25.000</p>
-                        <p class="discount">10% off</p>
-                        <h4 class="description">Nike Air Max 270</h4>
-                    </div>
-                </article>
-                <article>
-                    <img src="images/products/nike-blazer.jpg" alt="Nike Blazer" class="product_img">
-                    <div class="main-article">
-                        <p class="price">$25.000</p>
-                        <p class="discount">5% off</p>
-                        <h4 class="description">Nike Blazer</h4>
-                    </div>
-                </article>
+                <% for (i = 0 ; i < products.length ; i++) { %>
+                    <article>
+                        <a href="/admin/edit/<%= products[i].id %>" class="text-product">
+                            <img src="/images/products/<%= products[i].image %>" alt="<%= products[i].model %>" class="product_img">
+                            <div class="main-article">
+                                <h4 class="description"><%= products[i].model %></h4>
+                                <p class="price">$<%= products[i].price %></p>
+                            </div>
+                        </a>
+                    </article>
+                <% } %>
             </div>
         </section>
         <section class="offers">
             <h3>Ofertas</h3>
             <div class="products">
-                <article>
-                    <img src="images/products/adidas-superstar.jpg" alt="Adidas Superstar" class="product_img">
-                    <div class="main-article">
-                        <p class="price">$25.000</p>
-                        <p class="discount">40% off</p>
-                        <h4 class="description">Adidas Superstar</h4>
-                    </div>
-                </article>
-                <article>
-                    <img src="images/products/fila-high-top.jpg" alt="Fila High Top" class="product_img">
-                    <div class="main-article">
-                        <p class="price">$25.000</p>
-                        <p class="discount">20% off</p>
-                        <h4 class="description">Fila High Top</h4>
-                    </div>
-                </article>
-                <article>
-                    <img src="images/products/nike-flyease.jpg" alt="Nike Flyease" class="product_img">
-                    <div class="main-article">
-                        <p class="price">$25.000</p>
-                        <p class="discount">10% off</p>
-                        <h4 class="description">Nike Flyease</h4>
-                    </div>
-                </article>
-                <article>
-                    <img src="images/products/nike-air-max.jpg" alt="Nike Air Max" class="product_img">
-                    <div class="main-article">
-                        <p class="price">$25.000</p>
-                        <p class="discount">5% off</p>
-                        <h4 class="description">Nike Air Max</h4>
-                    </div>
-                </article>
+                <% for (i = 0 ; i < products.length ; i++) { %>
+                    <article>
+                        <a href="/admin/edit/<%= products[i].id %>" class="text-product">
+                            <img src="/images/products/<%= products[i].image %>" alt="<%= products[i].model %>" class="product_img">
+                            <div class="main-article">
+                                <h4 class="description"><%= products[i].model %></h4>
+                                <p class="price">$<%= products[i].price %></p>
+                            </div>
+                        </a>
+                    </article>
+                <% } %>
             </div>  
         </section>
     </main>
