@@ -3,113 +3,89 @@
     <%- include('./partials/head') %> 
     
 <body class="grid-container">
-
     <%- include('./partials/header') %> 
-        
-    <!-- Slideshow container -->
-    <div class="slideshow-container">
-
-    <!-- Full-width images with number and caption text -->
-    <div class="mySlides fade">
-      <div class="numbertext">1 / 3</div>
-      <img src="images/products/nike-air-force-1.jpg" style="width:100%" class="image-carousel">
-      <div class="text">Nike Air Force 1</div>
-    </div>
-  
-    <div class="mySlides fade">
-      <div class="numbertext">2 / 3</div>
-      <img src="images/products/nike-air-max.jpg" style="width:100%" class="image-carousel">
-      <div class="text">Nike Air Max</div>
-    </div>
-  
-    <div class="mySlides fade">
-      <div class="numbertext">3 / 3</div>
-      <img src="images/products/nike-air-max-270.jpg" style="width:100%" class="image-carousel">
-      <div class="text">Nike Air Max 270</div>
-    </div>
-  
-    <!-- Next and previous buttons -->
-    <div class="arrows">
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-    </div>
-  </div>
-  <br>
-  
-  <!-- The dots/circles -->
-  <div style="text-align:center">
-    <span class="dot" onclick="currentSlide(1)"></span>
-    <span class="dot" onclick="currentSlide(2)"></span>
-    <span class="dot" onclick="currentSlide(3)"></span>
-  </div>
-        <section class="ultimos-productos">          
-            <h3>PRODUCTOS DESTACADOS</h3>
+    <section class="banner">
+        <img src="images/banner.jpg" alt="Banner de ofertas">
+    </section>
+    <main>
+        <section class="last-visit">
+            <h3>Basado en tu última visita</h3>
             <div class="products">
-                <article class="producto-individual">
-                    <a href="/products/1">
-                        <img src="images/products/nike-flyEase.jpg" alt="Nike FlyEase" class="product_img">
-                        <div class="product">
-                            <h4 class="description">Nike FlyEase</h4>
-                            <p class="price">$45.500</p>
-                        </div>
-                    </a>
+                <article>
+                    <img src="images/products/nike-air-jordan.jpg" alt="Nike Air Jordan" class="product_img">
+                    <div class="main-article">
+                        <p class="price">$25.000</p>
+                        <p class="discount">40% off</p>
+                        <h4 class="description">Nike Air Jordan</h4>
+                    </div>
                 </article>
-                <article class="producto-individual">
-                    <a href="/products/2">
-                        <img src="images/products/nike-air-max.jpg" alt="Nike Air Max" class="product_img">
-                        <div class="product">
-                            <h4 class="description">Nike Air Max</h4>
-                            <p class="price">$16.000</p>
-                         </div>
-                    </a>
+                <article>
+                    <img src="images/products/nike-air-force-1.jpg" alt="Nike Air Force 1" class="product_img">
+                    <div class="main-article">
+                        <p class="price">$25.000</p>
+                        <p class="discount">20% off</p>
+                        <h4 class="description">Nike Air Force 1</h4>
+                    </div>
                 </article>
-                <article class="producto-individual">
-                    <a href="/products/3">
-                        <img src="images/products/nike-air-force-1.jpg" alt="Nike Air Force" class="product_img">
-                        <div class="product">
-                            <h4 class="description">Nike Air Force</h4>
-                            <p class="price">$16.500</p>
-                        </div>
-                    </a>
+                <article>
+                    <img src="images/products/nike-air-max-270.jpg" alt="Nike Air Max 270" class="product_img">
+                    <div class="main-article">
+                        <p class="price">$25.000</p>
+                        <p class="discount">10% off</p>
+                        <h4 class="description">Nike Air Max 270</h4>
+                    </div>
                 </article>
-                
+                <article>
+                    <img src="images/products/nike-blazer.jpg" alt="Nike Blazer" class="product_img">
+                    <div class="main-article">
+                        <p class="price">$25.000</p>
+                        <p class="discount">5% off</p>
+                        <h4 class="description">Nike Blazer</h4>
+                    </div>
+                </article>
             </div>
         </section>
-        <div class="todos">
-        </div>
+        <section class="offers">
+            <h3>Ofertas</h3>
+            <div class="products">
+                <article>
+                    <img src="images/products/adidas-superstar.jpg" alt="Adidas Superstar" class="product_img">
+                    <div class="main-article">
+                        <p class="price">$25.000</p>
+                        <p class="discount">40% off</p>
+                        <h4 class="description">Adidas Superstar</h4>
+                    </div>
+                </article>
+                <article>
+                    <img src="images/products/fila-high-top.jpg" alt="Fila High Top" class="product_img">
+                    <div class="main-article">
+                        <p class="price">$25.000</p>
+                        <p class="discount">20% off</p>
+                        <h4 class="description">Fila High Top</h4>
+                    </div>
+                </article>
+                <article>
+                    <img src="images/products/nike-flyease.jpg" alt="Nike Flyease" class="product_img">
+                    <div class="main-article">
+                        <p class="price">$25.000</p>
+                        <p class="discount">10% off</p>
+                        <h4 class="description">Nike Flyease</h4>
+                    </div>
+                </article>
+                <article>
+                    <img src="images/products/nike-air-max.jpg" alt="Nike Air Max" class="product_img">
+                    <div class="main-article">
+                        <p class="price">$25.000</p>
+                        <p class="discount">5% off</p>
+                        <h4 class="description">Nike Air Max</h4>
+                    </div>
+                </article>
+            </div>  
+        </section>
     </main>
-    <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.js"></script>
-    <link rel="stylesheet" href="css/slider.css" />
-    <script>
-        var slideIndex = 1;
-showSlides(slideIndex);
 
-// Next/previous controls
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
 
-// Thumbnail image controls
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
 
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
-}
-    </script>
     <%- include('./partials/footer') %> 
 </body>
 </html>
