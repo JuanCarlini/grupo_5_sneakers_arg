@@ -1,3 +1,4 @@
+// Requires:
 const express = require ('express');
 const router = express.Router();
 const adminController = require("../controllers/adminController")
@@ -20,11 +21,20 @@ const storage = multer.diskStorage({
 const upload = multer({storage});
 
 
+// Home route:
 
 router.get('/',adminController.admin);
 
+// Create:
+router.get("/create", adminController.create);
+router.post("/create", upload.single("productimage"), adminController.crear);
+
+
+// Update:
 router.get("/edit/:id", adminController.edit);
 router.put("/products/update/:id", upload.single("productimage") ,adminController.update);  
+
+// Products Route:
 router.get("/products", adminController.productList)
  
 module.exports = router;
