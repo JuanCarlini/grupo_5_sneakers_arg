@@ -1,41 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
     <%- include('./partials/head') %> 
-<body class="grid-container">
-
+<body>
     <%- include('./partials/header') %> 
     <main>
-        <section class="compra">
-            <article class="producto-individual-carrito">             
-                    <img src="/images/products/<%= product[0].image %>" alt="<%= product[0].model %>" class="product_img">
-                    <div class="product">   
-                        <h4 class="description"><%= product[0].model %></h4>
-                    </div>
-                </article>
-                <article class="descripcion">
-                   <article class="texto-general">
-                        <div class="contiene">
-                            <div class="texto-producto">
-                                <h3><%= product[0].model %></h3>
-                                <p><%= product[0].description %></p>
-                                <p>TIPO: <%= product[0].type %></p>
-                                <p>TALLE: <%= product[0].size %></p>
-                                <p>COLOR: <%= product[0].color %></p>
-                                <p>PRECIO: $<%= product[0].price %></p>
+        <section>
+            <h3>Todos los productos</h3>
+            <div class="products">
+                <% for (i = 0 ; i < products.length ; i++) { %>
+                    <article>
+                        <a href="/products/<%= products[i].id %>" class="text-product">
+                            <img src="/images/products/<%= products[i].image %>" alt="<%= products[i].model %>" class="product_img">
+                            <div class="main-article">
+                                <h4 class="description"><%= products[i].model %></h4>
+                                <p class="price">$<%= products[i].price %></p>
                             </div>
-                            <form action="/carrito" method="GET">
-                                <input type="submit" value="COMPRAR" class="boton-compra">
-
-                            </form>
-                        </div>
+                        </a>
                     </article>
-                </article>
-            </article>
+                <% } %>
+            </div>
         </section>
     </main>
-    <%- include('./partials/footer') %> 
-
-   
-
+    <%- include('./partials/footer') %>
 </body>
 </html>

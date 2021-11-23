@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const db = require('../database/models');
+const db = require('../database/models/index');
 
 const productsFilePath = path.join(__dirname, '../data/products.json');
 
@@ -19,11 +19,11 @@ const controller = {
 
 	// Detail - Detail from one product    
 	detail: (req, res) => {
-		let idProduct = parseInt(req.params.id);
-		let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-		let product = products.filter(i => i.id === idProduct);
-		res.render('detalle-del-producto', {product: product,
-			toThousand: toThousand, dotToComma: dotToComma}); 
+		let id = req.params.id;
+        db.Producto.findByPk(id)
+            .then(producto => {
+                return res.render("products", { producto: producto.dataValues })
+            })
 	},
 	
 	// Create - Form to create
