@@ -19,11 +19,10 @@ const dotToComma = n => n.toString().replace(/\./, ",");
 
 const controlador ={
     home: (req, res) => {
-		let idProduct = parseInt(req.params.id);
-        let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-		let product = products.filter(i => i.id === idProduct);
-		res.render('home', {product: product,
-			toThousand: toThousand, dotToComma: dotToComma})
+		db.Producto.findAll()
+                .then(products=>{
+                    return res.render("home", {products})
+                })
 
     // Render Login:
 

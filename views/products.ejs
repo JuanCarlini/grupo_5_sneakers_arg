@@ -7,10 +7,10 @@
         <h3>Todos los productos</h3>
         <div class="products">
             <% for (i = 0 ; i < products.length ; i++) { %>
-                <article class="products-complete">
+                <article>
                     <a href="/products/<%= products[i].id %>" class="text-product">
                         <img src="images/products/<%= products[i].image %>" alt="<%= products[i].model %>" class="product_img">
-                        <div class="product">
+                        <div class="main-article">
                             <h4 class="description"><%= products[i].model %></h4>
                             <p class="price">$<%= products[i].price %></p>
                         </div>
