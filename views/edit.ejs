@@ -7,12 +7,12 @@
         <form action="/admin/products/update/<%= producto.id %>?_method=PUT" method="POST" class ="form-box-admin" enctype="multipart/form-data">
             <h1 class="title">Editar Producto</h3>
                 <input type="text" name="name" placeholder="Nombre" value="<%= producto.name%>">
-            <input type="text" name="description" placeholder="Descripción">
+            <input type="text" name="description" placeholder="Descripción" value="<%= producto.description%>">
             <label>Elija una o más imágenes</label>
-            <input type="file" name="productimage" placeholder="Imagen">
-            <input type="text" name="category" placeholder="Categoría">
-            <input type="text" name="color" placeholder="Colores">
-            <input type="number" name="price" placeholder="Precio">
+            <input type="file" name="productimage" placeholder="Imagen" value="<%= producto.productimage%>">
+            <input type="text" name="category" placeholder="Categoría" value="<%= producto.category%>">
+            <input type="text" name="color" placeholder="Colores" value="<%= producto.color%>">
+            <input type="number" name="price" placeholder="Precio" value="<%= producto.price%>">
             <input type="submit" value="Enviar">
            
         </form>
