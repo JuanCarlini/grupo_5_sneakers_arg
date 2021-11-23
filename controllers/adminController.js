@@ -67,6 +67,15 @@ const adminController = {
             .catch((error) => res.send(error));
 
 
+    },
+
+    delete: (req, res) => {
+        db.Producto.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+        .then(res.redirect("/admin_productList"))
     }
 
 
