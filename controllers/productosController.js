@@ -43,7 +43,7 @@ const controller = {
 				price: req.body.price 
 				
 			 }).then(function (){
-				res.redirect("/home")
+				res.redirect("/admin/products")
 			}) 
 		},
 		
