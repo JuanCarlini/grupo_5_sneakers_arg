@@ -31,7 +31,7 @@ const adminController = {
             price: req.body.price
 
         }).then(function () {
-            res.redirect("/create")
+            res.redirect("/home")
         })
     },
 

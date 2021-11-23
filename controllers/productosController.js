@@ -11,8 +11,10 @@ const dotToComma = n => n.toString().replace(/\./, ",");
 const controller = {
 	// Root - Show all products
 	index: (req, res) => {
-		let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-		res.render('products', {products: products})
+		db.Producto.findAll()
+            .then(products => {
+                return res.render("admin_productList", { products })
+            })
 	},
 
 	// Detail - Detail from one product    
@@ -41,7 +43,7 @@ const controller = {
 				price: req.body.price 
 				
 			 }).then(function (){
-				res.redirect("/create")
+				res.redirect("/home")
 			}) 
 		},
 		
