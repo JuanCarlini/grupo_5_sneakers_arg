@@ -20,7 +20,6 @@ const adminController = {
 
     },
     crear: function (req, res) {
-        /* return res.json(req.file.filename) */
         db.Producto.create({
 
             name: req.body.name,
@@ -31,7 +30,7 @@ const adminController = {
             price: req.body.price
 
         }).then(function () {
-            res.redirect("/create")
+            res.redirect("/admin/create")
         })
     },
 

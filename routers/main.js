@@ -40,7 +40,6 @@ const upload = multer({storage});
 router.post("/register", uploadImage.single("avatar"), validations, usuariosController.crear)
 
 
-/* router.post("/register", uploadImage.single("avatar"), validaciones ,controlador.processRegister); */
 
 // Routes:
 
