@@ -12,56 +12,36 @@ const multer = require("multer");
 const controlador = require('../controllers/mainController.js')
 const usuariosController = require("../controllers/usuariosController");
 const controller = require("../controllers/productosController")
-const adminController = require("../controllers/adminController")
 
 // Middleweres:
 
 const uploadImage = require("../middlewares/profileImages");
 const validations = require('../middlewares/validateRegisterMiddleware');
 
-// Multer Upload products images:
-
-const storage = multer.diskStorage({
-    destination: function(req, file, cb) {
-        cb(null, path.join(__dirname, '../public/images/products'));
-    } ,
-
-    filename: function(req, file, cb) {
-        const newFileName = 'product-' + Date.now() + path.extname(file.originalname);
-        cb(null, newFileName);
-    }
-})
-
-const upload = multer({storage});
-
-
-// Route register form db:
-
-router.post("/register", uploadImage.single("avatar"), validations, usuariosController.crear)
-
-
 
 // Routes:
 
+// Home
 router.get('/', controlador.home);
+
+// Login
 router.get('/log-in',controlador.login);
 router.post("/user/login" ,controlador.processLogin)
+
+//Register
 router.get('/register', controlador.register); 
+router.post("/register", uploadImage.single("avatar"), validations, usuariosController.crear)
+
+//Carrito
 router.get('/carrito',controlador.carrito);
+
+//Detalle del producto
 router.get("/detail", controller.detail); 
 
-// Products CRUD:
-
-// Create
+// Todos los productos
 router.get('/products',controller.index);
 
 
-// Update
-
-router.get('/products/:id', controller.detail); 
-
-// Delete
-router.delete("/products/:id", controller.destroy);
 
 
 module.exports = router;

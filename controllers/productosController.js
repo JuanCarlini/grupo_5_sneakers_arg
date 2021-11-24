@@ -21,9 +21,10 @@ const controller = {
 	detail: (req, res) => {
 		let id = req.params.id;
         db.Producto.findByPk(id)
-            .then(producto => {
-                return res.render("products", { producto: producto.dataValues })
-            })
+            id.then(function(productoSeleccionado){
+				res.render("/detalle-del-producto", {producto: productoSeleccionado })
+			})
+            
 	},
 	
 	// Create - Form to create
