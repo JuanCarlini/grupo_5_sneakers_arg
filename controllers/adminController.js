@@ -75,7 +75,7 @@ const adminController = {
                 id: req.params.id
             }
         })
-        .then(res.redirect("/admin_productList"))
+        .then(res.redirect("/products"))
     }
 
 

@@ -35,7 +35,7 @@ router.get("/edit/:id", adminController.edit);
 router.put("/products/update/:id", upload.single("productimage") ,adminController.update);  
 
 // Delete:
-router.post("/admin/borrar/:id", adminController.delete)
+router.post("/borrar/:id", adminController.delete)
 
 // Products Route:
 router.get("/products", adminController.productList)

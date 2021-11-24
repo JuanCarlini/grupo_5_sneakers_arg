@@ -14,11 +14,12 @@
             <input type="text" name="color" placeholder="Colores" value="<%= producto.color%>">
             <input type="number" name="price" placeholder="Precio" value="<%= producto.price%>">
             <input type="submit" value="Enviar">
-            <form action="/admin/products" method="POST" class ="form-box-admin">
+            </form>
+
+            <form action="/admin/borrar/<%=producto.id %>" method="POST" class ="form-box-admin">
                 <input type="submit" value="ELIMINAR PRODUCTO">
             </form>
-           
-        </form>
+                
     </main>
     <%- include('./partials/footer') %>
 </body>
