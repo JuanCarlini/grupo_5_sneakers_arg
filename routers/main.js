@@ -2,9 +2,6 @@
 
 const express = require ('express');
 const router = express.Router();
-const path = require("path");
-const multer = require("multer");
-
 
 
 // Controllers:
@@ -36,7 +33,7 @@ router.post("/register", uploadImage.single("avatar"), validations, usuariosCont
 router.get('/carrito',controlador.carrito);
 
 //Detalle del producto
-router.get("/detail", controller.detail); 
+router.get("/detalle-del-producto/id:", controller.detail); 
 
 // Todos los productos
 router.get('/products',controller.index);

@@ -9,7 +9,7 @@
             <div class="products">
                 <% for (i = 0 ; i < products.length ; i++) { %>
                     <article>
-                        <a href="/products/<%= products[i].id %>" class="text-product">
+                        <a href="/detalle-del-producto/id:/<%= products[i].id %>" class="text-product">
                             <img src="/images/products/<%= products[i].image %>" alt="<%= products[i].model %>" class="product_img">
                             <div class="main-article">
                                 <h4 class="description"><%= products[i].model %></h4>
