@@ -2,11 +2,6 @@ const fs = require('fs');
 const path = require('path');
 const db = require('../database/models/index');
 
-const productsFilePath = path.join(__dirname, '../data/products.json');
-
-const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-const dotToComma = n => n.toString().replace(/\./, ",");
-
 
 const controller = {
 	// Root - Show all products
@@ -22,7 +17,7 @@ const controller = {
 		let id = req.params.id;
         db.Producto.findByPk(id)
             .then(producto => {
-                return res.redirect("/detalle-del-producto", { producto: producto.dataValues })
+                return res.render("detalle-del-producto", { producto: producto.dataValues })
             })
 	},
 };
