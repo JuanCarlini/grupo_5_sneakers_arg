@@ -1,0 +1,36 @@
+{
+  "name": "proyecto-integrador",
+  "version": "1.0.0",
+  "description": "Repositorio del proyecto integrador",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JuanCarlini/grupo_5_sneakers_arg.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JuanCarlini/grupo_5_sneakers_arg/issues"
+  },
+  "homepage": "https://github.com/JuanCarlini/grupo_5_sneakers_arg#readme",
+  "dependencies": {
+    "@splidejs/splide": "^2.4.21",
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.5",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "express-validator": "^6.13.0",
+    "method-override": "^3.0.0",
+    "multer": "^1.4.3",
+    "mysql2": "^2.3.2",
+    "nodemon": "^2.0.14",
+    "sequelize": "5.21",
+    "sequelize-cli": "^6.2.0",
+    "session": "^0.1.0",
+    "validator": "^13.7.0"
+  }
+}

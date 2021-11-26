@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head') %>
+<body class="formulario">
+    
+    <%- include('./partials/header') %>
+    <main class="formulario-registro">
+            <form action="/register" method="POST" class ="form-box" enctype="multipart/form-data">
+            <h1 class="title">Welcome ;)</h3>
+            <input type="text" name="name" placeholder="Nombre" value="<%= locals.oldData ? oldData.name : null%>">
+            
+            <% if (locals.errors && errors.name) { %>
+                <div class="text-danger">
+                   <%= errors.name.msg %>
+              </div>
+                <% } %>
+            
+            <input type="text" name="surname" placeholder="Apellido" value="<%= locals.oldData ? oldData.surname : null%>">
+            <% if (locals.errors && errors.surname) { %>
+                <div class="text-danger">
+                   <%= errors.surname.msg %>
+              </div>
+                <% } %>
+
+                <input type="text" name="email" placeholder="Email" value="<%= locals.oldData ? oldData.email : null%>">
+                <% if (locals.errors && errors.email) { %>
+                    <div class="text-danger">
+                       <%= errors.email.msg %>
+                  </div>
+                    <% } %>
+
+            <input type="text" name="user" placeholder="Nombre de usuario" value="<%= locals.oldData ? oldData.user : null%>">
+            <% if (locals.errors && errors.user) { %>
+                <div class="text-danger">
+                   <%= errors.user.msg %>
+              </div>
+                <% } %>
+
+            <input type="password" name="pass" placeholder="Contraseña" value="<%= locals.oldData ? oldData.pass : null%>">
+            <% if (locals.errors && errors.pass) { %>
+                <div class="text-danger">
+                   <%= errors.pass.msg %>
+              </div>
+                <% } %>
+
+            <label><b>Imagen de perfil:</b></label>
+            <input class="form-control" type="file" name="avatar"> 
+            <% if (locals.errors && errors.avatar) { %>
+                <div class="text-danger">
+                   <%= errors.avatar.msg %>
+              </div>
+                <% } %>
+                
+            <input type="submit" value="Enviar">
+            
+                  
+                </form>
+            </main>
+    <%- include('./partials/footer') %>
+    
+</body>
+</html>

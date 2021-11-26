@@ -1,0 +1,38 @@
+[
+ {
+  "id": 1,
+  "brand": "Nike",
+  "model": "FlyEase",
+  "description": "Para corredoras que valoran cada minuto y la velocidad es primordial, las nuevas Zapatillas Nike Air Max son perfectas porque combinan una estética minimalista clásica, el estilo urbano de la marca junto con su tecnología Air max que te brinda mejores y amortiguadas pisadas que te darán estabilidad y confianza a la hora de correr en cualquier lugar donde vayas.",
+  "type": "urban",
+  "size": 10,
+  "color": "Negro",
+  "image": "product-1632827693229.jpg",
+  "price": "45000",
+  "name": "FlyEase"
+ },
+ {
+  "id": 2,
+  "brand": "Nike",
+  "model": "Air Max",
+  "description": "Nuevas Nike Air Max",
+  "type": "urban",
+  "size": 10,
+  "color": "Negro",
+  "image": "product-1632767774536.jpg",
+  "price": "45000",
+  "name": "Air Max"
+ },
+ {
+  "id": 3,
+  "brand": "Nike",
+  "model": "Air Force",
+  "description": "Para corredoras que valoran cada minuto y la velocidad es primordial, las nuevas Zapatillas Nike Air Max son perfectas porque combinan una estética minimalista clásica, el estilo urbano de la marca junto con su tecnología Air max que te brinda mejores y amortiguadas pisadas que te darán estabilidad y confianza a la hora de correr en cualquier lugar donde vayas.",
+  "type": "urban",
+  "size": 10,
+  "color": "Beige",
+  "image": "nike-air-force-1.jpg",
+  "price": "28800",
+  "name": "Air Force"
+ }
+]

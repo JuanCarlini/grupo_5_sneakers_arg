@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head') %>
+</head>
+<body class="grid-container">
+
+    <%- include('./partials/header') %>
+
+    <main>
+
+        <div class="productos-seleccionados-main">
+
+            <section class="compra">
+                <article class="producto-individual-carrito">             
+                    <img src="/images/products/nike-flyEase.jpg" alt="Nike FlyEase" class="product_img">
+                    <div class="product">
+                     <h4 class="description">Nike FlyEase</h4>
+                      <p class="price">$45.000</p>
+                    </div>
+                </article>
+                <article class="precio-general-carrito">
+                   <article class="resutado-compra">
+                        <div class="precio-total">
+                            <div class="texto-carrito">
+                                <h3>RESUMEN</h3>
+                                <p>$45.000</p>
+                            </div>
+                            <div class="texto-carrito">
+                                <h3>SUBTOTAL</h3>
+                                <p>$500</p>
+                            </div>
+                            <div class="texto-carrito">
+                                <h3>TOTAL</h3>
+                                <p>$45.500</p>
+                            </div>
+                        </div>
+                        <form action="/" method="POST">
+                            <input type="submit" value="Enviar" class="boton-compra">
+                        </form>
+                    </article>
+                </article>
+            </section>
+            <section class="last-visit">
+                <h3>Basado en tu última visita</h3>
+                <div class="products">
+                    <article>
+                        <img src="images/products/nike-air-jordan.jpg" alt="Nike Air Jordan" class="product_img">
+                        <div class="main-article">
+                            <p class="price">$25.000</p>
+                            <p class="discount">40% off</p>
+                            <h4 class="description">Nike Air Jordan</h4>
+                        </div>
+                    </article>
+                    <article>
+                        <img src="images/products/nike-air-force-1.jpg" alt="Nike Air Force 1" class="product_img">
+                        <div class="main-article">
+                            <p class="price">$25.000</p>
+                            <p class="discount">20% off</p>
+                            <h4 class="description">Nike Air Force 1</h4>
+                        </div>
+                    </article>
+                    <article>
+                        <img src="images/products/nike-air-max-270.jpg" alt="Nike Air Max 270" class="product_img">
+                        <div class="main-article">
+                            <p class="price">$25.000</p>
+                            <p class="discount">10% off</p>
+                            <h4 class="description">Nike Air Max 270</h4>
+                        </div>
+                    </article>
+                    <article>
+                        <img src="images/products/nike-blazer.jpg" alt="Nike Blazer" class="product_img">
+                        <div class="main-article">
+                            <p class="price">$25.000</p>
+                            <p class="discount">5% off</p>
+                            <h4 class="description">Nike Blazer</h4>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </main> 
+
+        
+    
+    
+        <%- include('./partials/footer') %>
+    
+
+</body>
+</html>

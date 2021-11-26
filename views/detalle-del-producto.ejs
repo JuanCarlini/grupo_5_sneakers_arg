@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head') %> 
+<body>
+    <%- include('./partials/header') %> 
+    <main>
+        <section>
+            <h3>Todos los productos</h3>
+            <div class="products">
+                
+                    <article>
+                        <a href="/detalle-del-producto/<%= products.id %>" class="text-product">
+                            <img src="/images/products/<%= products.image %>" alt="<%= products.model %>" class="product_img">
+                            <div class="main-article">
+                                <h4 class="description"><%= products.model %></h4>
+                                <p class="price">$<%= products.price %></p>
+                            </div>
+                        </a>
+                    </article>
+                
+            </div>
+        </section>
+    </main>
+    <%- include('./partials/footer') %>
+</body>
+</html>

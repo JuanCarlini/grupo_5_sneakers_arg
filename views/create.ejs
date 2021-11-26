@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head') %> 
+<body>
+    <%- include('./partials/header') %>
+    <main>
+        <% if (typeof errors != "undefined"){ %>
+            <p style="color: red">ERROR</p>
+            <ul>
+                <% for (let i = 0; i < errors.length; i++){ %>
+                    <li>
+                        <%= errors(i).msg %>
+                    </li>
+                <% } %>
+            </ul>
+        <% } %>
+        <form action="/admin/create" method="POST" class ="form-box-admin" enctype="multipart/form-data">
+            <h1 class="title">Crear Producto</h3>
+            <input type="text" name="name" placeholder="Nombre">
+            <input type="text" name="description" placeholder="Descripción">
+            <label>Elija una o más imágenes</label>
+            <input type="file" name="productimage" placeholder="Imagen">
+            <input type="text" name="category" placeholder="Categoría">
+            <input type="text" name="color" placeholder="Colores">
+            <input type="number" name="price" placeholder="Precio">
+            <input type="submit" value="Enviar">
+        </form>
+    </main>
+    <%- include('./partials/footer') %>
+</body>
+</html>
