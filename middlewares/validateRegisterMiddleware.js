@@ -28,6 +28,4 @@ const validations =  [
 
    module.exports = validations;
 
-   let hola =1
-
-   let hola= 2
+  
