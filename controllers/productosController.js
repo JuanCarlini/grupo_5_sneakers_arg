@@ -17,7 +17,7 @@ const controller = {
 		let id = req.params.id;
         db.Producto.findByPk(id)
             .then(producto => {
-                return res.render("detalle-del-producto", { producto: producto.dataValues })
+                return res.render("detalle-del-producto", { products: producto })
             })
 	},
 };

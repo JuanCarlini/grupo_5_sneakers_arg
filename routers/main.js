@@ -33,7 +33,7 @@ router.post("/register", uploadImage.single("avatar"), validations, usuariosCont
 router.get('/carrito',controlador.carrito);
 
 //Detalle del producto
-router.get("/detalle-del-producto/id:", controller.detail); 
+router.get("/detalle-del-producto/:id", controller.detail); 
 
 // Todos los productos
 router.get('/products',controller.index);
