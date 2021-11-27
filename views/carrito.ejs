@@ -44,38 +44,17 @@
             <section class="last-visit">
                 <h3>Basado en tu última visita</h3>
                 <div class="products">
-                    <article>
-                        <img src="images/products/nike-air-jordan.jpg" alt="Nike Air Jordan" class="product_img">
-                        <div class="main-article">
-                            <p class="price">$25.000</p>
-                            <p class="discount">40% off</p>
-                            <h4 class="description">Nike Air Jordan</h4>
-                        </div>
-                    </article>
-                    <article>
-                        <img src="images/products/nike-air-force-1.jpg" alt="Nike Air Force 1" class="product_img">
-                        <div class="main-article">
-                            <p class="price">$25.000</p>
-                            <p class="discount">20% off</p>
-                            <h4 class="description">Nike Air Force 1</h4>
-                        </div>
-                    </article>
-                    <article>
-                        <img src="images/products/nike-air-max-270.jpg" alt="Nike Air Max 270" class="product_img">
-                        <div class="main-article">
-                            <p class="price">$25.000</p>
-                            <p class="discount">10% off</p>
-                            <h4 class="description">Nike Air Max 270</h4>
-                        </div>
-                    </article>
-                    <article>
-                        <img src="images/products/nike-blazer.jpg" alt="Nike Blazer" class="product_img">
-                        <div class="main-article">
-                            <p class="price">$25.000</p>
-                            <p class="discount">5% off</p>
-                            <h4 class="description">Nike Blazer</h4>
-                        </div>
-                    </article>
+                    <% for (i = 0 ; i < 4 ; i++) { %>
+                        <article>
+                            <a href="/detalle-del-producto/<%= products[i].id %>" class="text-product"> 
+                                <img src="/images/products/<%= products[i].image %>" alt="<%= products[i].model %>" class="product_img">
+                                <div class="main-article">
+                                    <h4 class="description"><%= products[i].name %></h4>
+                                    <p class="price">$<%= products[i].price %></p>
+                                </div>
+                            </a>
+                        </article>
+                    <% } %>
                 </div>
             </section>
         </div>

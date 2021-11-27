@@ -99,11 +99,10 @@ const controlador ={
     },
     
         carrito: (req,res) =>{
-        let idProduct = parseInt(req.params.id);
-		let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-		let product = products.filter(i => i.id === idProduct);
-		res.render('carrito', {product: product,
-			toThousand: toThousand, dotToComma: dotToComma});
+            db.Producto.findAll()
+            .then(products=>{
+                return res.render("carrito", {products})
+            })
     },
     edit: (req,res) =>{
         return res.render("edit")
