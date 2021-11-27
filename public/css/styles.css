@@ -393,22 +393,86 @@ article div.main-article{
 
 /*DETALLE DEL PRODUCTO*/
 
-.texto-producto{
-    border: 2px solid gray;
-    background-color: #fff;
-}
-.producto-individual-carrito{
-    height: 250px;
-    width: 250px;
-}
-
-.contiene{
-    color: none;
-}
-
-.compra{
+.flex-box{
     display: flex;
-    justify-content: space-around
+    width: 1000px;
+    margin: 20px auto;
+}
+
+.left{
+    width: 50%;
+}
+
+.img{
+    width: 250px;
+    height: 250px;
+}
+
+.img img{
+    width: inherit;
+}
+
+.pname{
+    font-size: 22px;
+    font-weight: 600;
+    margin-top: 50px;
+}
+
+.price{
+    font-size: 20px;
+    font-weight: 500;
+    margin: 20px 0
+}
+
+.quantity p{
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.quantity input{
+    width: 40px;
+    font-size: 17px;
+    font-weight: normal;
+    text-align: center;
+    margin-left: 10px;
+}
+
+.description{
+    font-size: 20px;
+    font-weight: 500;
+    margin: 20px 0
+}
+
+.btn-box{
+    display: flex;
+    margin: 20px 0;
+}
+
+.btn-box button{
+   font-size: 18px;
+   padding: 8px 25px;
+   border: none;
+   outline: none;
+   border-radius: 6px;
+   cursor: pointer;
+   color: white
+}
+
+.cart-btn{
+    background-color: #ff5e00;
+    margin-right: 20px;
+}
+
+.buy-btn{
+    background-color: #00aeff;
+}
+
+.cart-btn:hover{
+    background-color: #ff3c00;
+}
+
+.buy-btn:hover{
+    background-color: #0066ff;
 }
 
 /*ADMIN*/

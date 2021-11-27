@@ -8,7 +8,7 @@ const controller = {
 	index: (req, res) => {
 		db.Producto.findAll()
             .then(products => {
-                return res.render("produts", { products })
+                return res.render("products", { products })
             })
 	},
 
