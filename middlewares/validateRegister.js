@@ -2,7 +2,7 @@ const { body } = require('express-validator');
 const path = require('path');
 
 
-const validations =  [
+const validationsRegister =  [
     body ('name').notEmpty().withMessage("Nombre no puede estar vacío.").bail().isLength({ min: 2  })
     .withMessage("Tu nombre es demaciado corto." ),
 
@@ -11,7 +11,7 @@ const validations =  [
 
     body ('user').notEmpty().withMessage("Nombre de usuario no puede estar vacío."),
 
-    body ('pass').notEmpty().withMessage("Contraseña no puede estar vacío").bail().isLength({ min: 8  })
+    body ('pass').notEmpty().withMessage("Contraseña no puede estar vacío.").bail().isLength({ min: 8  })
     .withMessage("Tu contraseña tiene que tener 8 caracteres como mínimo." ),
 
     body ('email').notEmpty().withMessage("Email no puede estar vacío.").bail().isEmail()
@@ -20,7 +20,7 @@ const validations =  [
     body ('avatar').custom((value, { req })=>{
 
         let file = req.file;
-        let extensiones = ['JPG', 'PNG', 'GIF', 'JPEG'];
+        let extensiones = ['.jpg', '.png', '.gif', '.jpeg'];
           
         if (!file) {
             throw new Error('Tenés que subir una imagen.');
@@ -36,6 +36,6 @@ const validations =  [
         }),
       ]
 
-   module.exports = validations;
+   module.exports = validationsRegister;
 
   

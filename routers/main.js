@@ -13,7 +13,9 @@ const controller = require("../controllers/productosController")
 // Middleweres:
 
 const uploadImage = require("../middlewares/profileImages");
-const validations = require('../middlewares/validateRegisterMiddleware');
+const validationsRegister = require('../middlewares/validateRegister');
+const validationsLogin = require('../middlewares/ValidateLogin.js');
+
 
 
 // Routes:
@@ -23,11 +25,11 @@ router.get('/', controlador.home);
 
 // Login
 router.get('/log-in',controlador.login);
-router.post("/user/login" ,controlador.processLogin)
+router.post("/log-in", validationsLogin, usuariosController.login)
 
 //Register
 router.get('/register', controlador.register); 
-router.post("/register", uploadImage.single("avatar"), validations, usuariosController.crear)
+router.post("/register", uploadImage.single("avatar"), validationsRegister, usuariosController.register)
 
 //Carrito
 router.get('/carrito',controlador.carrito);

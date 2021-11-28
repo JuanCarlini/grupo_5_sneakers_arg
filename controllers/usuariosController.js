@@ -4,7 +4,7 @@ const { validationResult } = require('express-validator');
 
 const usuariosController = {
 
-    crear: function (req, res) { 
+    register: function (req, res) { 
         const resultValidation = validationResult(req)
         if (resultValidation.errors.length > 0) {
             return res.render('register', {
@@ -21,7 +21,7 @@ const usuariosController = {
                 res.render('register', {
                     errors: {
                         email: {
-                            msg: 'Este Email ya esta registrado',
+                            msg: 'Este Email ya esta registrado.',
                         },
                     },
                     oldData: req.body
@@ -39,8 +39,18 @@ const usuariosController = {
             }
         });
 
-    }
+    },
 
+    login: function (req, res) { 
+        const resultValidation = validationResult(req)
+        if (resultValidation.errors.length > 0) {
+            return res.render('log-in', {
+                errors: resultValidation.mapped(),
+                oldData: req.body
+            })
+        } 
+
+    }
 }
 
 
