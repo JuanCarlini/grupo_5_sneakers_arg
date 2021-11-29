@@ -46,10 +46,9 @@ const usuariosController = {
         if (resultValidation.errors.length > 0) {
             return res.render('log-in', {
                 errors: resultValidation.mapped(),
-                oldData: req.body
+                oldData: req.body // No llegan los datos del input
             })
-        } 
-
+        }        
     }
 }
 

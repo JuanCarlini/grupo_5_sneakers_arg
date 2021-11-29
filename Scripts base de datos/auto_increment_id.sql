@@ -1,0 +1,2 @@
+ALTER TABLE `productos` ADD INDEX(`id`);
+ALTER TABLE `productos` CHANGE `id` `id` INT(11) NOT NULL AUTO_INCREMENT;
