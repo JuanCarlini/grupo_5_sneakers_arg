@@ -8,6 +8,7 @@
             <h1 class="title">Editar Producto</h3>
             <br>    
                 <input type="text" name="name" placeholder="Nombre" value="<%= producto.name%>">
+                <div class="<%= locals.oldData ? oldData.name : null%>"></div>
                 <% if (locals.errors && errors.name) { %>
                     <div class="text-danger">
                        <%= errors.name.msg %>
@@ -15,14 +16,10 @@
                     <% } %>
 
             <input type="text" name="description" placeholder="Descripción" value="<%= producto.description%>">
+            
             <label>Elija una o más imágenes</label>
             
             <input type="file" name="productimage" placeholder="Imagen" value="<%= producto.productimage%>">
-            <% if (locals.errors && errors.productimage) { %>
-                <div class="text-danger">
-                   <%= errors.productimage.msg %>
-              </div>
-                <% } %>
             <input type="text" name="category" placeholder="Categoría" value="<%= producto.category%>">
             <input type="text" name="color" placeholder="Colores" value="<%= producto.color%>">
             <input type="number" name="price" placeholder="Precio" value="<%= producto.price%>">

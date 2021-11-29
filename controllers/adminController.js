@@ -49,14 +49,6 @@ const adminController = {
     },
 
     edit: (req, res) => {
-        let id = req.params.id;
-        db.Producto.findByPk(id).then((producto) => {
-            console.log(producto.dataValues)
-            res.render("edit", { producto: producto.dataValues })
-
-        });
-    },
-    update: (req, res) => {
         const resultValidation = validationResult(req)
         if (resultValidation.errors.length > 0) {
             return res.render('edit', {
@@ -64,6 +56,15 @@ const adminController = {
                 oldData: req.body
             })
         } else {
+        let id = req.params.id;
+        db.Producto.findByPk(id).then((producto) => {
+            console.log(producto.dataValues)
+            res.render("edit", { producto: producto.dataValues })
+
+        });
+    }
+    },
+    update: (req, res) => {
         let id = req.params.id
         db.Producto.update(
             {
@@ -86,7 +87,7 @@ const adminController = {
             })
             .catch((error) => res.send(error));
 
-        }
+        
     },
 
     delete: (req, res) => {
