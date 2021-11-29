@@ -1,6 +1,13 @@
 // Db:
 const db = require('../database/models/index');
 
+// Requires:
+
+const { validationResult } = require('express-validator');
+
+
+// Controller:
+
 
 const adminController = {
 
@@ -19,18 +26,26 @@ const adminController = {
 
     },
     crear: function (req, res) {
-        db.Producto.create({
+        const resultValidation = validationResult(req)
+        if (resultValidation.errors.length > 0) {
+            return res.render('create', {
+                errors: resultValidation.mapped(),
+                oldData: req.body
+            })
+        } else {
+            db.Producto.create({
 
-            name: req.body.name,
-            description: req.body.description,
-            image: req.file.filename,
-            category: req.body.category,
-            color: req.body.color,
-            price: req.body.price
+                name: req.body.name,
+                description: req.body.description,
+                image: req.file.filename,
+                category: req.body.category,
+                color: req.body.color,
+                price: req.body.price
 
-        }).then(function () {
-            res.redirect("/admin/create")
-        })
+            }).then(function () {
+                res.redirect("/admin/create")
+            })
+        }
     },
 
     edit: (req, res) => {
@@ -42,8 +57,14 @@ const adminController = {
         });
     },
     update: (req, res) => {
+        const resultValidation = validationResult(req)
+        if (resultValidation.errors.length > 0) {
+            return res.render('edit', {
+                errors: resultValidation.mapped(),
+                oldData: req.body
+            })
+        } else {
         let id = req.params.id
-        console.log("Valor del id", id)
         db.Producto.update(
             {
                 name: req.body.name,
@@ -65,7 +86,7 @@ const adminController = {
             })
             .catch((error) => res.send(error));
 
-
+        }
     },
 
     delete: (req, res) => {
@@ -74,7 +95,7 @@ const adminController = {
                 id: req.params.id
             }
         })
-        .then(res.redirect("/products"))
+            .then(res.redirect("/products"))
     }
 
 

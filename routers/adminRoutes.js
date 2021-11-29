@@ -5,6 +5,11 @@ const adminController = require("../controllers/adminController")
 const path = require("path");
 const multer = require("multer");
 
+// Middlewares:
+
+const validationsCreate = require("../middlewares/ValidateCreateProducts")
+const validationsUpdate = require("../middlewares/ValidateUpdateProducts")
+
 // Multer Upload products images:
 
 const storage = multer.diskStorage({
@@ -27,12 +32,12 @@ router.get('/',adminController.admin);
 
 // Create:
 router.get("/create", adminController.create);
-router.post("/create", upload.single("productimage"), adminController.crear);
+router.post("/create", upload.single("productimage"), validationsCreate, adminController.crear);
 
 
 // Update:
 router.get("/edit/:id", adminController.edit);
-router.put("/products/update/:id", upload.single("productimage") ,adminController.update);  
+router.put("/products/update/:id", upload.single("productimage"), validationsUpdate, adminController.update);  
 
 // Delete:
 router.post("/borrar/:id", adminController.delete)

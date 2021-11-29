@@ -5,7 +5,7 @@
     <%- include('./partials/header') %>
     <main>
         <% if (typeof errors != "undefined"){ %>
-            <p style="color: red">ERROR</p>
+           
             <ul>
                 <% for (let i = 0; i < errors.length; i++){ %>
                     <li>
@@ -16,10 +16,33 @@
         <% } %>
         <form action="/admin/create" method="POST" class ="form-box-admin" enctype="multipart/form-data">
             <h1 class="title">Crear Producto</h3>
-            <input type="text" name="name" placeholder="Nombre">
-            <textarea name="description" placeholder="Descripción"></textarea>
+            <br>
+            <input type="text" name="name" placeholder="Nombre"value="<%= locals.oldData ? oldData.name : null%>">
+            <% if (locals.errors && errors.name) { %>
+                <div class="text-danger">
+                   <%= errors.name.msg %>
+              </div>
+                <% } %>
+
+            <textarea name="description" placeholder="Descripción"value="<%= locals.oldData ? oldData.description : null%>"></textarea>
+            <% if (locals.errors && errors.name) { %>
+                <div class="text-danger">
+                   <%= errors.description.msg %>
+              </div>
+                <% } %>
+
+            <br>
             <label>Elija una o más imágenes</label>
+            <br>           
             <input type="file" name="productimage" placeholder="Imagen">
+
+            <br>
+    
+            <% if (locals.errors && errors.productimage) { %>
+                <div class="text-danger">
+                   <%= errors.productimage.msg %>
+              </div>
+                <% } %>
             <input type="text" name="category" placeholder="Categoría">
             <input type="text" name="color" placeholder="Colores">
             <input type="number" name="price" placeholder="Precio">

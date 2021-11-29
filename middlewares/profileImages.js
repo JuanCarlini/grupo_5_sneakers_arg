@@ -1,6 +1,8 @@
+// Requires:
 const path = require("path");
 const multer = require("multer");
 
+// Multer:
 
 const storage = multer.diskStorage({
     destination: function(req, file, cb) {

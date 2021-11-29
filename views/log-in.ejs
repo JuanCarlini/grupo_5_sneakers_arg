@@ -15,7 +15,13 @@
               </div>
                 <% } %>
 
-            <input type="password" name="pass" placeholder="Contraseña">
+            <input type="password" name="pass" placeholder="Contraseña" value="<%= locals.oldData ? oldData.pass : null%>">
+
+            <% if (locals.errors && errors.pass) { %>
+                <div class="text-danger">
+                   <%= errors.pass.msg %>
+              </div>
+                <% } %>
             <input type="submit" value="Enviar">
         </form>
     </main>

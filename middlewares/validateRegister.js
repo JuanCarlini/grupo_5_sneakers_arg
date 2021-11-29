@@ -1,6 +1,8 @@
+// Reequires:
 const { body } = require('express-validator');
 const path = require('path');
 
+// Validations:
 
 const validationsRegister =  [
     body ('name').notEmpty().withMessage("Nombre no puede estar vacío.").bail().isLength({ min: 2  })
