@@ -13,14 +13,15 @@
 
             <div class="right">
                 <div class="pname"><%= products.name %></div>
+                <div class="description-p">
+                    <%= products.description %>
+                </div>
                 <div class="price">$<%= products.price %></div>
                 <div class="quantity">
                     <p>Cantidad: </p>
                     <input type="number" min="1" max="5" value="1">
                 </div>
-                <p class="description">
-                    <%= products.description %>
-                </p>
+                
                 <div class="btn-box">
                     <button class="cart-btn">Añadir al carrito</button>
                     <button class="buy-btn">Comprar ahora</button>

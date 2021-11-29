@@ -98,17 +98,12 @@ const controlador ={
         }
     },
     
-        carrito: (req,res) =>{
-            db.Producto.findAll()
-            .then(products=>{
-                return res.render("carrito", {products})
-            })
+    carrito: (req,res) =>{
+        return res.render("carrito")
     },
     edit: (req,res) =>{
         return res.render("edit")
-    
-    
-}
+    }
 };
 
 module.exports= controlador;

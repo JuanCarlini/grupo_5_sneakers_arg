@@ -8,55 +8,37 @@
     <%- include('./partials/header') %>
 
     <main>
-
-        <div class="productos-seleccionados-main">
-
-            <section class="compra">
-                <article class="producto-individual-carrito">             
-                    <img src="/images/products/nike-flyEase.jpg" alt="Nike FlyEase" class="product_img">
-                    <div class="product">
-                     <h4 class="description">Nike FlyEase</h4>
-                      <p class="price">$45.000</p>
-                    </div>
-                </article>
-                <article class="precio-general-carrito">
-                   <article class="resutado-compra">
-                        <div class="precio-total">
-                            <div class="texto-carrito">
-                                <h3>RESUMEN</h3>
-                                <p>$45.000</p>
-                            </div>
-                            <div class="texto-carrito">
-                                <h3>SUBTOTAL</h3>
-                                <p>$500</p>
-                            </div>
-                            <div class="texto-carrito">
-                                <h3>TOTAL</h3>
-                                <p>$45.500</p>
-                            </div>
-                        </div>
-                        <form action="/" method="POST">
-                            <input type="submit" value="Enviar" class="boton-compra">
-                        </form>
-                    </article>
-                </article>
-            </section>
-            <section class="last-visit">
-                <h3>Basado en tu última visita</h3>
-                <div class="products">
-                    <% for (i = 0 ; i < 4 ; i++) { %>
-                        <article>
-                            <a href="/detalle-del-producto/<%= products[i].id %>" class="text-product"> 
-                                <img src="/images/products/<%= products[i].image %>" alt="<%= products[i].model %>" class="product_img">
-                                <div class="main-article">
-                                    <h4 class="description"><%= products[i].name %></h4>
-                                    <p class="price">$<%= products[i].price %></p>
-                                </div>
-                            </a>
-                        </article>
-                    <% } %>
+        <h2 style="margin: 20px 0">Carrito</h2>
+        <div class="flex-box">
+            <div class="left">
+                <div class="img">
+                    <img src="/images/products/nike-air-max.jpg" alt="Nike Air Max">
                 </div>
-            </section>
+            </div>
+
+            <div class="right">
+                <div class="pname">Nike Air Max</div>
+                <div class="description-p">
+                    color: negro  talle: 42
+                </div>
+                <div class="price">$25.000</div>
+            </div>
+            <div class="left">
+                <div class="img">
+                    <img src="/images/products/nike-air-max.jpg" alt="Nike Air Max">
+                </div>
+            </div>
+
+            <div class="right">
+                <div class="pname">Nike Air Max</div>
+                <div class="description-p">
+                    color: negro  talle: 42
+                </div>
+                <div class="price">$25.000</div>
+                <div class="btn-box">
+                    <button class="buy-btn">Comprar ahora</button>
+                </div>
+            </div>
         </div>
     </main> 
 
