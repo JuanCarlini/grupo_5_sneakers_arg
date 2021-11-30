@@ -56,7 +56,12 @@ const usuariosController = {
     users: function (req,res) {
         db.Usuario.findAll()
         .then(usuarios =>{
-            return res.json(usuarios)
+            return res.status(200).json({
+                count: usuarios.length,
+                users: usuarios,
+                status: 200,
+
+            })
         })
     }
 }
