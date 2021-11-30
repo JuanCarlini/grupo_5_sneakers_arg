@@ -49,6 +49,15 @@ const usuariosController = {
                 oldData: req.body // No llegan los datos del input
             })
         }        
+    },
+
+    // Api Usuarios:
+
+    users: function (req,res) {
+        db.Usuario.findAll()
+        .then(usuarios =>{
+            return res.json(usuarios)
+        })
     }
 }
 

@@ -6,7 +6,8 @@ const methodOverride = require("method-override");
 
 const mainRoutes = require('./routers/main')
 const adminRoute = require('./routers/adminRoutes')
-const profileImages = require("./middlewares/profileImages");
+const usuariosController = require("./controllers/usuariosController");
+
 
 
 
@@ -22,6 +23,7 @@ app.use(session({
   saveUninitialized: false
 }))
 const { use } = require("./routers/main");
+
 
 app.use(express.static('./public')); 
 
@@ -47,6 +49,12 @@ app.use('/register', mainRoutes)
 
 /* app.use('/productos', productosRouter) */
 
+// API
+
+app.use('/users', mainRoutes)
+
+// Servidor:
+
 app.listen(3000, () =>{
-    console.log("Servidor corriendo en 3000");
+    console.log("Servidor corriendo en el puerto 3000");
 })

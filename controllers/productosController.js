@@ -4,7 +4,7 @@ const db = require('../database/models/index');
 
 
 const controller = {
-	// Root - Show all products
+	// Mostrar todos los productos:
 	index: (req, res) => {
 		db.Producto.findAll()
             .then(products => {
@@ -12,7 +12,7 @@ const controller = {
             })
 	},
 
-	// Detail - Detail from one product    
+	// Detalle de un producto en particular:  
 	detail: (req, res) => {
 		let id = req.params.id;
         db.Producto.findByPk(id)

@@ -16,7 +16,9 @@ const uploadImage = require("../middlewares/profileImages");
 const validationsRegister = require('../middlewares/validateRegister');
 const validationsLogin = require('../middlewares/ValidateLogin.js');
 
+// API:
 
+router.get('/users', usuariosController.users)
 
 // Routes:
 
