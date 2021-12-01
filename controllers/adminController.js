@@ -62,7 +62,8 @@ const adminController = {
     update: (req, res) => {
         const resultValidation = validationResult(req)
         if (resultValidation.errors.length > 0) {
-            return res.render('edit', {
+            return res.render('edit', { 
+                producto: req.body,
                 errors: resultValidation.mapped(),
                 oldData: req.body
             })

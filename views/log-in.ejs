@@ -5,7 +5,7 @@
     
     <%- include('./partials/header') %> 
     <main class="main formulario-registro">
-        <form action="/log-in" method="POST" class ="form-box" enctype="multipart/form-data">
+        <form action="/log-in" method="POST" class ="form-box" >
             <h1 class="title">Welcome back :)</h3>
             <input type="text" name="email" placeholder="Email" value="<%= locals.oldData ? oldData.email : null%>">
 

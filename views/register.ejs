@@ -5,9 +5,15 @@
     
     <%- include('./partials/header') %>
     <main class="formulario-registro">
-            <form action="/register" method="POST" class ="form-box" enctype="multipart/form-data">
+            <form action="/register" method="POST" class ="form-box register" enctype="multipart/form-data">
             <h1 class="title">Welcome ;)</h3>
             <input type="text" name="name" placeholder="Nombre" value="<%= locals.oldData ? oldData.name : null%>">
+
+            <!-- Validaciones del front-->
+            <script type="text/javascript">
+                validator.notEmpty()
+            </script>
+            <!---->
             
             <% if (locals.errors && errors.name) { %>
                 <div class="text-danger">

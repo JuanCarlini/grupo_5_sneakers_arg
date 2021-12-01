@@ -7,8 +7,7 @@
         <form action="/admin/products/update/<%= producto.id %>?_method=PUT" method="POST" class ="form-box-admin" enctype="multipart/form-data">
             <h1 class="title">Editar Producto</h3>
             <br>    
-                <input type="text" name="name" placeholder="Nombre">
-                <div class='"<%= producto.name%>" 'text-danger' : null  %> '><%= locals.oldData ? oldData.name : null%></div>
+                <input type="text" name="name" placeholder="Nombre" value="<%= producto.name%>">
                 <% if (locals.errors && errors.name) { %>
                     <div class="text-danger">
                        <%= errors.name.msg %>
