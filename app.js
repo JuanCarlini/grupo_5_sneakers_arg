@@ -12,6 +12,7 @@ const usuariosController = require("./controllers/usuariosController");
 
 
 
+
 const app = express();
 
 /* -- Middlewares --- */
@@ -23,6 +24,14 @@ app.use(session({
   saveUninitialized: false
 }))
 const { use } = require("./routers/main");
+
+// Session:
+
+app.use(session({
+  secret: "Es un secreto!",
+  resave: false,
+  saveUninitialized: false,
+}))
 
 
 app.use(express.static('./public')); 
@@ -48,6 +57,10 @@ app.use('/admin', adminRoute)
 app.use('/register', mainRoutes)
 
 /* app.use('/productos', productosRouter) */
+
+// Express Session:
+
+
 
 // API
 

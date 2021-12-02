@@ -1,6 +1,9 @@
+// Requires:
+
 const db = require('../database/models');
 const bcript = require('bcryptjs');
 const { validationResult } = require('express-validator');
+const bcryptjs = require('bcryptjs')
 
 const usuariosController = {
 
@@ -67,20 +70,18 @@ const usuariosController = {
       .then(Usuario => {
         let UsuarioALoguear = Usuario.find(i => i.email == req.body.email)
 
-        return res.send(UsuarioALoguear)
-
-        if (UsuarioALoguear) {
-          let passOk = bcryptjs.compareSync(
-            req.body.password,
-            UsuarioALoguear.password,
+        if (UsuarioALoguear) {  
+          let passOk = bcryptjs.compareSync( // No se hace la comparacion
+            req.body.pass,
+            UsuarioALoguear.pass,
           )
-          if (passOk) {
-            delete UsuarioALoguear.password
+          if (passOk) { 
             req.session.userLogged = UsuarioALoguear
+            return res.redirect('UserProfile')
 
           }
 
-          return res.render('login', {
+          return res.render('log-in', {
             errors: {
               email: {
                 msg: 'Las credenciales son incorrectas.',
@@ -89,7 +90,7 @@ const usuariosController = {
           })
         }
 
-        return res.render('login', {
+        return res.render('log-in', {
           errors: {
             email: {
               msg: 'Las credenciales son incorrectas.',
@@ -97,6 +98,10 @@ const usuariosController = {
           },
         })
       })
+  },
+
+  userProfile: (req, res) => {
+    return res.render('UserProfile')
   },
 
 
