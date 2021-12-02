@@ -60,7 +60,7 @@ const controlador ={
         } 
 
         User.create(userToCreate)
-        return res.render("home")
+        return res.redirect("home")
     },
         
 
