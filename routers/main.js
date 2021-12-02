@@ -26,12 +26,12 @@ router.get('/users', usuariosController.users)
 router.get('/', controlador.home);
 
 // Login
-router.get('/log-in',controlador.login);
-router.post("/log-in", validationsLogin, usuariosController.login)
+router.get('/log-in',usuariosController.login);
+router.post("/log-in", validationsLogin, usuariosController.loginProcess)
 
 //Register
-router.get('/register', controlador.register); 
-router.post("/register", uploadImage.single("avatar"), validationsRegister, usuariosController.register)
+router.get('/register', usuariosController.register); 
+router.post("/register", uploadImage.single("avatar"), validationsRegister, usuariosController.registerProcess)
 
 //Carrito
 router.get('/carrito',controlador.carrito);

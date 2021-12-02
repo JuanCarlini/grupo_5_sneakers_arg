@@ -4,66 +4,116 @@ const { validationResult } = require('express-validator');
 
 const usuariosController = {
 
-    register: function (req, res) { 
-        const resultValidation = validationResult(req)
-        if (resultValidation.errors.length > 0) {
-            return res.render('register', {
-                errors: resultValidation.mapped(),
-                oldData: req.body
-            })
-        } 
-        db.Usuario.findAll({
-            where: {
-                email: req.body.email
-            }
-        }).then(function (resultados) {
-            if (resultados.length > 0) {
-                res.render('register', {
-                    errors: {
-                        email: {
-                            msg: 'Este Email ya esta registrado.',
-                        },
-                    },
-                    oldData: req.body
-                },)
-            } else {
-                db.Usuario.create({
-                    name: req.body.name,
-                    surname: req.body.surname,
-                    email: req.body.email,
-                    user: req.body.user,
-                    pass: bcript.hashSync(req.body.pass, 10)
-                }).then(function () {
-                    res.redirect('/register')
-                });
-            }
-        });
+  // Register render/ Process:
 
-    },
+  register: (req, res) => {
+    return res.render('register')
+  },
 
-    login: function (req, res) { 
-        const resultValidation = validationResult(req)
-        if (resultValidation.errors.length > 0) {
-            return res.render('log-in', {
-                errors: resultValidation.mapped(),
-                oldData: req.body 
-            })
-        }        
-    },
-
-    // Api Usuarios:
-
-    users: function (req,res) {
-        db.Usuario.findAll()
-        .then(usuarios =>{
-            return res.status(200).json({
-                count: usuarios.length,
-                users: usuarios,
-                status: 200,
-
-            })
-        })
+  registerProcess: function (req, res) {
+    const resultValidation = validationResult(req)
+    if (resultValidation.errors.length > 0) {
+      return res.render('register', {
+        errors: resultValidation.mapped(),
+        oldData: req.body
+      })
     }
+    db.Usuario.findAll({
+      where: {
+        email: req.body.email
+      }
+    }).then(function (resultados) {
+      if (resultados.length > 0) {
+        res.render('register', {
+          errors: {
+            email: {
+              msg: 'Este Email ya esta registrado.',
+            },
+          },
+          oldData: req.body
+        })
+      } else {
+        db.Usuario.create({
+          name: req.body.name,
+          surname: req.body.surname,
+          email: req.body.email,
+          user: req.body.user,
+          pass: bcript.hashSync(req.body.pass, 10)
+        }).then(function () {
+          res.redirect('/log-in')
+        });
+      }
+    });
+
+  },
+
+  // Login render / Process:
+
+  login: (req, res) => {
+    return res.render('log-in')
+  },
+
+
+  loginProcess: function (req, res) {
+    const resultValidation = validationResult(req)
+    if (resultValidation.errors.length > 0) {
+      return res.render('log-in', {
+        errors: resultValidation.mapped(),
+        oldData: req.body
+      })
+    }
+
+    db.Usuario.findAll()
+      .then(Usuario => {
+        let UsuarioALoguear = Usuario.find(i => i.email == req.body.email)
+
+        return res.send(UsuarioALoguear)
+
+        if (UsuarioALoguear) {
+          let passOk = bcryptjs.compareSync(
+            req.body.password,
+            UsuarioALoguear.password,
+          )
+          if (passOk) {
+            delete UsuarioALoguear.password
+            req.session.userLogged = UsuarioALoguear
+
+          }
+
+          return res.render('login', {
+            errors: {
+              email: {
+                msg: 'Las credenciales son incorrectas.',
+              },
+            },
+          })
+        }
+
+        return res.render('login', {
+          errors: {
+            email: {
+              msg: 'Las credenciales son incorrectas.',
+            },
+          },
+        })
+      })
+  },
+
+
+
+  // Api Usuarios:
+
+  users: function (req, res) {
+    db.Usuario.findAll()
+      .then(usuarios => {
+        return res.status(200).json({
+          count: usuarios.length,
+          users: usuarios,
+          status: 200,
+
+        })
+      })
+  }
 }
 
 
