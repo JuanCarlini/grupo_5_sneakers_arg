@@ -8,8 +8,6 @@ window.addEventListener("load", function(){
         let errors = []
         
         let campoNombre = document.querySelector("input[name='name']");
-        console.log(campoNombre)
-
         if(campoNombre.value == ""){
             errors.push("El campo de nombre tiene que estar completo");
         } else if(campoNombre.value.length < 3){

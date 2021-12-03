@@ -1,25 +1,33 @@
-// Validaciones register:
+// Validaciones create:
 
 window.addEventListener("load", function(){
-    let formulario = document.querySelector("form.register");
+    let formulario = document.querySelector("form.create");
 
     formulario.addEventListener("submit", function(e){
-        e.preventDefault();
+        e.preventDefault(); 
         let errors = []
         
         let campoNombre = document.querySelector("input[name='name']");
-        console.log(campoNombre)
 
         if(campoNombre.value == ""){
             errors.push("El campo de nombre tiene que estar completo");
         } else if(campoNombre.value.length < 3){
             errors.push("El campo de nombre debe tener al menos 3 caracteres")
-       }
+        }
 
-       let campoDescripcion = document.querySelector("input[name='surname']");
+        let campoDescripcion = document.querySelector("textarea[name='description']");
 
         if(campoDescripcion.value == ""){
             errors.push("El campo de descripcion tiene que estar completo");
+        }
+
+        let campoImagen = document.querySelector("input[name='productimage']")
+        let extensionesPermitidas = /(http(s?):)|([/|.|\w|\s])*\.(?:jpg|gif|png|jpeg)/
+
+        if(campoImagen.value == ""){
+            errors.push("El campo de imagen tiene que estar completo")
+        }else if(!extensionesPermitidas.test(campoImagen.value)){
+            errors.push("Las extensiones permitidas son '.jpg', '.png', '.gif', '.jpeg'")
         }
 
         let campoCategoria = document.querySelector("input[name='category']");
@@ -39,7 +47,7 @@ window.addEventListener("load", function(){
         if(campoPrecio.value == ""){
             errors.push("El campo de precio tiene que estar completo")
         }
-     
+        
 
         if (errors.length > 0) {
             

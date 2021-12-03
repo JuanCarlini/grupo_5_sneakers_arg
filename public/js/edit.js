@@ -1,10 +1,10 @@
-// Validaciones register:
+// Validaciones edit:
 
 window.addEventListener("load", function(){
-    let formulario = document.querySelector("form.register");
+    let formulario = document.querySelector("form.edit");
 
     formulario.addEventListener("submit", function(e){
-        e.preventDefault();
+        e.preventDefault(); 
         let errors = []
         
         let campoNombre = document.querySelector("input[name='name']");
@@ -14,36 +14,40 @@ window.addEventListener("load", function(){
             errors.push("El campo de nombre tiene que estar completo");
         } else if(campoNombre.value.length < 3){
             errors.push("El campo de nombre debe tener al menos 3 caracteres")
-       }
-
-       let campoApellido = document.querySelector("input[name='surname']");
-
-        if(campoApellido.value == ""){
-            errors.push("El campo de apellido tiene que estar completo");
         }
 
-        let campoEmail = document.querySelector("input[name='email']");
-        let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/
+        let campoDescripcion = document.querySelector("textarea[name='description']");
 
-        if (!regexEmail.test(campoEmail.value)){
-            errors.push("Email inválido")   
+        if(campoDescripcion.value == ""){
+            errors.push("El campo de descripcion tiene que estar completo");
         }
 
-        let campoUsuario = document.querySelector("input[name='user']");
+        let campoImagen = document.querySelector("input[name='productimage']")
+        let extensionesPermitidas = /(http(s?):)|([/|.|\w|\s])*\.(?:jpg|gif|png|jpeg)/
 
-        if(campoUsuario.value == ""){
-            errors.push("El campo de usuario tiene que estar completo");
+        if(campoImagen.value == ""){
+            errors.push("El campo de imagen tiene que estar completo")
+        }else if(!extensionesPermitidas.test(campoImagen.value)){
+            errors.push("Las extensiones permitidas son '.jpg', '.png', '.gif', '.jpeg'")
         }
 
-        let campoContrasenia = document.querySelector("input[name='name']");
-        let regexPass = /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/
+        let campoCategoria = document.querySelector("input[name='category']");
 
-        if(!regexPass.test(campoContrasenia)){
-            errors.push("La contraseña debe tener al entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula. NO puede tener otros símbolos.");
-        }else if(campoContrasenia.value == ""){
-            errors.push("El campo de contaseña tiene que estar completo")
+        if(campoCategoria.value == ""){
+            errors.push("El campo de categoría tiene que estar completo");
         }
 
+        let campoColor = document.querySelector("input[name='color']")
+
+        if(campoColor.value == ""){
+            errors.push("El campo de color tiene que estar completo")
+        }
+
+        let campoPrecio = document.querySelector("input[name='price']")
+
+        if(campoPrecio.value == ""){
+            errors.push("El campo de precio tiene que estar completo")
+        }
         
 
         if (errors.length > 0) {
