@@ -71,13 +71,13 @@ const usuariosController = {
         let UsuarioALoguear = Usuario.find(i => i.email == req.body.email)
 
         if (UsuarioALoguear) {  
-          let passOk = bcryptjs.compareSync( // No se hace la comparacion
+          let passOk = bcryptjs.compareSync( // No se hace la comparacion 
             req.body.pass,
             UsuarioALoguear.pass,
           )
           if (passOk) { 
             req.session.userLogged = UsuarioALoguear
-            return res.redirect('UserProfile')
+            return res.redirect('/UserProfile')
 
           }
 

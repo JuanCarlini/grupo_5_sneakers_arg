@@ -26,7 +26,8 @@ router.get('/users', usuariosController.users)
 router.get('/', controlador.home);
 
 // Login
-router.get('/log-in',usuariosController.login);
+router.get('/log-in' ,usuariosController.login);
+router.get('/UserProfile' ,usuariosController.userProfile)
 router.post("/log-in", validationsLogin, usuariosController.loginProcess)
 
 //Register
