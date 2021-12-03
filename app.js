@@ -8,12 +8,11 @@ const mainRoutes = require('./routers/main')
 const adminRoute = require('./routers/adminRoutes')
 const usuariosController = require("./controllers/usuariosController");
 
-
-
-
-
-
 const app = express();
+
+const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware")
+
+
 
 /* -- Middlewares --- */
 app.use(express.urlencoded({ extended: false })); 
@@ -32,6 +31,8 @@ app.use(session({
   resave: false,
   saveUninitialized: false,
 }))
+
+app.use(userLoggedMiddleware)
 
 
 app.use(express.static('./public')); 

@@ -1,0 +1,28 @@
+1. Renderizar las vistas para que muestre los productos con la base de datos
+2. Implementar el login
+
+0800 123 6227 matias castellano
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4. Diagrama de relaciones y relacionar las tablas en el modelo de sequelize(Difil)
+5. Implementar login con base de datos (Dificil)
+
+
+
+

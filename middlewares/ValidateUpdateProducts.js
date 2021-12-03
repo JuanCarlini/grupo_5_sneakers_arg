@@ -8,7 +8,9 @@ const validationsUpdate= [
     body ('name').notEmpty().withMessage("Nombre no puede estar vacío.").bail().isLength({ min: 5  })
     .withMessage("El nombre del producto es demaciado corto." ),
     body ('description').notEmpty().withMessage("La descripción del producto no puede estar vacía.").bail().isLength({ min: 20  })
-    .withMessage("La descripción del producto es demaciado corta." ),
+    .withMessage("La descripción del producto es demasiado corta." ), body ('category').notEmpty().withMessage("La categoría del producto no puede estar vacía.").bail(),
+    body ('color').notEmpty().withMessage("La categoría del color no puede estar vacía.").bail(),
+    body ('price').notEmpty().withMessage("La categoría del precio no puede estar vacía.").bail(),
 
     body ('productimage').custom((value, { req })=>{
 

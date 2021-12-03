@@ -71,11 +71,12 @@ const usuariosController = {
         let UsuarioALoguear = Usuario.find(i => i.email == req.body.email)
 
         if (UsuarioALoguear) {  
-          let passOk = bcryptjs.compareSync( // No se hace la comparacion 
+          let passOk = bcryptjs.compareSync( 
             req.body.pass,
             UsuarioALoguear.pass,
           )
           if (passOk) { 
+            delete UsuarioALoguear.pass // ?
             req.session.userLogged = UsuarioALoguear
             return res.redirect('/UserProfile')
 
@@ -100,8 +101,18 @@ const usuariosController = {
       })
   },
 
+// UserProfile:
+
   userProfile: (req, res) => {
-    return res.render('UserProfile')
+    return res.render('UserProfile', { user: req.session.userLogged })
+  },
+
+// Logout:
+
+  logout: (req, res) => {
+    req.session.destroy
+    console.log(req.session)
+    return res.redirect('/')
   },
 
 

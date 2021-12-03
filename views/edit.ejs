@@ -18,13 +18,42 @@
                     <% } %>
 
             <textarea name="description" placeholder="Descripción" value="<%= producto.description%>"></textarea>
+            <% if (locals.errors && errors.description) { %>
+                <div class="text-danger">
+                   <%= errors.description.msg %>
+              </div>
+                <% } %>
             
             <label>Elija una o más imágenes</label>
             
             <input type="file" name="productimage" placeholder="Imagen" value="<%= producto.productimage%>">
+            <% if (locals.errors && errors.productimage) { %>
+                <div class="text-danger">
+                   <%= errors.productimage.msg %>
+              </div>
+                <% } %>
+
             <input type="text" name="category" placeholder="Categoría" value="<%= producto.category%>">
+            <% if (locals.errors && errors.category) { %>
+                <div class="text-danger">
+                   <%= errors.category.msg %>
+              </div>
+                <% } %>
+
             <input type="text" name="color" placeholder="Colores" value="<%= producto.color%>">
+            <% if (locals.errors && errors.color) { %>
+                <div class="text-danger">
+                   <%= errors.color.msg %>
+              </div>
+                <% } %>
+
             <input type="number" name="price" placeholder="Precio" value="<%= producto.price%>">
+            <% if (locals.errors && errors.price) { %>
+                <div class="text-danger">
+                   <%= errors.price.msg %>
+              </div>
+                <% } %>
+
             <input type="submit" value="Enviar">
             </form>
 
