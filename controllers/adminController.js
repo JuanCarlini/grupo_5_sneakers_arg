@@ -51,8 +51,8 @@ const adminController = {
     edit: (req, res) => {
             let id = req.params.id;
             db.Producto.findByPk(id).then((producto) => {
-                console.log(producto.dataValues)
-                res.render("edit", { producto: producto.dataValues })
+                console.log(producto)
+                res.render("edit", { producto: producto })
 
             });
         
@@ -62,6 +62,7 @@ const adminController = {
     update: (req, res) => {
         const resultValidation = validationResult(req)
         if (resultValidation.errors.length > 0) {
+            req.body.id = req.params.id
             return res.render('edit', { 
                 producto: req.body,
                 errors: resultValidation.mapped(),
