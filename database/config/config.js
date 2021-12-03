@@ -1,9 +1,9 @@
 module.exports ={
   "development": {
-    "username": "root",
-    "password": "",
-    "database": "sneakers_db",
-    "host": "127.0.0.1",
+    "username": "251004",
+    "password": "Juanandr3s.",
+    "database": "sneakersarg_database",
+    "host": "mysql-sneakersarg.alwaysdata.net",
     "dialect": "mysql"
   },
   "test": {
