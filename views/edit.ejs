@@ -6,6 +6,9 @@
     <main>
         <form action="/admin/products/update/<%= producto.id %>?_method=PUT" method="POST" class ="form-box-admin" enctype="multipart/form-data">
             <h1 class="title">Editar Producto</h3>
+                <div class="errors" style="color: red;">
+                    <ul></ul>
+                </div>
             <br>    
                 <input type="text" name="name" placeholder="Nombre" value="<%= producto.name%>">
                 <% if (locals.errors && errors.name) { %>

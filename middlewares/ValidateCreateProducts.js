@@ -27,6 +27,9 @@ const validationsCreate =[
           }
           return true
         }),
+    body ('category').notEmpty().withMessage("La categoría del producto no puede estar vacía.").bail(),
+    body ('color').notEmpty().withMessage("La categoría del color no puede estar vacía.").bail(),
+    body ('price').notEmpty().withMessage("La categoría del precio no puede estar vacía.").bail(),
       ]
 
 module.exports = validationsCreate;

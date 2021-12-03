@@ -5,8 +5,11 @@
     
     <%- include('./partials/header') %> 
     <main class="main formulario-registro">
-        <form action="/log-in" method="POST" class ="form-box" >
+        <form action="/log-in" method="POST" class ="form-box log-in" >
             <h1 class="title">Welcome back :)</h3>
+                <div class="errors" style="color: red;">
+                    <ul></ul>
+                </div>
             <input type="text" name="email" placeholder="Email" value="<%= locals.oldData ? oldData.email : null%>">
 
             <% if (locals.errors && errors.email) { %>
@@ -26,6 +29,7 @@
         </form>
     </main>
     <%- include('./partials/footer') %>
+    <script src="js/login.js"></script>
 </body>
 </html>
 
