@@ -16,15 +16,18 @@
 
             <ul class="nav-menu">
                 <% if (locals.isLogged) { %>
+                    <li class="nav-menu-item"><a href="/UserProfile" class="nav-menu-link nav-link">Hola, <%=user.name %>!</a></li>
                     <li class="nav-menu-item"><a href="/products" class="nav-menu-link nav-link">Productos</a></li>
-                    <li class="nav-menu-item"><a href="/UserProfile" class="nav-menu-link nav-link">Hola, <%= user.name %>!</a></li>
                     <li class="nav-menu-item"><a href="/log-out" class="nav-menu-link nav-link">logout</a></li>
                     <li class="nav-menu-item"><a href="/carrito" class="nav-menu-link nav-link">Carrito</a></li>
                 <% } else  { %>
+
+            <ul class="nav-menu"></ul>
                 <li class="nav-menu-item"><a href="/products" class="nav-menu-link nav-link">Productos</a></li>
                 <li class="nav-menu-item"><a href="/log-in" class="nav-menu-link nav-link">Ingresá</a></li>
                 <li class="nav-menu-item"><a href="/register" class="nav-menu-link nav-link">Registrate</a></li>
                 <li class="nav-menu-item"><a href="/carrito" class="nav-menu-link nav-link">Carrito</a></li>
+
                 <% } %>
 
                 

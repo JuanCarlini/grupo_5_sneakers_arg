@@ -8,7 +8,7 @@ const controller = {
 	index: (req, res) => {
 		db.Producto.findAll()
             .then(products => {
-                return res.render("products", { products })
+                return res.render("products", { products , user: req.session.userLogged })
             })
 	},
 
@@ -17,7 +17,7 @@ const controller = {
 		let id = req.params.id;
         db.Producto.findByPk(id)
             .then(producto => {
-                return res.render("detalle-del-producto", { products: producto })
+                return res.render("detalle-del-producto", { products: producto , user: req.session.userLogged })
             })
 	},
 };
