@@ -42,7 +42,8 @@ const usuariosController = {
           surname: req.body.surname,
           email: req.body.email,
           user: req.body.user,
-          pass: bcript.hashSync(req.body.pass, 10)
+          pass: bcript.hashSync(req.body.pass, 10),
+          avatar: req.file.filename
         }).then(function () {
           res.redirect('/log-in')
         });

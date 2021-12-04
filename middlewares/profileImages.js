@@ -9,9 +9,9 @@ const storage = multer.diskStorage({
         cb(null, path.join(__dirname, '../public/images/avatars'));
     } ,
 
-    filename: function(req, file, cb) {
-        const newFileName = `${Date.now()}_img${path.extname(file.originalname)}`;
-        cb(null, newFileName);
+    filename: function (req, file, cb) {
+        let FileName = Math.round(Math.random() * 1E9) + '-img' + path.extname(file.originalname)
+        cb(null, FileName)
     }
 })
 
