@@ -9,6 +9,7 @@ const multer = require("multer");
 
 const validationsCreate = require("../middlewares/ValidateCreateProducts")
 const validationsUpdate = require("../middlewares/ValidateUpdateProducts")
+const authAdmin = require("../middlewares/authAdminMiddleware")
 
 // Multer Upload products images:
 
@@ -28,7 +29,7 @@ const upload = multer({storage});
 
 // Home route:
 
-router.get('/',adminController.admin);
+router.get('/',authAdmin, adminController.admin);
 
 // Create:
 router.get("/create", adminController.create);

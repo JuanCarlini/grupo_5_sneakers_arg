@@ -12,11 +12,11 @@ const { validationResult } = require('express-validator');
 const adminController = {
 
     admin: (req, res) => {
-        return res.render('admin');
+        return res.render('admin', {user: req.session.userLogged});
     },
 
     create: (req, res) => {
-        return res.render('create')
+        return res.render('create', {user: req.session.userLogged})
     },
     productList: (req, res) => {
         db.Producto.findAll()
@@ -52,7 +52,7 @@ const adminController = {
             let id = req.params.id;
             db.Producto.findByPk(id).then((producto) => {
                 console.log(producto)
-                res.render("edit", { producto: producto })
+                res.render("edit", { producto: producto , user: req.session.userLogged})
 
             });
         
@@ -66,7 +66,7 @@ const adminController = {
             return res.render('edit', { 
                 producto: req.body,
                 errors: resultValidation.mapped(),
-                oldData: req.body
+                oldData: req.body,
             })
         } else {
         let id = req.params.id
@@ -87,7 +87,7 @@ const adminController = {
         )
             .then(() => {
                 console.log("Datos actualizados!")
-                return res.redirect("/products");
+                return res.redirect("/products", {user: req.session.userLogged});
             })
             .catch((error) => res.send(error));
         }
