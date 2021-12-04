@@ -1,14 +1,15 @@
 /* -- Requires --- */
 const express = require("express");
-const session = require("express-session");
-const path = require("path");
+
 const methodOverride = require("method-override");
 
 const mainRoutes = require('./routers/main')
 const adminRoute = require('./routers/adminRoutes')
-const usuariosController = require("./controllers/usuariosController");
+
 
 const app = express();
+
+const session = require("express-session");
 
 const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware")
 

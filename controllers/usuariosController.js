@@ -5,6 +5,7 @@ const bcript = require('bcryptjs');
 const { validationResult } = require('express-validator');
 const bcryptjs = require('bcryptjs')
 
+
 const usuariosController = {
 
   // Register render/ Process:
@@ -110,8 +111,9 @@ const usuariosController = {
 // Logout:
 
   logout: (req, res) => {
-    req.session.destroy
+    req.session.destroy()
     return res.redirect('/')
+    
   },
 
 
