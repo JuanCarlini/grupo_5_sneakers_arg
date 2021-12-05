@@ -21,7 +21,7 @@ const adminController = {
     productList: (req, res) => {
         db.Producto.findAll()
             .then(products => {
-                return res.render("admin_productList", { products })
+                return res.render("admin_productList", { products , user: req.session.userLogged })
             })
 
     },
@@ -50,9 +50,9 @@ const adminController = {
 
     edit: (req, res) => {
             let id = req.params.id;
-            db.Producto.findByPk(id).then((producto) => {
-                console.log(producto)
-                res.render("edit", { producto: producto , user: req.session.userLogged})
+            db.Producto.findByPk(id).then((products) => {
+                console.log(products)
+                res.render("edit", { products: products , user: req.session.userLogged})
 
             });
         
@@ -85,11 +85,10 @@ const adminController = {
                 },
             }
         )
-            .then(() => {
-                console.log("Datos actualizados!")
-                return res.redirect("/products", {user: req.session.userLogged});
-            })
-            .catch((error) => res.send(error));
+            .then(res.redirect("/products")) /* { products , user: req.session.userLogged }) */;
+                
+            
+            
         }
 
     },
