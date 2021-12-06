@@ -33,11 +33,12 @@ window.addEventListener("load", function(){
             errors.push("El campo de usuario tiene que estar completo");
         }
 
-        let campoContrasenia = document.querySelector("input[name='name']");
-        let regexPass = /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/
+        let campoContrasenia = document.querySelector("input[name='pass']");
+        let regexPass = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/
 
-        if(!regexPass.test(campoContrasenia)){
-            errors.push("La contraseña debe tener al entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula. NO puede tener otros símbolos.");
+        console.log(campoContrasenia.value)
+        if(!regexPass.test(campoContrasenia.value)){
+            errors.push("La contraseña debe tener mínimo ocho caracteres, al menos una letra mayúscula, una letra minúscula y un número");
         }else if(campoContrasenia.value == ""){
             errors.push("El campo de contaseña tiene que estar completo")
         }
