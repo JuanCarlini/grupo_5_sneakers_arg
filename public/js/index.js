@@ -33,7 +33,7 @@ window.addEventListener("load", function(){
             errors.push("El campo de usuario tiene que estar completo");
         }
 
-        let campoContrasenia = document.querySelector("input[name='name']");
+        let campoContrasenia = document.querySelector("input[name='pass']");
         let regexPass = /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/
 
         if(!regexPass.test(campoContrasenia)){
