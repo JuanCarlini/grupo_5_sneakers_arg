@@ -4,8 +4,23 @@
 <body class="grid-container">
     <%- include('./partials/header') %> 
     
-    <div class="products">
-        <h2><%= user.name %></h2>
+    <div style="margin: 10px;">
+        <h2>Bienvenid@ de vuelta <%= user.name %>!</h2>
+        <div><img src="/images/avatars/1638372268657_img.jpg" alt="Avatar del perfil"></div>
+
+        <h4>¿Qué queres comprar hoy? Descubrilo</h4>
+        <form action="/" method="GET" style=>
+            <input type="submit" value="COMPRÁ AHORA" style="font-size: 18px;
+            padding: 8px 25px;
+            border: none;
+            outline: none;
+            border-radius: 6px;
+            cursor: pointer;
+            color: white;
+            background-color: #ff5e00;
+            margin-right: 20px">
+        </form>
+        
         
     </div>
 

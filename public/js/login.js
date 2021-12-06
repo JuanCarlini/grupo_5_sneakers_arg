@@ -1,5 +1,4 @@
 // Validaciones log-in:
-
 window.addEventListener("load", function(){
     let formulario = document.querySelector("form.log-in");
 
@@ -13,12 +12,15 @@ window.addEventListener("load", function(){
         if (!regexEmail.test(campoEmail.value)){
             errors.push("Email inválido")   
         }
-
+        
         let campoContrasenia = document.querySelector("input[name='pass']");
-        let regexPass = /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/
+        let regexPass = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/
 
-        if(!regexPass.test(campoContrasenia)){
-            errors.push("Ingresa una contraseña")
+        console.log(campoContrasenia.value)
+        if(!regexPass.test(campoContrasenia.value)){
+            errors.push("La contraseña debe tener mínimo ocho caracteres, al menos una letra mayúscula, una letra minúscula y un número");
+        }else if(campoContrasenia.value == ""){
+            errors.push("El campo de contaseña tiene que estar completo")
         }
 
         if (errors.length > 0) {
