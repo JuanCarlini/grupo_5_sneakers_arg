@@ -1,17 +1,14 @@
 // Multer - express:
-
 const express = require ('express');
 const router = express.Router();
 
 
 // Controllers:
-
 const controlador = require('../controllers/mainController.js')
 const usuariosController = require("../controllers/usuariosController");
 const controller = require("../controllers/productosController")
 
 // Middleweres:
-
 const uploadImage = require("../middlewares/profileImages");
 const validationsRegister = require('../middlewares/validateRegister');
 const validationsLogin = require('../middlewares/ValidateLogin.js');
@@ -19,12 +16,13 @@ const guestMiddleware = require('../middlewares/guestMiddleware')
 const authMiddleware = require('../middlewares/authMiddleware')
 
 
-// API:
+// API
+// Users
+router.get('/api/users', usuariosController.users)
+router.get('/api/users/:id', usuariosController.userId)
 
-router.get('/users', usuariosController.users)
 
-// Routes:
-
+// Routes
 // Home
 router.get('/', controlador.home);
 
@@ -34,7 +32,6 @@ router.get('/UserProfile',authMiddleware, usuariosController.userProfile)
 router.post("/log-in", validationsLogin, usuariosController.loginProcess)
 
 // Logout
-
 router.get('/log-out', usuariosController.logout)
 
 //Register
