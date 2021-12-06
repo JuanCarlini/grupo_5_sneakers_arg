@@ -373,13 +373,13 @@ article div.main-article{
 /*Carrito*/
 
 .flex-box-c{
-    display: flex;
+    display: block;
     width: 1000px;
     margin: 20px auto;
 }
 
 .left-c{
-    display: inline-flex;
+    display: block;
 }
 
 

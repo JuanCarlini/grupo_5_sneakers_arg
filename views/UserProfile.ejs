@@ -4,10 +4,27 @@
 <body class="grid-container">
     <%- include('./partials/header') %> 
     
-    <div class="products">
-        <h2><%= user.name %></h2>
-        <!-- No se sube la imagen a la base. -->
+    <div style="margin: 10px;">
+        <h2>Bienvenid@ de vuelta, <%= user.name %>!</h2>
+        <br>
+        <div><img src="/images/avatars/<%=user.avatar%>" alt="Avatar del perfil" style="width:350px;"></div>
+        <br>
 
+        <h4>¿Qué queres comprar hoy? Descubrilo</h4>
+        <br>
+        <form action="/" method="GET" style=>
+            <input type="submit" value="COMPRÁ AHORA" style="font-size: 18px;
+            padding: 8px 25px;
+            border: none;
+            outline: none;
+            border-radius: 6px;
+            cursor: pointer;
+            color: white;
+            background-color: #ff5e00;
+            margin-right: 20px">
+        </form>
+        
+        
     </div>
 
 
