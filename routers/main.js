@@ -6,7 +6,8 @@ const router = express.Router();
 // Controllers:
 const controlador = require('../controllers/mainController.js')
 const usuariosController = require("../controllers/usuariosController");
-const controller = require("../controllers/productosController")
+const productosController = require("../controllers/productosController")
+
 
 // Middleweres:
 const uploadImage = require("../middlewares/profileImages");
@@ -20,6 +21,9 @@ const authMiddleware = require('../middlewares/authMiddleware')
 // Users
 router.get('/api/users', usuariosController.users)
 router.get('/api/users/:id', usuariosController.userId)
+
+// Products
+router.get('/api/products', productosController.products)
 
 
 // Routes
@@ -42,10 +46,10 @@ router.post("/register", uploadImage.single("avatar"), validationsRegister, usua
 router.get('/carrito', controlador.carrito);
 
 //Detalle del producto
-router.get("/detalle-del-producto/:id", controller.detail); 
+router.get("/detalle-del-producto/:id", productosController.detail); 
 
 // Todos los productos
-router.get('/products', controller.index);
+router.get('/products', productosController.index);
 
 
 
