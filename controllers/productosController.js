@@ -26,18 +26,33 @@ const controller = {
 	products: (req, res) => {
 		db.Producto.findAll()
 		.then(products => {
+			let categoryUrban = 0
+			let categoryRetro = 0
+
 			for (let i = 0; i < products.length; i++) {
 			  products[i].setDataValue("detail", "http://localhost:3000/api/products/" + products[i].id)
-			}
+			
+			  if(products[i].category == "Urban"){
+				  	categoryUrban++
+
+			  }	if(products[i].category == "Retro"){
+					categoryRetro++
+			  }	
+			}	
 	
 			res.status(200).json({
 			  count: products.length,
+			  countByCategory: {
+				Urban: "",
+				Retro:  ""
+			  },
 			  products: products,
 			  status: 200
 			})
 	
 		  }).catch(error => res.json(error));
 	  },
+	  
 };
 module.exports = controller;
 
