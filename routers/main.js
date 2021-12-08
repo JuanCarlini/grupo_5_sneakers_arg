@@ -24,6 +24,8 @@ router.get('/api/users/:id', usuariosController.userId)
 
 // Products
 router.get('/api/products', productosController.products)
+router.get('/api/users/:id', productosController.productsId)
+
 
 
 // Routes
