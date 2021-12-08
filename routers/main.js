@@ -1,17 +1,15 @@
 // Multer - express:
-
 const express = require ('express');
 const router = express.Router();
 
 
 // Controllers:
-
 const controlador = require('../controllers/mainController.js')
 const usuariosController = require("../controllers/usuariosController");
-const controller = require("../controllers/productosController")
+const productosController = require("../controllers/productosController")
+
 
 // Middleweres:
-
 const uploadImage = require("../middlewares/profileImages");
 const validationsRegister = require('../middlewares/validateRegister');
 const validationsLogin = require('../middlewares/ValidateLogin.js');
@@ -19,12 +17,16 @@ const guestMiddleware = require('../middlewares/guestMiddleware')
 const authMiddleware = require('../middlewares/authMiddleware')
 
 
-// API:
+// API
+// Users
+router.get('/api/users', usuariosController.users)
+router.get('/api/users/:id', usuariosController.userId)
 
-router.get('/users', usuariosController.users)
+// Products
+router.get('/api/products', productosController.products)
 
-// Routes:
 
+// Routes
 // Home
 router.get('/', controlador.home);
 
@@ -34,7 +36,6 @@ router.get('/UserProfile',authMiddleware, usuariosController.userProfile)
 router.post("/log-in", validationsLogin, usuariosController.loginProcess)
 
 // Logout
-
 router.get('/log-out', usuariosController.logout)
 
 //Register
@@ -45,10 +46,10 @@ router.post("/register", uploadImage.single("avatar"), validationsRegister, usua
 router.get('/carrito', controlador.carrito);
 
 //Detalle del producto
-router.get("/detalle-del-producto/:id", controller.detail); 
+router.get("/detalle-del-producto/:id", productosController.detail); 
 
 // Todos los productos
-router.get('/products', controller.index);
+router.get('/products', productosController.index);
 
 
 

@@ -5,11 +5,16 @@
     <%- include('./partials/header') %> 
     
     <div style="margin: 10px;">
+        <br>
         <h2>Bienvenid@ de vuelta, <%= user.name %>!</h2>
         <br>
         <div><img src="/images/avatars/<%=user.avatar%>" alt="Avatar del perfil" style="width:350px;"></div>
         <br>
-
+        <h5>Tu nombre de usuario: "<%= user.user %>"</h5>
+        <br>
+        <h5>Email de la cuenta: <%= user.email %></h5>
+        <br>
+        <br>
         <h4>¿Qué queres comprar hoy? Descubrilo</h4>
         <br>
         <form action="/" method="GET" style=>
@@ -26,6 +31,8 @@
         
         
     </div>
+    <br>
+    
 
 
 

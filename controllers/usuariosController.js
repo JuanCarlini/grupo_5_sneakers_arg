@@ -72,12 +72,12 @@ const usuariosController = {
       .then(Usuario => {
         let UsuarioALoguear = Usuario.find(i => i.email == req.body.email)
 
-        if (UsuarioALoguear) {  
-          let passOk = bcryptjs.compareSync( 
+        if (UsuarioALoguear) {
+          let passOk = bcryptjs.compareSync(
             req.body.pass,
             UsuarioALoguear.pass,
           )
-          if (passOk) { 
+          if (passOk) {
             delete UsuarioALoguear.pass // ?
             req.session.userLogged = UsuarioALoguear
             return res.redirect('/UserProfile')
@@ -103,36 +103,67 @@ const usuariosController = {
       })
   },
 
-// UserProfile:
+  // UserProfile:
 
   userProfile: (req, res) => {
-    return res.render('UserProfile', { user: req.session.userLogged })
+    db.Usuario.findByPk(parseInt(req.session.userLogged.id)).then((user) => {
+      res.render('UserProfile', {
+        user: user,
+      })
+    })
   },
 
-// Logout:
+  // Logout:
 
   logout: (req, res) => {
     req.session.destroy()
     return res.redirect('/')
-    
+
   },
 
 
 
   // Api Usuarios:
 
-  users: function (req, res) {
-    db.Usuario.findAll()
-      .then(usuarios => {
-        return res.status(200).json({
-          count: usuarios.length,
-          users: usuarios,
-          status: 200,
+  users: (req, res) => {
+    db.Usuario.findAll({
+      attributes: ["id", "name", "email"]
+    })
 
+      .then(users => {
+        for (let i = 0; i < users.length; i++) {
+          users[i].setDataValue("detail", "http://localhost:3000/api/users/" + users[i].id)
+        }
+
+        res.status(200).json({
+          count: users.length,
+          users: users,
+          status: 200
         })
+
+      }).catch(error => res.json(error));
+  },
+
+
+
+  userId: (req, res) => {
+    db.Usuario.findByPk(parseInt(req.params.id))
+
+      .then((userProfile) => {
+        res.status(200).json({
+          id: userProfile.id,
+          name: userProfile.name,
+          surname: userProfile.surname,
+          user: userProfile.user,
+          email: userProfile.email,
+          avatar: "http://localhost:3000/images/avatars/" + userProfile.avatar,
+        });
+
       })
-  }
+      .catch((error) => console.error(error));
+  },
 }
+
 
 
 
