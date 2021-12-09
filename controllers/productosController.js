@@ -30,6 +30,7 @@ const controller = {
 			.then(products => {
 				let categoryUrban = 0
 				let categoryRetro = 0
+				let categorySport = 0
 
 				for (let i = 0; i < products.length; i++) {
 					products[i].setDataValue("detail", "http://localhost:3000/api/products/" + products[i].id)
@@ -39,14 +40,20 @@ const controller = {
 
 					} if (products[i].category == "Retro") {
 						categoryRetro++
+
+					} if (products[i].category == "Sport") {
+						categorySport++
+
 					}
+					
 				}
 
 				res.status(200).json({  //// DUDA
 					count: products.length,
 					countByCategory: {
 						Urban: categoryUrban,
-						Retro: categoryRetro
+						Retro: categoryRetro,
+						Sport: categorySport
 					},
 					products: products,
 					status: 200
@@ -59,10 +66,22 @@ const controller = {
 
 
 	productsId: (req, res) => {
-		db.Producto.findAll({
-			attributes: ["id", "name", "description", "category"]
-		})
-	}
+		db.Producto.findByPk(req.params.id)
+			.then(function (producto) {
+				console.log(producto)
+				res.status(200).json({
+					id: producto.id,
+					Name: producto.name,
+					description: producto.description,
+					category: [producto.category],
+					color: producto.color,
+					price: producto.price,
+					image: `http://localhost:3000/images/products/` + producto.image,
+					status: 200,
+				})
+			})
+	},
+
 };
 module.exports = controller;
 
