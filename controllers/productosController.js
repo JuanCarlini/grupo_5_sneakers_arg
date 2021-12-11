@@ -48,7 +48,7 @@ const controller = {
 					
 				}
 
-				res.status(200).json({  //// DUDA
+				res.status(200).json({  
 					count: products.length,
 					countByCategory: {
 						Urban: categoryUrban,

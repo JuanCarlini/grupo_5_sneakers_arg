@@ -6,8 +6,14 @@ const methodOverride = require("method-override");
 const mainRoutes = require('./routers/main')
 const adminRoute = require('./routers/adminRoutes')
 
+const cors = require("cors")
+
 
 const app = express();
+
+app.use (cors())
+
+
 
 const session = require("express-session");
 
@@ -70,6 +76,6 @@ app.use('/users', mainRoutes)
 
 // Servidor:
 
-app.listen(3000, () =>{
-    console.log("Servidor corriendo en el puerto 3000");
+app.listen(3100, () =>{
+    console.log("Servidor corriendo en el puerto 3100");
 })
