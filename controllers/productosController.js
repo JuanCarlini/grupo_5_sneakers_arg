@@ -43,8 +43,8 @@ const controller = {
 			res.status(200).json({
 			  count: products.length,
 			  countByCategory: {
-				Urban: "",
-				Retro:  ""
+				Urban: categoryUrban,
+				Retro: categoryRetro
 			  },
 			  products: products,
 			  status: 200
