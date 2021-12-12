@@ -25,7 +25,7 @@ const controller = {
 
 	products: (req, res) => {
 		db.Producto.findAll({
-			attributes: ["id", "name", "description", "category"]
+			attributes: ["id", "name", "description", "category", "image"]
 		})
 			.then(products => {
 				let categoryUrban = 0
@@ -47,6 +47,11 @@ const controller = {
 					}
 					
 				}
+
+				for (let i = 0; i < products.length; i++) {
+					products[i].setDataValue('image', `http://localhost:3100/images/products/${products[i].image}`)
+				}
+	
 
 				res.status(200).json({  
 					count: products.length,
