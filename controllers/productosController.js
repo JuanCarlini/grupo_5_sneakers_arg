@@ -33,7 +33,7 @@ const controller = {
 				let categorySport = 0
 
 				for (let i = 0; i < products.length; i++) {
-					products[i].setDataValue("detail", "http://localhost:3000/api/products/" + products[i].id)
+					products[i].setDataValue("detail", "http://localhost:3100/api/products/" + products[i].id)
 
 					if (products[i].category == "Urban") {
 						categoryUrban++
@@ -81,7 +81,7 @@ const controller = {
 					category: [producto.category],
 					color: producto.color,
 					price: producto.price,
-					image: `http://localhost:3000/images/products/` + producto.image,
+					image: `http://localhost:3100/images/products/` + producto.image,
 					status: 200,
 				})
 			})
