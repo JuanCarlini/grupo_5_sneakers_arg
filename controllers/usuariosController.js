@@ -132,7 +132,7 @@ const usuariosController = {
 
       .then(users => {
         for (let i = 0; i < users.length; i++) {
-          users[i].setDataValue("detail", "http://localhost:3000/api/users/" + users[i].id)
+          users[i].setDataValue("detail", "http://localhost:3100/api/users/" + users[i].id)
         }
 
         res.status(200).json({
@@ -156,7 +156,7 @@ const usuariosController = {
           surname: userProfile.surname,
           user: userProfile.user,
           email: userProfile.email,
-          avatar: "http://localhost:3000/images/avatars/" + userProfile.avatar,
+          avatar: "http://localhost:3100/images/avatars/" + userProfile.avatar,
         });
 
       })

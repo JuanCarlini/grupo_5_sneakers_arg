@@ -25,7 +25,7 @@ const controller = {
 
 	products: (req, res) => {
 		db.Producto.findAll({
-			attributes: ["id", "name", "description", "category"]
+			attributes: ["id", "name", "description", "category", "image"]
 		})
 			.then(products => {
 				let categoryUrban = 0
@@ -33,7 +33,7 @@ const controller = {
 				let categorySport = 0
 
 				for (let i = 0; i < products.length; i++) {
-					products[i].setDataValue("detail", "http://localhost:3000/api/products/" + products[i].id)
+					products[i].setDataValue("detail", "http://localhost:3100/api/products/" + products[i].id)
 
 					if (products[i].category == "Urban") {
 						categoryUrban++
@@ -48,13 +48,18 @@ const controller = {
 					
 				}
 
-				res.status(200).json({  //// DUDA
+				for (let i = 0; i < products.length; i++) {
+					products[i].setDataValue('image', `http://localhost:3100/images/products/${products[i].image}`)
+				}
+	
+
+				res.status(200).json({  
 					count: products.length,
-					countByCategory: {
-						Urban: categoryUrban,
-						Retro: categoryRetro,
-						Sport: categorySport
-					},
+					countByCategory: [
+						{Urban: categoryUrban},
+						{Retro: categoryRetro},
+						{Sport: categorySport}
+					],
 					products: products,
 					status: 200
 				})
@@ -76,7 +81,7 @@ const controller = {
 					category: [producto.category],
 					color: producto.color,
 					price: producto.price,
-					image: `http://localhost:3000/images/products/` + producto.image,
+					image: `http://localhost:3100/images/products/` + producto.image,
 					status: 200,
 				})
 			})
