@@ -13,4 +13,6 @@ TRELLO: https://trello.com/b/PhJL3xc4/weekly-meeting-template
 
 GITHUB: https://github.com/JuanCarlini/grupo_5_sneakers_arg
 
+DASHBOARD: https://github.com/lauutarol/sneakers-arg-dashboard
+
 BASE DE DATOS: https://phpmyadmin.alwaysdata.com/phpmyadmin/index.php?route=/table/sql&db=sneakersarg_database&table=productos
